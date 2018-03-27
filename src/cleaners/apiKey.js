@@ -1,5 +1,0 @@
-export const apiKey = '480eafc74b027454d89765098061cb64';
-
-// jared - 480eafc74b027454d89765098061cb64
-// Matt - 4eabf2c86624eba27b3bed0627180793
-// om - e7f886548071b04cf8febc293d108511
