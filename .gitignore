@@ -21,4 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # api keys
-/src/cleaners/api-keys
+/src/cleaners/api-keys.js
