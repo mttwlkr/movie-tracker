@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import { apiKey } from '../../cleaners/apiKey.js';
 import { Route, Switch } from 'react-router-dom';
 import { Home } from '../Home/Home';
 import { getNowPlaying } from '../../cleaners/fetchData'
