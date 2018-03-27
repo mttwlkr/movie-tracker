@@ -1,4 +1,4 @@
-import { apiKey } from './apiKey'
+import { apiKey } from './apiKeys'
 
 const rootUrl = 'https://api.themoviedb.org/3';
 const nowPlaying = `/movie/now_playing?page=1&language=en-US&api_key=${apiKey}&language=en-US`
