@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addNewUser } from '../../actions';
 
 export class Login extends Component {
 	constructor() {
@@ -11,13 +13,14 @@ export class Login extends Component {
 	}
 
 	render() {
+		const {handleSubmit, user} = this.props;
 
 		return (
 			<form onSubmit={(e) => {
 				e.preventDefault() 
-				// handleSubmit(this.state)
+				handleSubmit(this.state.username, this.state.password)
 			}}>
-				<label for="username">Username: </label>
+				<label htmlFor="username">Username: </label>
 				<input 
 					type='text' 
 					id='username' 
@@ -25,7 +28,7 @@ export class Login extends Component {
 					placeholder='username'
 					onChange={(e) => this.setState({ username: e.target.value })}
 				/>
-				<label for="password">Password: </label>
+				<label htmlFor="password">Password: </label>
 				<input 
 					type='password' 
 					id='password' 
@@ -33,8 +36,24 @@ export class Login extends Component {
 					placeholder='password'
 					onChange={(e) => this.setState({ password: e.target.value })}
 				/>
-				<NavLink to='/home'>Sign in</NavLink>
+				<button>submit</button>
 			</form>
 		)
 	}
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleSubmit: (username, password) => {
+      dispatch(addNewUser(username, password))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
