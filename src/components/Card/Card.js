@@ -8,7 +8,8 @@ export const Card = ({movieInfo}) => {
     <div className='card'>
       <h1>{title}</h1>
       <img className='card-image'
-           src={`https://image.tmdb.org/t/p/w500/${poster_path}`} />
+           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+           alt='movie poster' />
       <p>{overview}</p>
       <p>{vote_average}</p>
     </div>
