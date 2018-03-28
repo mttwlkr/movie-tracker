@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addNewUser } from '../../actions';
 
@@ -12,14 +12,17 @@ export class Login extends Component {
 		}
 	}
 
-	render() {
-		const {handleSubmit, user} = this.props;
+	submitUsername = (e) => {
+		e.preventDefault()
+		this.props.handleSubmit(this.state.username, this.state.password);
+		const path = "/";
+		this.props.history.push(path);
+	}
 
+
+	render() {
 		return (
-			<form onSubmit={(e) => {
-				e.preventDefault() 
-				handleSubmit(this.state.username, this.state.password)
-			}}>
+			<form onSubmit={this.submitUsername}>
 				<label htmlFor="username">Username: </label>
 				<input 
 					type='text' 
@@ -36,7 +39,10 @@ export class Login extends Component {
 					placeholder='password'
 					onChange={(e) => this.setState({ password: e.target.value })}
 				/>
-				<button>submit</button>
+
+				<button>
+					submit
+				</button>
 			</form>
 		)
 	}
@@ -56,4 +62,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login))
