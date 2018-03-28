@@ -3,7 +3,7 @@ import './App.css';
 import { Route, Switch, NavLink } from 'react-router-dom';
 import { Home } from '../Home/Home';
 import { getNowPlaying } from '../../cleaners/fetchData';
-import Login from '../Login/Login';
+import Login from '../../containers/Login/Login';
 
 class App extends Component {
   constructor() {
