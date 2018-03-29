@@ -8,10 +8,51 @@ import Login from '../../containers/Login/Login';
 import { loadMovies } from '../../actions';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      logIn: []
+    }
+  }
   
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
     this.props.loadMovies(nowPlaying.results);
+    this.logIn({email: 'tman2272@aol.com', password: 'password'})
+    this.createNewAccount({
+      name: 'jared', 
+      email: 'hottstuff81@aol.net', 
+      password: 'hottie'
+    })
+  }
+
+  const createNewAccount = async (data) => {
+    const response = await fetch('/api/users/new', {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    const newAccount = await response.json();
+    console.log('newAccount' , newAccount)
+  }
+
+  const logIn = async (data) => {
+    const response = await fetch('/api/users', {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        'content-type': 'application/json'
+      }
+    });
+    const logInData = await response.json();
+    this.setState({ 
+      logIn : 
+        { email: logInData.data.email,
+          name: logInData.data.name
+        }
+     })
   }
 
   render() {
