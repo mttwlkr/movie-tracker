@@ -26,7 +26,7 @@ class SignUp extends Component {
       if (newAccount.error) {
         // 
       } else {
-        <Redirect to='/login' />
+        <Redirect to='/login/' />
       }
     } catch (error) {
       alert('error')
