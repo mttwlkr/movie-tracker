@@ -1,7 +1,7 @@
-export const addNewUser = (username, password) => ({
-  type: 'ADD_NEW_USER',
-  username,
-  password
+export const logInUser = (id, name) => ({
+  type: 'LOGIN_USER',
+  id,
+  name
 });
 
 export const loadMovies = (movies) => ({

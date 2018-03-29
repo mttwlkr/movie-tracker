@@ -1,7 +1,9 @@
 const userReducer = (state = [], action) => {
+  console.log('action', action)
   switch (action.type) {
-  case 'ADD_NEW_USER':
-    return [...state, { username: action.username, password: action.password }];
+  case 'LOGIN_USER':
+    return [...state, { id: action.id, name: action.name }];
+
   default:
     return state;
   }

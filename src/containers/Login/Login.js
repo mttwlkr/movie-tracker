@@ -1,34 +1,57 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addNewUser } from '../../actions';
+import { logInUser } from '../../actions';
 
 export class Login extends Component {
   constructor() {
     super();
     this.state = {
-      username: '',
+      email: '',
       password: ''
     };
   }
 
-  submitUsername = (event) => {
+  submitEmail = (event) => {
     event.preventDefault();
-    this.props.handleSubmit(this.state.username, this.state.password);
+    this.logIn(this.state)
+
+  }
+
+  logIn = async (data) => {
+    try {
+      const response = await fetch('/api/users', {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          'content-type': 'application/json'
+        }
+      });
+      const logInData = await response.json();
+      this.redirectUser(logInData.data.id, logInData.data.name)
+
+    } catch (error){
+      // throw new Error('Login failed')
+      console.log('you are a bad bad human')
+    }
+  }
+
+  redirectUser = (id, name) => {
+    this.props.handleSubmit(id, name);
     const path = "/";
-    this.props.history.push(path);
+    this.props.history.push(path);    
   }
 
   render() {
     return (
-      <form onSubmit={this.submitUsername}>
-        <label htmlFor="username">Username: </label>
+      <form onSubmit={this.submitEmail}>
+        <label htmlFor="email">email: </label>
         <input 
           type='text' 
-          id='username' 
-          value={this.state.username} 
-          placeholder='username'
-          onChange={(event) => this.setState({ username: event.target.value })}
+          id='email' 
+          value={this.state.email} 
+          placeholder='email'
+          onChange={(event) => this.setState({ email: event.target.value })}
         />
         <label htmlFor="password">Password: </label>
         <input 
@@ -52,8 +75,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleSubmit: (username, password) => {
-      dispatch(addNewUser(username, password));
+    handleSubmit: (id, name) => {
+      dispatch(logInUser(id, name));
     }
   };
 };
