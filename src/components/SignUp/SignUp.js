@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+// import Login from '../../containers/Login/Login';
+import { Redirect } from 'react-router-dom'
 
 class SignUp extends Component {
   constructor(props) {
@@ -10,6 +12,27 @@ class SignUp extends Component {
     }
   }
 
+  handleFetch = async (state) => {
+    try {
+      const response = await fetch('/api/users/new', {
+        method: "POST",
+        body: JSON.stringify(state),
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      const newAccount = await response.json();
+      
+      if (newAccount.error) {
+        // 
+      } else {
+        <Redirect to='/login' />
+      }
+    } catch (error) {
+      alert('error')
+    }
+  }
+
   handleChange = (event) => {
     const { name, value } = event.target
     this.setState({[name]: value})
@@ -17,6 +40,12 @@ class SignUp extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    this.handleFetch(this.state)
+    this.setState({
+      name: '',
+      email: '',
+      password: ''
+    })
   }
 
   render() {

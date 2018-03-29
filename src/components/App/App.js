@@ -21,11 +21,11 @@ class App extends Component {
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
     this.props.loadMovies(nowPlaying.results);
-    this.createNewAccount({
-      name: 'jared', 
-      email: 'hottstuff81@aol.net', 
-      password: 'hottie'
-    })
+    // this.createNewAccount({
+    //   name: 'jared', 
+    //   email: 'hottstuff81@aol.net', 
+    //   password: 'hottie'
+    // })
     // this.logIn({email: 'tman2272@aol.com', password: 'password12'})
   }
 
@@ -53,17 +53,17 @@ class App extends Component {
   //   }
   // }
 
-  createNewAccount = async (data) => {
-    const response = await fetch('/api/users/new', {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        'content-type': 'application/json'
-      }
-    })
-    const newAccount = await response.json();
-    this.setState({newUserID: newAccount.id})
-  }
+  // createNewAccount = async (data) => {
+  //   const response = await fetch('/api/users/new', {
+  //     method: "POST",
+  //     body: JSON.stringify(data),
+  //     headers: {
+  //       'content-type': 'application/json'
+  //     }
+  //   })
+  //   const newAccount = await response.json();
+  //   this.setState({newUserID: newAccount.id})
+  // }
 
   render() {
     return (
