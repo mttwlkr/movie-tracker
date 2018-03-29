@@ -11,7 +11,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      logIn: []
+      logIn: [],
+      newUserID: ''
     }
   }
   
@@ -26,19 +27,7 @@ class App extends Component {
     })
   }
 
-  const createNewAccount = async (data) => {
-    const response = await fetch('/api/users/new', {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        'content-type': 'application/json'
-      }
-    })
-    const newAccount = await response.json();
-    console.log('newAccount' , newAccount)
-  }
-
-  const logIn = async (data) => {
+  logIn = async (data) => {
     const response = await fetch('/api/users', {
       method: "POST",
       body: JSON.stringify(data),
@@ -55,8 +44,19 @@ class App extends Component {
      })
   }
 
-  render() {
+  createNewAccount = async (data) => {
+    const response = await fetch('/api/users/new', {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    const newAccount = await response.json();
+    this.setState({newUserID: newAccount.id})
+  }
 
+  render() {
     return (
       <div className="App">
         <header>
