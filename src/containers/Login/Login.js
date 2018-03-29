@@ -39,7 +39,7 @@ export class Login extends Component {
   redirectUser = (id, name) => {
     this.props.handleSubmit(id, name);
     const path = "/";
-    this.props.history.push(path);    
+    this.props.history.push(path);
   }
 
   render() {

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-// import Login from '../../containers/Login/Login';
-import { Redirect } from 'react-router-dom'
+import { Redirect, NavLink } from 'react-router-dom';
 
 class SignUp extends Component {
   constructor(props) {
@@ -8,7 +7,9 @@ class SignUp extends Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      authenticated: false,
+      signUpError: false
     }
   }
 
@@ -20,18 +21,25 @@ class SignUp extends Component {
         headers: {
           'content-type': 'application/json'
         }
-      })
+      });
       const newAccount = await response.json();
-      
+
       if (newAccount.error) {
-        // 
+        this.setState({ signUpError: true });
       } else {
-        <Redirect to='/login/' />
+        this.setState({ authenticated: true });
       }
+
     } catch (error) {
-      alert('error')
+      alert(error);
     }
   }
+
+
+
+  handleError = () => {
+    console.log('error')
+  } 
 
   handleChange = (event) => {
     const { name, value } = event.target
@@ -40,7 +48,12 @@ class SignUp extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.handleFetch(this.state)
+    const info = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password
+    }
+    this.handleFetch(info)
     this.setState({
       name: '',
       email: '',
@@ -50,9 +63,8 @@ class SignUp extends Component {
 
   render() {
     return (
-      <form
-        onSubmit={this.handleSubmit}
-      >
+      <div>
+      <form onSubmit={this.handleSubmit}>
         <input 
           type='text'
           name='name'
@@ -76,6 +88,18 @@ class SignUp extends Component {
         />
         <button>Submit</button>
       </form>
+      { 
+        this.state.signUpError &&
+          <section>
+            <p>Signup Failed: Please Try Again</p>
+            <NavLink to="/login">Already a member?</NavLink>
+          </section>
+      }
+      {
+        this.state.authenticated && 
+          <Redirect to='/login' />
+      }
+      </div>
     )
   }
 }
