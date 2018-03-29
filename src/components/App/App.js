@@ -7,6 +7,7 @@ import { getNowPlaying } from '../../cleaners/fetchData';
 // import login from '../../containers/Login/Login';
 import Login from '../../containers/Login/Login'
 import { loadMovies } from '../../actions';
+import SignUp from '../SignUp/SignUp.js'
 
 class App extends Component {
   constructor() {
@@ -80,6 +81,9 @@ class App extends Component {
           />
           <Route exact path='/login'
             component={ () => <Login />} 
+          />
+          <Route exact path='/signup'
+            component={ () => <SignUp />}
           />
         </Switch>
       </div>
