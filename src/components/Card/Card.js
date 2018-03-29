@@ -1,9 +1,9 @@
 import React from 'react';
-import './Card.css'
+import './Card.css';
 
 export const Card = ({movieInfo}) => {
-  console.log(movieInfo.poster_path)
-  const {title, poster_path, overview, vote_average} = movieInfo
+  const {title, poster_path, overview, vote_average} = movieInfo;
+
   return (
     <div className='card'>
       <h1>{title}</h1>
@@ -13,5 +13,5 @@ export const Card = ({movieInfo}) => {
       <p>{overview}</p>
       <p>{vote_average}</p>
     </div>
-  )
-}
+  );
+};
