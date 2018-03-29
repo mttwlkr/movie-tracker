@@ -65,10 +65,10 @@ export class Login extends Component {
           <button>submit</button>
         </form>
         { this.state.error &&
-          <section>
-            <p>Login Failed: Please Try Again</p>
-            <NavLink to="/signup">Sign Up</NavLink>
-          </section>
+            <section>
+              <p>Login Failed: Please Try Again</p>
+              <NavLink to="/signup">Sign Up</NavLink>
+            </section>
         }
       </div>
     );
