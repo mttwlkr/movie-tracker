@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch, NavLink } from 'react-router-dom';
+import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Home from '../Home/Home';
 import { getNowPlaying } from '../../cleaners/fetchData';
-import Login from '../../containers/Login/Login';
+// import login from '../../containers/Login/Login';
+import Login from '../../containers/Login/Login'
 import { loadMovies } from '../../actions';
 
 class App extends Component {
@@ -19,30 +20,37 @@ class App extends Component {
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
     this.props.loadMovies(nowPlaying.results);
-    this.logIn({email: 'tman2272@aol.com', password: 'password'})
     this.createNewAccount({
       name: 'jared', 
       email: 'hottstuff81@aol.net', 
       password: 'hottie'
     })
+    // this.logIn({email: 'tman2272@aol.com', password: 'password12'})
   }
 
-  logIn = async (data) => {
-    const response = await fetch('/api/users', {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        'content-type': 'application/json'
-      }
-    });
-    const logInData = await response.json();
-    this.setState({ 
-      logIn : 
-        { email: logInData.data.email,
-          name: logInData.data.name
-        }
-     })
-  }
+  // logIn = async (data) => {
+  //   try {
+  //     const response = await fetch('/api/users', {
+  //       method: "POST",
+  //       body: JSON.stringify(data),
+  //       headers: {
+  //         'content-type': 'application/json'
+  //       }
+  //     });
+  //     const logInData = await response.json();
+
+  //     console.log(logInData)
+  //     this.setState({ 
+  //       logIn : { 
+  //           email: logInData.data.email,
+  //           name: logInData.data.name
+  //         }
+  //      })
+  //   } catch (error){
+  //     // throw new Error('Login failed')
+  //     console.log('bad')
+  //   }
+  // }
 
   createNewAccount = async (data) => {
     const response = await fetch('/api/users/new', {
@@ -87,4 +95,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));
