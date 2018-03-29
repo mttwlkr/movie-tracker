@@ -4,76 +4,46 @@ import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Home from '../Home/Home';
 import { getNowPlaying } from '../../cleaners/fetchData';
-// import login from '../../containers/Login/Login';
 import Login from '../../containers/Login/Login'
-import { loadMovies } from '../../actions';
+import { loadMovies, logOutUser } from '../../actions';
 import SignUp from '../SignUp/SignUp.js'
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      logIn: [],
-      newUserID: ''
-    }
-  }
+  // constructor() {
+  //   super();
+  //   // this.state = {
+  //   //   logIn: [],
+  //   //   newUserID: ''
+  //   // }
+  // }
   
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
     this.props.loadMovies(nowPlaying.results);
-    // this.createNewAccount({
-    //   name: 'jared', 
-    //   email: 'hottstuff81@aol.net', 
-    //   password: 'hottie'
-    // })
-    // this.logIn({email: 'tman2272@aol.com', password: 'password12'})
   }
 
-  // logIn = async (data) => {
-  //   try {
-  //     const response = await fetch('/api/users', {
-  //       method: "POST",
-  //       body: JSON.stringify(data),
-  //       headers: {
-  //         'content-type': 'application/json'
-  //       }
-  //     });
-  //     const logInData = await response.json();
+  logIn = () => {
+    return (
+      <NavLink 
+        to='/login'
+        className='nav'> 
+        Log in / Sign up
+      </NavLink>
+    );
+  };
 
-  //     console.log(logInData)
-  //     this.setState({ 
-  //       logIn : { 
-  //           email: logInData.data.email,
-  //           name: logInData.data.name
-  //         }
-  //      })
-  //   } catch (error){
-  //     // throw new Error('Login failed')
-  //     console.log('bad')
-  //   }
-  // }
-
-  // createNewAccount = async (data) => {
-  //   const response = await fetch('/api/users/new', {
-  //     method: "POST",
-  //     body: JSON.stringify(data),
-  //     headers: {
-  //       'content-type': 'application/json'
-  //     }
-  //   })
-  //   const newAccount = await response.json();
-  //   this.setState({newUserID: newAccount.id})
-  // }
+  logOut = () => {
+    return (
+      <button onClick={ () => this.props.logOutUser() }>Log Out</button>
+    )
+  }
 
   render() {
+
     return (
       <div className="App">
         <header>
-          <NavLink 
-            to='/login'
-            className='nav'> 
-            Sign in / Sign up
-          </NavLink>
+        { !this.props.user.length ? this.logIn() : this.logOut()}
         </header>
         <Switch>
           <Route exact path='/' 
@@ -91,12 +61,17 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
   return {
-    loadMovies: (movies) => {
-      dispatch(loadMovies(movies));
-    }
+    user: state.user
   };
 };
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadMovies: (movies) => (dispatch(loadMovies(movies))),
+    logOutUser: () => (dispatch(logOutUser()))
+  };
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
