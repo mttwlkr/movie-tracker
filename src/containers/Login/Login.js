@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logInUser } from '../../actions';
 
@@ -8,14 +8,15 @@ export class Login extends Component {
     super();
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      error: false
     };
   }
 
   submitEmail = (event) => {
     event.preventDefault();
-    this.logIn(this.state)
-
+    const userInfo = {email: this.state.email, password: this.state.password}
+    this.logIn(userInfo)
   }
 
   logIn = async (data) => {
@@ -29,9 +30,8 @@ export class Login extends Component {
       });
       const logInData = await response.json();
       this.redirectUser(logInData.data.id, logInData.data.name)
-
     } catch (error){
-      // throw new Error('Login failed')
+      this.setState({error: true})
       console.log('you are a bad bad human')
     }
   }
@@ -39,30 +39,38 @@ export class Login extends Component {
   redirectUser = (id, name) => {
     this.props.handleSubmit(id, name);
     const path = "/";
-    this.props.history.push(path);    
+    this.props.history.push(path);
   }
 
   render() {
     return (
-      <form onSubmit={this.submitEmail}>
-        <label htmlFor="email">email: </label>
-        <input 
-          type='text' 
-          id='email' 
-          value={this.state.email} 
-          placeholder='email'
-          onChange={(event) => this.setState({ email: event.target.value })}
-        />
-        <label htmlFor="password">Password: </label>
-        <input 
-          type='password' 
-          id='password' 
-          value={this.state.password} 
-          placeholder='password'
-          onChange={(event) => this.setState({ password: event.target.value })}
-        />
-        <button>submit</button>
-      </form>
+      <div>
+        <form onSubmit={this.submitEmail}>
+          <label htmlFor="email">email: </label>
+          <input 
+            type='text' 
+            id='email' 
+            value={this.state.email} 
+            placeholder='email'
+            onChange={(event) => this.setState({ email: event.target.value })}
+          />
+          <label htmlFor="password">Password: </label>
+          <input 
+            type='password' 
+            id='password' 
+            value={this.state.password} 
+            placeholder='password'
+            onChange={(event) => this.setState({ password: event.target.value })}
+          />
+          <button>submit</button>
+        </form>
+        { this.state.error &&
+          <section>
+            <p>Login Failed: Please Try Again</p>
+            <NavLink to="/signup">Sign Up</NavLink>
+          </section>
+        }
+      </div>
     );
   }
 }
