@@ -8,14 +8,7 @@ import Login from '../../containers/Login/Login'
 import { loadMovies, logOutUser } from '../../actions';
 import SignUp from '../SignUp/SignUp.js'
 
-class App extends Component {
-  // constructor() {
-  //   super();
-  //   // this.state = {
-  //   //   logIn: [],
-  //   //   newUserID: ''
-  //   // }
-  // }
+export class App extends Component {
   
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
