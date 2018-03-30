@@ -8,12 +8,15 @@ describe('userReducer', () => {
     expect(userReducer(undefined, {})).toEqual(expected);
   });
 
-  it('should add a new user into state', () => {
-    const username = 'jared';
-    const password = 'hotstuff';
-    const expected = [{username, password}];
-    expect(userReducer(undefined, actions
-      .addNewUser(username, password))).toEqual(expected);
+  it('should login user with id and name', () => {
+    const id = '12345';
+    const name = 'jared';
+    const expected = [{id, name}];
+    expect(userReducer(undefined, actions.logInUser(id, name))).toEqual(expected);
+  });
+
+  it('should logout user and return empty array', () => {
+    expect(userReducer(undefined, actions.logOutUser())).toEqual([]);
   });
 
 });

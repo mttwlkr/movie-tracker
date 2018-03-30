@@ -36,7 +36,6 @@ class SignUp extends Component {
   }
 
 
-
   handleError = () => {
     console.log('error')
   } 
