@@ -3,9 +3,9 @@ import './App.css';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Home from '../Home/Home';
-import { getNowPlaying } from '../../cleaners/fetchData';
+import { getNowPlaying, addToFavorites } from '../../cleaners/fetchData';
 import Login from '../../containers/Login/Login'
-import { loadMovies, logOutUser } from '../../actions';
+import { loadMovies, logOutUser, addFavorite } from '../../actions';
 import SignUp from '../SignUp/SignUp.js'
 
 export class App extends Component {
@@ -28,8 +28,12 @@ export class App extends Component {
   logOut = () => {
     return (
       <button onClick={ () => this.props.logOutUser() }>Log Out</button>
-    )
-  }
+    );
+  };
+
+  // addToFavorites = async () => {
+  //   const response = 
+  // }
 
   render() {
 
@@ -56,14 +60,16 @@ export class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    // movies: state.movies
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     loadMovies: (movies) => (dispatch(loadMovies(movies))),
-    logOutUser: () => (dispatch(logOutUser()))
+    logOutUser: () => (dispatch(logOutUser())),
+    // addFavorite: (id) => (dispatch(addFavorite(id)))
   };
 };
 
