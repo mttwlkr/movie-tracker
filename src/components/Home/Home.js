@@ -18,7 +18,7 @@ export const Home = ({movies}) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   movies: state.movies
 });
 
