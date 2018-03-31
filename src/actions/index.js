@@ -13,9 +13,9 @@ export const loadMovies = (movies) => ({
   movies
 });
 
-export const addFavorite = (id) => ({
+export const addFavorite = (movie) => ({
   type: 'ADD_FAVORITE',
-  id
+  movie
 });
 
 export const removeFavorite = (id) => ({

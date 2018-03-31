@@ -31,16 +31,12 @@ export class App extends Component {
     );
   };
 
-  // addToFavorites = async () => {
-  //   const response = 
-  // }
-
   render() {
 
     return (
       <div className="App">
         <header>
-        { !this.props.user.length ? this.logIn() : this.logOut()}
+        { !this.props.user.id ? this.logIn() : this.logOut()}
         </header>
         <Switch>
           <Route exact path='/' 

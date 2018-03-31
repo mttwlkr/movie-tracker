@@ -1,16 +1,14 @@
 import React from 'react';
 import { connect }from 'react-redux';
-import { Card } from '../Card/Card.js';
+import Card from '../Card/Card.js';
 import './Home.css';
 import { addFavorite } from '../../actions'
 
-export const Home = ({ movies, addFavorite, user }) => {
+export const Home = ({ movies }) => {
   const displayMovies = movies.map((movie, index) => {
     return ( <Card 
       movieInfo={movie} 
       key={index}
-      addFavorite={addFavorite}
-      userId={user.id}
       />
     );
   });
@@ -24,11 +22,10 @@ export const Home = ({ movies, addFavorite, user }) => {
 
 export const mapStateToProps = (state) => ({
   movies: state.movies,
-  user: state.user
 });
 
-export const mapDispatchToProps = (dispatch) => ({
-  addFavorite: (id) => (dispatch(addFavorite(id)))
-});
+// export const mapDispatchToProps = (dispatch) => ({
+//   addFavorite: (id) => (dispatch(addFavorite(id)))
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);
