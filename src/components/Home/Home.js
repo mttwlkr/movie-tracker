@@ -24,8 +24,4 @@ export const mapStateToProps = (state) => ({
   movies: state.movies,
 });
 
-// export const mapDispatchToProps = (dispatch) => ({
-//   addFavorite: (id) => (dispatch(addFavorite(id)))
-// });
-
 export default connect(mapStateToProps)(Home);

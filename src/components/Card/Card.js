@@ -1,12 +1,11 @@
 import React from 'react';
 import './Card.css';
-import { addToFavorites } from '../../cleaners/fetchData';
-import { addFavorite } from '../../actions/';
+import { addToFavorites, removeFromFavorites } from '../../cleaners/fetchData';
+import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
 
-export const Card = ({ movieInfo, user, addFavorite, favorites }) => {
+export const Card = ({ movieInfo, user, addFavorite, favorites, removeFavorite }) => {
   const {title, poster_path, overview, vote_average, id, release_date} = movieInfo;
-
   const favoriteObj = {
     movie_id: id, 
     user_id: user.id,
@@ -25,9 +24,12 @@ export const Card = ({ movieInfo, user, addFavorite, favorites }) => {
 
     if (!isInFavorites.length) {
       const favorite = await addToFavorites(favoriteObj)
-      addFavorite(movieInfo)
+      const newFavorite = {...movieInfo, 
+        favoriteId: favorite.id};
+      addFavorite(newFavorite)
     } else {
-      // remove the movie from favorites
+      removeFavorite(favoriteObj.movie_id)
+      await removeFromFavorites(user.id, isInFavorites[0].favoriteId)
     }
   }
 
@@ -50,8 +52,9 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  addFavorite: (movie) => (dispatch(addFavorite(movie))) 
-})
+  addFavorite: (movie) => (dispatch(addFavorite(movie))),
+  removeFavorite: (id) => (dispatch(removeFavorite(id))) 
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card)
 

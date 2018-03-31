@@ -1,6 +1,7 @@
 import * as actions from '../actions';
 
 const favoriteReducer = (state = [], action) => {
+  
   switch (action.type) {
   case 'ADD_FAVORITE':
     return [...state, action.movie]
