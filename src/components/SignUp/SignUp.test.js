@@ -82,13 +82,15 @@ describe('SignUp', () => {
 
   });  
 
-  it.skip('should invoke handleFetch when handleSubmit is called', () => {
+  it('should invoke handleFetch when handleSubmit is called', () => {
     const mockEvent = { preventDefault: jest.fn() };
     const mockInfo = {
       name: 'Bob',
       email: 'bobbafetch@dude.com',
       password: 'boobbafette'
     };
+
+    wrapper.instance().handleFetch = jest.fn()
     const spy = jest.spyOn(wrapper.instance(), 'handleFetch');
 
     wrapper.setState({
@@ -102,13 +104,8 @@ describe('SignUp', () => {
   });
 
 
-  it.skip('should reset state to empty when handleSubmit is called', async () => {
+  it('should reset state to empty when handleSubmit is called', async () => {
     const mockData = { name: 'Matt', password: 'sploosh', email: 'ohmama@zguy.com' }
-
-    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-     ok: true,
-     json: () => Promise.resolve(mockData)
-    }));
 
     const mockEvent = { preventDefault: jest.fn() };
     wrapper.setState({
@@ -124,7 +121,7 @@ describe('SignUp', () => {
       authenticated: false,
       signUpError: false
     };
-
+    wrapper.instance().handleFetch = jest.fn()
     await wrapper.instance().handleSubmit(mockEvent);
     expect(wrapper.state()).toEqual(expected);
   });

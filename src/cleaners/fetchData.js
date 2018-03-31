@@ -13,5 +13,20 @@ export const getNowPlaying = async () => {
   } catch (error) {
     throw new Error ('its bad');
   }
-
 };
+
+
+export const addToFavorites = async (movie) => {
+  console.log(movie)
+  const response = await fetch('/api/users/favorites/new', {
+    method: 'POST',
+    body: JSON.stringify(movie),
+    headers: {
+      'content-type': 'application/json'
+    }
+  });
+
+  const favoriteData = await response.json()
+  console.log(favoriteData)
+
+}

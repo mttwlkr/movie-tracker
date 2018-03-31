@@ -14,6 +14,7 @@ class SignUp extends Component {
   }
 
   handleFetch = async (state) => {
+    console.log('initial')
     try {
       const response = await fetch('/api/users/new', {
         method: "POST",
@@ -23,7 +24,7 @@ class SignUp extends Component {
         }
       });
       const newAccount = await response.json();
-      console.log('ola')
+      console.log('response after fetch')
       if (newAccount.error) {
         this.setState({ signUpError: true });
       } else {
