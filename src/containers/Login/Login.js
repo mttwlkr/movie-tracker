@@ -29,10 +29,10 @@ export class Login extends Component {
         }
       });
       const logInData = await response.json();
+
       this.redirectUser(logInData.data.id, logInData.data.name)
     } catch (error){
       this.setState({error: true})
-      console.log('you are a bad bad human')
     }
   }
 
@@ -75,13 +75,13 @@ export class Login extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     user: state.user
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     handleSubmit: (id, name) => {
       dispatch(logInUser(id, name));

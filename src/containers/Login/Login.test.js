@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Login } from './Login';
 import * as actions from '../../actions/index';
+import { mapStateToProps, mapDispatchToProps } from './Login';
 
 describe('Login', () => {
   let wrapper, 
@@ -25,13 +26,44 @@ describe('Login', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip('should call submitEmail when submit the form', () => {
-    const email = 'tman1000@gmail.com';
-    const password = 'hotstuff81';
+  it('should invoke logIn with correct params when submitEmail is called', () => {
+    const expected = {
+      email: '',
+      password: ''
+    }
 
+    wrapper.instance().logIn = jest.fn();
     const spy = jest.spyOn(wrapper.instance(), 'logIn');
+
     wrapper.instance().submitEmail(mockEvent);
-    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledWith(expected);
+  });
+
+  it('should call redirectUser with correct params', async () => {
+    const mockData = {
+      email: 'tman2272@aol.com',
+      password: 'password'
+    }
+
+    const mocklogInData = { data : {
+      id: 1, 
+      name: "Taylor", 
+      password: "password", 
+      email: "tman2272@aol.com" },
+      message: "Retrieved ONE User",
+      status: "success" 
+    }
+
+    wrapper.instance().redirectUser = jest.fn();
+    const spy = jest.spyOn(wrapper.instance(), 'redirectUser');
+
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+     ok: true,
+     json: () => Promise.resolve(mocklogInData)
+    }));
+
+    await wrapper.instance().logIn(mockData);
+    expect(spy).toHaveBeenCalledWith(1, 'Taylor');
   });
 
   it('should call handleSubmit when redirectUser is called', () => {
@@ -40,6 +72,43 @@ describe('Login', () => {
 
     wrapper.instance().redirectUser(id, name);
     expect(mockHandleSubmit).toHaveBeenCalledWith(id, name);
+  });
+
+  it('should set state error to true in case of bad response', async () => {
+    const mockData = {
+      email: 'tman@gmail.com',
+      password: 'blobs'
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+     status: 500,
+    }));
+
+    await wrapper.instance().logIn(mockData);
+    expect(wrapper.state('error')).toEqual(true);
+  });
+
+  it('should set state of email and password when input changes', () => {
+    const event1 = { target: { value: 'tman@gmail.com' } }
+    wrapper.find('#email').simulate('change', event1);
+    expect(wrapper.state('email')).toEqual('tman@gmail.com');
+
+    const event2 = { target: { value: 'dayman' } }
+    wrapper.find('#password').simulate('change', event2);
+    expect(wrapper.state('password')).toEqual('dayman');
+  });
+
+  it('should map to the store correctly', () => {
+    const mockStore = { user: {name: 'Jared'} };
+    const mapped = mapStateToProps(mockStore);
+    expect(mapped.user).toEqual(mockStore.user);
+  });
+
+  it('should dispatch to the store correctly', () => {
+    const mockDispatch = jest.fn();
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.handleSubmit();
+    expect(mockDispatch).toHaveBeenCalled();
   });
 
 });

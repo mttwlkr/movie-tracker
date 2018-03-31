@@ -23,7 +23,7 @@ class SignUp extends Component {
         }
       });
       const newAccount = await response.json();
-
+      console.log('ola')
       if (newAccount.error) {
         this.setState({ signUpError: true });
       } else {
@@ -31,14 +31,10 @@ class SignUp extends Component {
       }
 
     } catch (error) {
+      console.log('error')
       alert(error);
     }
   }
-
-
-  handleError = () => {
-    console.log('error')
-  } 
 
   handleChange = (event) => {
     const { name, value } = event.target
@@ -67,6 +63,7 @@ class SignUp extends Component {
         <input 
           type='text'
           name='name'
+          id='name'
           value={this.state.name}
           placeholder='Name'
           onChange={this.handleChange}
@@ -74,6 +71,7 @@ class SignUp extends Component {
         <input 
           type='email'
           name='email'
+          id='email'
           value={this.state.email}
           placeholder='Email'
           onChange={this.handleChange}
@@ -81,6 +79,7 @@ class SignUp extends Component {
         <input 
           type='password'
           name='password'
+          id='password'
           value={this.state.password}
           placeholder='Password'
           onChange={this.handleChange}
