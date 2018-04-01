@@ -23,6 +23,7 @@ export const removeFavorite = (id) => ({
   id
 });
 
-export const showAllFavorites = () => ({
-  type: 'SHOW_ALL_FAVORITES'
+export const addAllFavorites = (movies) => ({
+  type: 'ADD_ALL_FAVORITES',
+  movies
 });
