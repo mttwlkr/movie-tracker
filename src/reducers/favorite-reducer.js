@@ -1,5 +1,3 @@
-import * as actions from '../actions';
-
 const favoriteReducer = (state = [], action) => {
 
   switch (action.type) {

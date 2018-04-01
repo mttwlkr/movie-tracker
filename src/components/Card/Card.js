@@ -9,7 +9,7 @@ export const Card = ({ movieInfo, user, addFavorite, favorites, removeFavorite, 
   const userMovie = {...movieInfo, user_id: user.id};
   const {title, poster_path, overview, vote_average, movie_id, user_id, release_date} = userMovie;
 
-  const addFavoritesToStore = async (userMovie) => {
+  const addFavoritesToStore = (userMovie) => {
 
     const isInFavorites = favorites.filter(favorite => {
       return favorite.movie_id === movie_id;
