@@ -14,7 +14,6 @@ class SignUp extends Component {
   }
 
   handleFetch = async (state) => {
-    console.log('initial')
     try {
       const response = await fetch('/api/users/new', {
         method: "POST",
@@ -24,7 +23,7 @@ class SignUp extends Component {
         }
       });
       const newAccount = await response.json();
-      console.log('response after fetch')
+     
       if (newAccount.error) {
         this.setState({ signUpError: true });
       } else {
@@ -32,7 +31,6 @@ class SignUp extends Component {
       }
 
     } catch (error) {
-      console.log('error')
       alert(error);
     }
   }
@@ -90,7 +88,7 @@ class SignUp extends Component {
       { 
         this.state.signUpError &&
           <section>
-            <p>Signup Failed: Please Try Again</p>
+            <p>This email has already been used, please try again. </p>
             <NavLink to="/login">Already a member?</NavLink>
           </section>
       }

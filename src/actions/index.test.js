@@ -40,13 +40,13 @@ describe('Actions', () => {
 
    describe('addFavorite', () => {
     it('should return a type of ADD_FAVORITE', () => {
-      const id = 12;
+      const movie = {name: 'how low'};
       const expected = {
         type: 'ADD_FAVORITE',
-        id
+        movie
       };
 
-      expect(actions.addFavorite(id)).toEqual(expected);
+      expect(actions.addFavorite(movie)).toEqual(expected);
     });
    });
 
@@ -63,12 +63,12 @@ describe('Actions', () => {
    });
 
    describe('showAllFavorites', () => {
-    it('should return a type of SHOW_ALL_FAVORITES', () => {
+    it('should return a type of ADD_ALL_FAVORITES', () => {
       const expected = {
-        type: 'SHOW_ALL_FAVORITES'
+        type: 'ADD_ALL_FAVORITES'
       };
 
-      expect(actions.showAllFavorites()).toEqual(expected);
+      expect(actions.addAllFavorites()).toEqual(expected);
     });
    });
 

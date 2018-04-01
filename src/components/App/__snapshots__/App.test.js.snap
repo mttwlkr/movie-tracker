@@ -6,11 +6,10 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App
     user={
-        Array [
-            Object {
-              "name": "jared",
-            },
-          ]
+        Object {
+            "id": 4,
+            "name": "mud",
+          }
     }
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -27,17 +26,31 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <header>
-          <button
-                    onClick={[Function]}
-          >
-                    Log Out
-          </button>
+          <div>
+                    <button
+                              onClick={[Function]}
+                    >
+                              Log Out
+                    </button>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              className="nav"
+                              onClick={[Function]}
+                              to="/favorites"
+                    >
+                              Show Favorites
+                    </NavLink>
+          </div>
+          <h1>
+                    Movie Tracker
+          </h1>
 </header>,
         <Switch>
           <Route
-                    component={[Function]}
                     exact={true}
                     path="/"
+                    render={[Function]}
           />
           <Route
                     component={[Function]}
@@ -48,6 +61,11 @@ ShallowWrapper {
                     component={[Function]}
                     exact={true}
                     path="/signup"
+          />
+          <Route
+                    exact={true}
+                    path="/favorites"
+                    render={[Function]}
           />
 </Switch>,
       ],
@@ -60,25 +78,97 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <button
-            onClick={[Function]}
->
-            Log Out
-</button>,
+          "children": Array [
+            <div>
+              <button
+                            onClick={[Function]}
+              >
+                            Log Out
+              </button>
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            className="nav"
+                            onClick={[Function]}
+                            to="/favorites"
+              >
+                            Show Favorites
+              </NavLink>
+</div>,
+            <h1>
+              Movie Tracker
+</h1>,
+          ],
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Log Out",
-            "onClick": [Function],
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  onClick={[Function]}
+>
+                  Log Out
+</button>,
+                <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  className="nav"
+                  onClick={[Function]}
+                  to="/favorites"
+>
+                  Show Favorites
+</NavLink>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Log Out",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Log Out",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Show Favorites",
+                  "className": "nav",
+                  "onClick": [Function],
+                  "to": "/favorites",
+                },
+                "ref": null,
+                "rendered": "Show Favorites",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
           },
-          "ref": null,
-          "rendered": "Log Out",
-          "type": "button",
-        },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Movie Tracker",
+            },
+            "ref": null,
+            "rendered": "Movie Tracker",
+            "type": "h1",
+          },
+        ],
         "type": "header",
       },
       Object {
@@ -88,9 +178,9 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <Route
-              component={[Function]}
               exact={true}
               path="/"
+              render={[Function]}
 />,
             <Route
               component={[Function]}
@@ -102,6 +192,11 @@ ShallowWrapper {
               exact={true}
               path="/signup"
 />,
+            <Route
+              exact={true}
+              path="/favorites"
+              render={[Function]}
+/>,
           ],
         },
         "ref": null,
@@ -111,9 +206,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "component": [Function],
               "exact": true,
               "path": "/",
+              "render": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -145,6 +240,19 @@ ShallowWrapper {
             "rendered": null,
             "type": [Function],
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/favorites",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
         ],
         "type": [Function],
       },
@@ -159,17 +267,31 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <header>
-            <button
-                        onClick={[Function]}
-            >
-                        Log Out
-            </button>
+            <div>
+                        <button
+                                    onClick={[Function]}
+                        >
+                                    Log Out
+                        </button>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    className="nav"
+                                    onClick={[Function]}
+                                    to="/favorites"
+                        >
+                                    Show Favorites
+                        </NavLink>
+            </div>
+            <h1>
+                        Movie Tracker
+            </h1>
 </header>,
           <Switch>
             <Route
-                        component={[Function]}
                         exact={true}
                         path="/"
+                        render={[Function]}
             />
             <Route
                         component={[Function]}
@@ -180,6 +302,11 @@ ShallowWrapper {
                         component={[Function]}
                         exact={true}
                         path="/signup"
+            />
+            <Route
+                        exact={true}
+                        path="/favorites"
+                        render={[Function]}
             />
 </Switch>,
         ],
@@ -192,25 +319,97 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <button
-              onClick={[Function]}
->
-              Log Out
-</button>,
+            "children": Array [
+              <div>
+                <button
+                                onClick={[Function]}
+                >
+                                Log Out
+                </button>
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                className="nav"
+                                onClick={[Function]}
+                                to="/favorites"
+                >
+                                Show Favorites
+                </NavLink>
+</div>,
+              <h1>
+                Movie Tracker
+</h1>,
+            ],
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Log Out",
-              "onClick": [Function],
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <button
+                    onClick={[Function]}
+>
+                    Log Out
+</button>,
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    className="nav"
+                    onClick={[Function]}
+                    to="/favorites"
+>
+                    Show Favorites
+</NavLink>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Log Out",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Log Out",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Show Favorites",
+                    "className": "nav",
+                    "onClick": [Function],
+                    "to": "/favorites",
+                  },
+                  "ref": null,
+                  "rendered": "Show Favorites",
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
             },
-            "ref": null,
-            "rendered": "Log Out",
-            "type": "button",
-          },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Movie Tracker",
+              },
+              "ref": null,
+              "rendered": "Movie Tracker",
+              "type": "h1",
+            },
+          ],
           "type": "header",
         },
         Object {
@@ -220,9 +419,9 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Route
-                component={[Function]}
                 exact={true}
                 path="/"
+                render={[Function]}
 />,
               <Route
                 component={[Function]}
@@ -234,6 +433,11 @@ ShallowWrapper {
                 exact={true}
                 path="/signup"
 />,
+              <Route
+                exact={true}
+                path="/favorites"
+                render={[Function]}
+/>,
             ],
           },
           "ref": null,
@@ -243,9 +447,9 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
                 "exact": true,
                 "path": "/",
+                "render": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -277,6 +481,19 @@ ShallowWrapper {
               "rendered": null,
               "type": [Function],
             },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/favorites",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
           ],
           "type": [Function],
         },
@@ -295,7 +512,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`App should match the snapshot 1`] = `
+exports[`App should match the snapshot without a user 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -324,12 +541,15 @@ ShallowWrapper {
           >
                     Log in / Sign up
           </NavLink>
+          <h1>
+                    Movie Tracker
+          </h1>
 </header>,
         <Switch>
           <Route
-                    component={[Function]}
                     exact={true}
                     path="/"
+                    render={[Function]}
           />
           <Route
                     component={[Function]}
@@ -340,6 +560,11 @@ ShallowWrapper {
                     component={[Function]}
                     exact={true}
                     path="/signup"
+          />
+          <Route
+                    exact={true}
+                    path="/favorites"
+                    render={[Function]}
           />
 </Switch>,
       ],
@@ -352,31 +577,49 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            className="nav"
-            to="/login"
+          "children": Array [
+            <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="nav"
+              to="/login"
 >
-            Log in / Sign up
+              Log in / Sign up
 </NavLink>,
+            <h1>
+              Movie Tracker
+</h1>,
+          ],
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "active",
-            "ariaCurrent": "true",
-            "children": "Log in / Sign up",
-            "className": "nav",
-            "to": "/login",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "ariaCurrent": "true",
+              "children": "Log in / Sign up",
+              "className": "nav",
+              "to": "/login",
+            },
+            "ref": null,
+            "rendered": "Log in / Sign up",
+            "type": [Function],
           },
-          "ref": null,
-          "rendered": "Log in / Sign up",
-          "type": [Function],
-        },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Movie Tracker",
+            },
+            "ref": null,
+            "rendered": "Movie Tracker",
+            "type": "h1",
+          },
+        ],
         "type": "header",
       },
       Object {
@@ -386,9 +629,9 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <Route
-              component={[Function]}
               exact={true}
               path="/"
+              render={[Function]}
 />,
             <Route
               component={[Function]}
@@ -400,6 +643,11 @@ ShallowWrapper {
               exact={true}
               path="/signup"
 />,
+            <Route
+              exact={true}
+              path="/favorites"
+              render={[Function]}
+/>,
           ],
         },
         "ref": null,
@@ -409,9 +657,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "component": [Function],
               "exact": true,
               "path": "/",
+              "render": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -443,6 +691,19 @@ ShallowWrapper {
             "rendered": null,
             "type": [Function],
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/favorites",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
         ],
         "type": [Function],
       },
@@ -465,12 +726,15 @@ ShallowWrapper {
             >
                         Log in / Sign up
             </NavLink>
+            <h1>
+                        Movie Tracker
+            </h1>
 </header>,
           <Switch>
             <Route
-                        component={[Function]}
                         exact={true}
                         path="/"
+                        render={[Function]}
             />
             <Route
                         component={[Function]}
@@ -481,6 +745,11 @@ ShallowWrapper {
                         component={[Function]}
                         exact={true}
                         path="/signup"
+            />
+            <Route
+                        exact={true}
+                        path="/favorites"
+                        render={[Function]}
             />
 </Switch>,
         ],
@@ -493,31 +762,49 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <NavLink
-              activeClassName="active"
-              ariaCurrent="true"
-              className="nav"
-              to="/login"
+            "children": Array [
+              <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                className="nav"
+                to="/login"
 >
-              Log in / Sign up
+                Log in / Sign up
 </NavLink>,
+              <h1>
+                Movie Tracker
+</h1>,
+            ],
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "activeClassName": "active",
-              "ariaCurrent": "true",
-              "children": "Log in / Sign up",
-              "className": "nav",
-              "to": "/login",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "Log in / Sign up",
+                "className": "nav",
+                "to": "/login",
+              },
+              "ref": null,
+              "rendered": "Log in / Sign up",
+              "type": [Function],
             },
-            "ref": null,
-            "rendered": "Log in / Sign up",
-            "type": [Function],
-          },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Movie Tracker",
+              },
+              "ref": null,
+              "rendered": "Movie Tracker",
+              "type": "h1",
+            },
+          ],
           "type": "header",
         },
         Object {
@@ -527,9 +814,9 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Route
-                component={[Function]}
                 exact={true}
                 path="/"
+                render={[Function]}
 />,
               <Route
                 component={[Function]}
@@ -541,6 +828,11 @@ ShallowWrapper {
                 exact={true}
                 path="/signup"
 />,
+              <Route
+                exact={true}
+                path="/favorites"
+                render={[Function]}
+/>,
             ],
           },
           "ref": null,
@@ -550,9 +842,9 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
                 "exact": true,
                 "path": "/",
+                "render": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -579,6 +871,19 @@ ShallowWrapper {
                 "component": [Function],
                 "exact": true,
                 "path": "/signup",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/favorites",
+                "render": [Function],
               },
               "ref": null,
               "rendered": null,

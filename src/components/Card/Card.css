@@ -9,3 +9,8 @@
   height: 180px;
   width: 118px;
 }*/
+
+
+.selected {
+  background: yellow;
+}

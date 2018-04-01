@@ -5,12 +5,25 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
+    addFavorite={[Function]}
+    favorites={Array []}
     movieInfo={
+        Array [
+            Object {
+              "movie_id": "284054",
+              "overview": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan 'special forces'), and an American secret agent, to prevent Wakanda from being dragged into a world war.",
+              "poster_path": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+              "release_date": "2018-02-13",
+              "title": "Black Panther",
+              "vote_average": "7.4",
+            },
+          ]
+    }
+    removeFavorite={[Function]}
+    user={
         Object {
-            "overview": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan 'special forces'), and an American secret agent, to prevent Wakanda from being dragged into a world war.",
-            "poster_path": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
-            "title": "Black Panther",
-            "vote_average": "7.4",
+            "id": 4,
+            "name": "mud",
           }
     }
 />,
@@ -27,22 +40,27 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1>
-          Black Panther
-</h1>,
         <img
           alt="movie poster"
-          className="card-image"
-          src="https://image.tmdb.org/t/p/w500//uxzzxijgPIY7slzFvMotPv8wjKA.jpg"
+          className="tile__img"
+          src="https://image.tmdb.org/t/p/w500/undefined"
 />,
-        <p>
-          King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan 'special forces'), and an American secret agent, to prevent Wakanda from being dragged into a world war.
-</p>,
-        <p>
-          7.4
-</p>,
+        <div
+          className="card-details"
+>
+          <h2 />
+          <textarea
+                    className="tile__title"
+          />
+          <button
+                    className="undefined"
+                    onClick={[Function]}
+          >
+                    favorite
+          </button>
+</div>,
       ],
-      "className": "card",
+      "className": "tile",
     },
     "ref": null,
     "rendered": Array [
@@ -51,20 +69,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Black Panther",
-        },
-        "ref": null,
-        "rendered": "Black Panther",
-        "type": "h1",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
           "alt": "movie poster",
-          "className": "card-image",
-          "src": "https://image.tmdb.org/t/p/w500//uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+          "className": "tile__img",
+          "src": "https://image.tmdb.org/t/p/w500/undefined",
         },
         "ref": null,
         "rendered": null,
@@ -75,22 +82,60 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan 'special forces'), and an American secret agent, to prevent Wakanda from being dragged into a world war.",
+          "children": Array [
+            <h2 />,
+            <textarea
+              className="tile__title"
+/>,
+            <button
+              className="undefined"
+              onClick={[Function]}
+>
+              favorite
+</button>,
+          ],
+          "className": "card-details",
         },
         "ref": null,
-        "rendered": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan 'special forces'), and an American secret agent, to prevent Wakanda from being dragged into a world war.",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "7.4",
-        },
-        "ref": null,
-        "rendered": "7.4",
-        "type": "p",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "tile__title",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "textarea",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "favorite",
+              "className": "undefined",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "favorite",
+            "type": "button",
+          },
+        ],
+        "type": "div",
       },
     ],
     "type": "div",
@@ -102,22 +147,27 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1>
-            Black Panther
-</h1>,
           <img
             alt="movie poster"
-            className="card-image"
-            src="https://image.tmdb.org/t/p/w500//uxzzxijgPIY7slzFvMotPv8wjKA.jpg"
+            className="tile__img"
+            src="https://image.tmdb.org/t/p/w500/undefined"
 />,
-          <p>
-            King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan 'special forces'), and an American secret agent, to prevent Wakanda from being dragged into a world war.
-</p>,
-          <p>
-            7.4
-</p>,
+          <div
+            className="card-details"
+>
+            <h2 />
+            <textarea
+                        className="tile__title"
+            />
+            <button
+                        className="undefined"
+                        onClick={[Function]}
+            >
+                        favorite
+            </button>
+</div>,
         ],
-        "className": "card",
+        "className": "tile",
       },
       "ref": null,
       "rendered": Array [
@@ -126,20 +176,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Black Panther",
-          },
-          "ref": null,
-          "rendered": "Black Panther",
-          "type": "h1",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
             "alt": "movie poster",
-            "className": "card-image",
-            "src": "https://image.tmdb.org/t/p/w500//uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+            "className": "tile__img",
+            "src": "https://image.tmdb.org/t/p/w500/undefined",
           },
           "ref": null,
           "rendered": null,
@@ -150,22 +189,60 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan 'special forces'), and an American secret agent, to prevent Wakanda from being dragged into a world war.",
+            "children": Array [
+              <h2 />,
+              <textarea
+                className="tile__title"
+/>,
+              <button
+                className="undefined"
+                onClick={[Function]}
+>
+                favorite
+</button>,
+            ],
+            "className": "card-details",
           },
           "ref": null,
-          "rendered": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan 'special forces'), and an American secret agent, to prevent Wakanda from being dragged into a world war.",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "7.4",
-          },
-          "ref": null,
-          "rendered": "7.4",
-          "type": "p",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "tile__title",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "textarea",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "favorite",
+                "className": "undefined",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "favorite",
+              "type": "button",
+            },
+          ],
+          "type": "div",
         },
       ],
       "type": "div",

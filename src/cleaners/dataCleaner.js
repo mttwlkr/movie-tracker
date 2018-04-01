@@ -6,5 +6,5 @@ export const cleanMovies = (movieData) => {
     release_date: movie.release_date, 
     vote_average: movie.vote_average, 
     overview: movie.overview  
-  }))
+  }));
 }
