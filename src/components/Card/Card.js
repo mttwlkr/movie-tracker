@@ -1,54 +1,55 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Card.css';
 import { addToFavorites, removeFromFavorites } from '../../cleaners/fetchData';
 import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
 
-export const Card = ({ movieInfo, user, addFavorite, favorites, removeFavorite, selected }) => {
 
-  const userMovie = {...movieInfo, user_id: user.id};
-  const {title, poster_path, overview, vote_average, movie_id, user_id, release_date} = userMovie;
+export class Card extends Component {
+  constructor(props) {
+    super(props)
+    this.userMovie = {...this.props.movieInfo, user_id: this.props.user.id}
+  }
 
-  const addFavoritesToStore = (userMovie) => {
-
-    const isInFavorites = favorites.filter(favorite => {
-      return favorite.movie_id === movie_id;
-    });
+  addFavoritesToStore = (userMovie) => {
+    const isInFavorites = this.props.favorites
+      .filter(favorite => favorite.movie_id === this.props.movieInfo.movie_id);
 
     if (!isInFavorites.length) {
       addToFavorites(userMovie);
       addFavorite(userMovie);
     } else {
-      removeFavorite(movie_id)
-      removeFromFavorites(user_id, movie_id);
+      removeFavorite(this.props.movieInfo.movie_id)
+      removeFromFavorites(this.props.user_id, this.props.movieInfo.movie_id);
     }
   }
 
-  const validateUser = () => {  
-    if (!user.id) {
+  validateUser = () => {  
+    if (!this.props.user.id) {
       alert('Please log in or sign up to add favorites')
     } else {
-      addFavoritesToStore(userMovie);
-
+      this.addFavoritesToStore(this.userMovie);
     }
   }
 
-  return (
-    <div className='tile'>
-      <img className='tile__img'
-          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-          alt='movie poster' />
-      <div className='card-details'>
-        <h2>{title}</h2>
-        <textarea className='tile__title'>{overview}</textarea>
-        <button 
-          onClick={() => validateUser()}
-          className={`${selected}`}>
-          favorite</button>
+  render () {
+    const { poster_path, title, overview } = this.props.movieInfo
+    return (
+      <div className='tile'>
+        <img className='tile__img'
+            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            alt='movie poster' />
+        <div className='card-details'>
+          <h2>{title}</h2>
+          <textarea className='tile__title'>{overview}</textarea>
+          <button 
+            onClick={this.validateUser}
+            className={`${this.props.selected}`}>
+            favorite</button>
+        </div>
       </div>
-    </div>
-
-  );
+    );
+  }
 };
 
 export const mapStateToProps = (state) => ({

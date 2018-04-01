@@ -11,11 +11,11 @@ describe('Card', () => {
 
   beforeEach(() => {
     wrapper = shallow(<Card 
-    movieInfo={mockCleanMovie}
-    favorites={mockFavorites}
-    addFavorite={mockAddFavorite}
-    removeFavorite={mockRemoveFavorite}
-    user={mockUser}/>);
+      movieInfo={mockCleanMovie}
+      favorites={mockFavorites}
+      addFavorite={mockAddFavorite}
+      removeFavorite={mockRemoveFavorite}
+      user={mockUser}/>);
   });
 
   it('should match the snapshot', () => {
@@ -29,11 +29,13 @@ describe('Card', () => {
     expect(wrapper.instance().validateUser).toHaveBeenCalled();
   });
 
+
     describe.skip('add favorite to store', () => {
 
-      it('should addToFavorites when the movie is not in favorites', () => {
-        console.log(wrapper.debug());
+      it('should call addFavorite when the movie is not in favorites', () => {
+        // wrapper.instance().addFavorite = jest.fn()
         wrapper.instance().addFavoritesToStore(mockCleanMovie);
+        expect(mockAddFavorite).toHaveBeenCalledWith(mockCleanMovie)
       });
       
     });
