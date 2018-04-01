@@ -1,33 +1,25 @@
 import React from 'react';
 import './Card.css';
-import { addToFavorites } from '../../cleaners/fetchData';
-import { addFavorite } from '../../actions/';
+import { addToFavorites, removeFromFavorites } from '../../cleaners/fetchData';
+import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
 
-export const Card = ({ movieInfo, user, addFavorite, favorites }) => {
-  const {title, poster_path, overview, vote_average, id, release_date} = movieInfo;
+export const Card = ({ movieInfo, user, addFavorite, favorites, removeFavorite }) => {
+  const userMovie = {...movieInfo, user_id: user.id};
+  const {title, poster_path, overview, vote_average, movie_id, user_id, release_date} = userMovie;
 
-  const favoriteObj = {
-    movie_id: id, 
-    user_id: user.id,
-    title: title, 
-    poster_path: poster_path, 
-    release_date: release_date, 
-    vote_average: vote_average, 
-    overview: overview
-  }
-
-  const addFavoritesToStore = async (favoriteObj) => {
+  const addFavoritesToStore = async (userMovie) => {
 
     const isInFavorites = favorites.filter(favorite => {
-      return favorite.id === favoriteObj.movie_id
+      return favorite.movie_id === movie_id
     });
 
     if (!isInFavorites.length) {
-      const favorite = await addToFavorites(favoriteObj)
-      addFavorite(movieInfo)
+      addToFavorites(userMovie);
+      addFavorite(userMovie);
     } else {
-      // remove the movie from favorites
+      removeFavorite(movie_id)
+      removeFromFavorites(user_id, movie_id);
     }
   }
 
@@ -39,7 +31,7 @@ export const Card = ({ movieInfo, user, addFavorite, favorites }) => {
            alt='movie poster' />
       <p>{overview}</p>
       <p>{vote_average}</p>
-      <button onClick={ () => addFavoritesToStore(favoriteObj) }>favorite</button>
+      <button onClick={ () => addFavoritesToStore(userMovie) }>favorite</button>
     </div>
   );
 };
@@ -50,8 +42,9 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  addFavorite: (movie) => (dispatch(addFavorite(movie))) 
-})
+  addFavorite: (movie) => (dispatch(addFavorite(movie))),
+  removeFavorite: (movie_id) => (dispatch(removeFavorite(movie_id))) 
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card)
 

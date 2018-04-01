@@ -1,7 +1,9 @@
 const movieReducer = (state = [], action) => {
+  console.log(action)
+  
   switch (action.type) {
   case 'LOAD_MOVIES':
-    return [...state, ...action.movies];
+    return [...action.movies];
   default:
     return state;
   }
