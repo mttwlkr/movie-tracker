@@ -1,5 +1,138 @@
-body {
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0 10px;
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  background: #0e0f11;
+  color: #ecf0f1;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+header {
+  width: 100%
+}
+
+h1 {
+  text-align: center;
+  font-size: 75px;
+  color: red;
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited {
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+  color: #95a5a6;
+  text-decoration: none;
+}
+a:hover {
+  color: #7f8c8d;
+  text-decoration: underline;
+}
+.App {
+  width: 100%;
+}
+.row {
+  overflow: scroll;
+  width: 100%;
+  position: absolute;
+  top: 150px;
+}
+.row__inner {
+  transition: 450ms transform;
+  white-space: nowrap;
+  margin: 80px 0;
+  padding: 0 0 10px 45px;
+}
+
+.tile {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 300px;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 450ms all;
+  transform-origin: center left;
+}
+.tile__img {
+  width: 250px;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.tile:hover .tile__img {
+  opacity: .2;
+}
+
+.card-details {
+  position: relative;
+  top: -315px;
+  width: 100%;
+  height: 300px;
+}
+
+.tile:hover .tile__details {
+  opacity: 1;
+}
+.tile__title {
+  position: absolute;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+  background: transparent;
+  color: white;
+  border: none;
+  opacity: 0;
+  padding: 0 5px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 16px;
+  opacity: 0;
+}
+
+.tile:hover h2 {
+  opacity: 1;
+}
+
+.tile button {
+  position: absolute;
+  left: 100px;
+  bottom: 10px;
+  opacity: 0;
+  border: none;
+  outline: none;
+}
+
+.tile:hover button {
+  opacity: 1;
+}
+
+.tile:hover .tile__title {
+  opacity: 1;
+}
+.row__inner:hover {
+  transform: translate3d(-62.5px, 0, 0);
+}
+.row__inner:hover .tile {
+  opacity: 0.3;
+}
+.row__inner:hover .tile:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+.tile:hover ~ .tile {
+  transform: translate3d(150px, 0, 0);
 }
