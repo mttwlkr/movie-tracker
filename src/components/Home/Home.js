@@ -3,11 +3,20 @@ import Card from '../Card/Card.js';
 import './Home.css';
 
 
-export const Home = ({ movies }) => {
-  const displayMovies = movies.map((movie, index) => {
-    return ( <Card 
-      movieInfo={movie} 
-      key={index}
+export const Home = ({ movies, favorites }) => {
+  const displayMovies = movies.map((movie, index) => 
+    {
+      let selected = '';
+      favorites.forEach(favorite => {
+        if (favorite.movie_id === movie.movie_id) {
+          selected = 'selected';
+        }
+      });
+
+      return ( <Card 
+        movieInfo={movie} 
+        key={index}
+        selected={selected}
       />
     );
   });

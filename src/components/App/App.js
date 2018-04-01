@@ -57,7 +57,9 @@ export class App extends Component {
 
         <Switch>
           <Route exact path='/' 
-            render={ () => <Home movies={movies} />} 
+            render={ () => <Home 
+              movies={movies} 
+              favorites={favorites} />} 
           />
           <Route exact path='/login'
             component={Login} 
@@ -66,7 +68,9 @@ export class App extends Component {
             component={SignUp}
           />
           <Route exact path='/favorites'
-            render={ () => <Home movies={favorites} />}
+            render={ () => <Home 
+              movies={favorites} 
+              favorites={favorites} />}
           />
         </Switch>
       </div>

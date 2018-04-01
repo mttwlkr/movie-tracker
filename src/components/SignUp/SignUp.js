@@ -90,7 +90,7 @@ class SignUp extends Component {
       { 
         this.state.signUpError &&
           <section>
-            <p>Signup Failed: Please Try Again</p>
+            <p>This email has already been used, please try again. </p>
             <NavLink to="/login">Already a member?</NavLink>
           </section>
       }

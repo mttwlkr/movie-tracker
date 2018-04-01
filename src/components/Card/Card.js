@@ -4,14 +4,15 @@ import { addToFavorites, removeFromFavorites } from '../../cleaners/fetchData';
 import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
 
-export const Card = ({ movieInfo, user, addFavorite, favorites, removeFavorite }) => {
+export const Card = ({ movieInfo, user, addFavorite, favorites, removeFavorite, selected }) => {
+
   const userMovie = {...movieInfo, user_id: user.id};
   const {title, poster_path, overview, vote_average, movie_id, user_id, release_date} = userMovie;
 
   const addFavoritesToStore = async (userMovie) => {
 
     const isInFavorites = favorites.filter(favorite => {
-      return favorite.movie_id === movie_id
+      return favorite.movie_id === movie_id;
     });
 
     if (!isInFavorites.length) {
@@ -23,12 +24,16 @@ export const Card = ({ movieInfo, user, addFavorite, favorites, removeFavorite }
     }
   }
 
-  // const url = `width:200px; background:url(https://image.tmdb.org/t/p/w500/${poster_path})`
-  // console.log(url)
+  const validateUser = () => {  
+    if (!user.id) {
+      alert('Please log in or sign up to add favorites')
+    } else {
+      addFavoritesToStore(userMovie);
 
-   //  styles={`width:200px background-image:url(https://image.tmdb.org/t/p/w500/${poster_path})` }
+    }
+  }
+
   return (
-
     <div className='tile'>
       <img className='tile__img'
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
@@ -36,7 +41,10 @@ export const Card = ({ movieInfo, user, addFavorite, favorites, removeFavorite }
       <div className='card-details'>
         <h2>{title}</h2>
         <textarea className='tile__title'>{overview}</textarea>
-        <button onClick={ () => addFavoritesToStore(userMovie) }>favorite</button>
+        <button 
+          onClick={() => validateUser()}
+          className={`${selected}`}>
+          favorite</button>
       </div>
     </div>
 
