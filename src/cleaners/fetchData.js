@@ -13,7 +13,7 @@ export const getNowPlaying = async () => {
 
     return cleanedMovies;
   } catch (error) {
-    throw new Error ('its bad');
+    throw new Error ('Cannot fetch');
   }
 };
 
@@ -29,6 +29,8 @@ export const addToFavorites = async (movie) => {
       }
     });
     const favoriteData = await response.json();
+
+    console.log(favoriteData);
 
     return favoriteData;
   } catch (error) {
