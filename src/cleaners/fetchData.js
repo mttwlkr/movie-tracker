@@ -29,7 +29,6 @@ export const addToFavorites = async (movie) => {
       }
     });
     const favoriteData = await response.json();
-    console.log("favorite data", favoriteData);
 
     return favoriteData;
   } catch (error) {
@@ -64,7 +63,6 @@ export const loadAllFavorites = async (userId) => {
   try {
     const response = await fetch(`/api/users/${userId}/favorites/`);
     const favoriteData = await response.json();
-    console.log(favoriteData);
 
     return favoriteData;
   } catch (error) {

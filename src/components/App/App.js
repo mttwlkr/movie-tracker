@@ -17,7 +17,6 @@ export class App extends Component {
 
   showFavorites = async () => {
     const allFavorites = await loadAllFavorites(this.props.user.id);
-    console.log(allFavorites);
     
     this.props.addAllFavorites(allFavorites.data);
   }
@@ -53,6 +52,7 @@ export class App extends Component {
       <div className="App">
         <header>
         { !user.id ? this.logIn() : this.logOut()}
+        <h1>Movie Tracker</h1>
         </header>
 
         <Switch>

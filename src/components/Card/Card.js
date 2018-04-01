@@ -23,16 +23,23 @@ export const Card = ({ movieInfo, user, addFavorite, favorites, removeFavorite }
     }
   }
 
+  // const url = `width:200px; background:url(https://image.tmdb.org/t/p/w500/${poster_path})`
+  // console.log(url)
+
+   //  styles={`width:200px background-image:url(https://image.tmdb.org/t/p/w500/${poster_path})` }
   return (
-    <div className='card'>
-      <h1>{title}</h1>
-      <img className='card-image'
-           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-           alt='movie poster' />
-      <p>{overview}</p>
-      <p>{vote_average}</p>
-      <button onClick={ () => addFavoritesToStore(userMovie) }>favorite</button>
+
+    <div className='tile'>
+      <img className='tile__img'
+          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+          alt='movie poster' />
+      <div className='card-details'>
+        <h2>{title}</h2>
+        <textarea className='tile__title'>{overview}</textarea>
+        <button onClick={ () => addFavoritesToStore(userMovie) }>favorite</button>
+      </div>
     </div>
+
   );
 };
 

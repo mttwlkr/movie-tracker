@@ -13,8 +13,10 @@ export const Home = ({ movies }) => {
   });
 
   return (
-    <div className='home-now-playing'>
-      {displayMovies}
+    <div className='row'>
+      <div className='row__inner'>
+        {displayMovies}
+      </div>
     </div>
   );
 };
