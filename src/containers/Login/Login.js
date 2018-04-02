@@ -3,7 +3,7 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Login.css';
 import { logInUser, addAllFavorites } from '../../actions';
-import { loadAllFavorites } from '../../cleaners/fetchData'
+import { loadAllFavorites } from '../../cleaners/loadAllFavorites.js';
 
 export class Login extends Component {
   constructor() {
@@ -42,7 +42,7 @@ export class Login extends Component {
   showFavorites = async (userId) => {
     const allFavorites = await loadAllFavorites(userId);
 
-    this.props.addAllFavorites(allFavorites.data);
+    this.props.addAllFavorites(allFavorites);
   }
 
   redirectUser = (id, name) => {

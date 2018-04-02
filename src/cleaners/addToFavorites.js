@@ -9,9 +9,8 @@ export const addToFavorites = async (movie) => {
       }
     });
     const favoriteData = await response.json();
-
     return favoriteData;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error adding to your favorites');
   }
 }

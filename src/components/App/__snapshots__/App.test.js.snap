@@ -27,17 +27,19 @@ ShallowWrapper {
       "children": Array [
         <header>
           <div>
-                    <button
-                              className="log-out-button"
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              className="log-out"
                               onClick={[Function]}
+                              to="/"
                     >
                               Log Out
-                    </button>
+                    </NavLink>
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
                               className="nav"
-                              onClick={[Function]}
                               to="/favorites"
                     >
                               Show Favorites
@@ -81,17 +83,19 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div>
-              <button
-                            className="log-out-button"
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            className="log-out"
                             onClick={[Function]}
+                            to="/"
               >
                             Log Out
-              </button>
+              </NavLink>
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
                             className="nav"
-                            onClick={[Function]}
                             to="/favorites"
               >
                             Show Favorites
@@ -110,17 +114,19 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <button
-                  className="log-out-button"
+                <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  className="log-out"
                   onClick={[Function]}
+                  to="/"
 >
                   Log Out
-</button>,
+</NavLink>,
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
                   className="nav"
-                  onClick={[Function]}
                   to="/favorites"
 >
                   Show Favorites
@@ -132,15 +138,18 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "function",
                 "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
                   "children": "Log Out",
-                  "className": "log-out-button",
+                  "className": "log-out",
                   "onClick": [Function],
+                  "to": "/",
                 },
                 "ref": null,
                 "rendered": "Log Out",
-                "type": "button",
+                "type": [Function],
               },
               Object {
                 "instance": null,
@@ -151,7 +160,6 @@ ShallowWrapper {
                   "ariaCurrent": "true",
                   "children": "Show Favorites",
                   "className": "nav",
-                  "onClick": [Function],
                   "to": "/favorites",
                 },
                 "ref": null,
@@ -272,17 +280,19 @@ ShallowWrapper {
         "children": Array [
           <header>
             <div>
-                        <button
-                                    className="log-out-button"
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    className="log-out"
                                     onClick={[Function]}
+                                    to="/"
                         >
                                     Log Out
-                        </button>
+                        </NavLink>
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
                                     className="nav"
-                                    onClick={[Function]}
                                     to="/favorites"
                         >
                                     Show Favorites
@@ -326,17 +336,19 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div>
-                <button
-                                className="log-out-button"
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                className="log-out"
                                 onClick={[Function]}
+                                to="/"
                 >
                                 Log Out
-                </button>
+                </NavLink>
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
                                 className="nav"
-                                onClick={[Function]}
                                 to="/favorites"
                 >
                                 Show Favorites
@@ -355,17 +367,19 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <button
-                    className="log-out-button"
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    className="log-out"
                     onClick={[Function]}
+                    to="/"
 >
                     Log Out
-</button>,
+</NavLink>,
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
                     className="nav"
-                    onClick={[Function]}
                     to="/favorites"
 >
                     Show Favorites
@@ -377,15 +391,18 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
+                  "nodeType": "function",
                   "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
                     "children": "Log Out",
-                    "className": "log-out-button",
+                    "className": "log-out",
                     "onClick": [Function],
+                    "to": "/",
                   },
                   "ref": null,
                   "rendered": "Log Out",
-                  "type": "button",
+                  "type": [Function],
                 },
                 Object {
                   "instance": null,
@@ -396,7 +413,6 @@ ShallowWrapper {
                     "ariaCurrent": "true",
                     "children": "Show Favorites",
                     "className": "nav",
-                    "onClick": [Function],
                     "to": "/favorites",
                   },
                   "ref": null,
@@ -547,7 +563,7 @@ ShallowWrapper {
                     className="nav"
                     to="/login"
           >
-                    Log in / Sign up
+                    Log In / Sign Up
           </NavLink>
           <h1>
                     Movie Tracker
@@ -592,7 +608,7 @@ ShallowWrapper {
               className="nav"
               to="/login"
 >
-              Log in / Sign up
+              Log In / Sign Up
 </NavLink>,
             <h1>
               Movie Tracker
@@ -608,12 +624,12 @@ ShallowWrapper {
             "props": Object {
               "activeClassName": "active",
               "ariaCurrent": "true",
-              "children": "Log in / Sign up",
+              "children": "Log In / Sign Up",
               "className": "nav",
               "to": "/login",
             },
             "ref": null,
-            "rendered": "Log in / Sign up",
+            "rendered": "Log In / Sign Up",
             "type": [Function],
           },
           Object {
@@ -732,7 +748,7 @@ ShallowWrapper {
                         className="nav"
                         to="/login"
             >
-                        Log in / Sign up
+                        Log In / Sign Up
             </NavLink>
             <h1>
                         Movie Tracker
@@ -777,7 +793,7 @@ ShallowWrapper {
                 className="nav"
                 to="/login"
 >
-                Log in / Sign up
+                Log In / Sign Up
 </NavLink>,
               <h1>
                 Movie Tracker
@@ -793,12 +809,12 @@ ShallowWrapper {
               "props": Object {
                 "activeClassName": "active",
                 "ariaCurrent": "true",
-                "children": "Log in / Sign up",
+                "children": "Log In / Sign Up",
                 "className": "nav",
                 "to": "/login",
               },
               "ref": null,
-              "rendered": "Log in / Sign up",
+              "rendered": "Log In / Sign Up",
               "type": [Function],
             },
             Object {

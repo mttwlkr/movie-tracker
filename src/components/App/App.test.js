@@ -5,12 +5,12 @@ import { mockNowPlaying,
   mockUser } from '../../cleaners/mockData';
 import { shallow } from 'enzyme';
 import { getNowPlaying } from '../../cleaners/getNowPlaying'
-import { loadAllFavorites } from '../../cleaners/loadAllFavorites'
+// import { loadAllFavorites } from '../../cleaners/loadAllFavorites'
 import { mapStateToProps } from './App.js'
 import { mapDispatchToProps } from './App.js'
 
 jest.mock('../../cleaners/getNowPlaying')
-jest.mock('../../cleaners/loadAllFavorites')
+
 
 describe('App', () => {
   let wrapper;
@@ -36,7 +36,7 @@ describe('App', () => {
       user={mockUser}
       logOutUser={mockLogOutUser}
       />, { disableLifecycleMethods: true });
-    wrapper.find('.log-out-button').simulate('click')
+    wrapper.find('.log-out').simulate('click')
     expect(mockLogOutUser).toHaveBeenCalled()
   })
 
@@ -51,15 +51,6 @@ describe('App', () => {
     await expect(mockLoadMovies).toHaveBeenCalled()
   })
 
-  it('should fetch favorites from db and put them into the store', async () => {
-    const mockAddAllFavorites = jest.fn()
-    wrapper = shallow(<App 
-      user={mockUser}
-      addAllFavorites={mockAddAllFavorites}
-    />, { disableLifecycleMethods: true });
-    await wrapper.instance().showFavorites()
-    expect(mockAddAllFavorites).toHaveBeenCalled() 
-  })
 
   it('should map state to props', () => {
     const mockUser = {user: {name: 'matt'}}
@@ -81,7 +72,7 @@ describe('App', () => {
     const mapped = mapDispatchToProps(mockDispatch)
     mapped.loadMovies()
     mapped.logOutUser()
-    mapped.addAllFavorites()
+    // mapped.addAllFavorites()
     expect(mockDispatch).toHaveBeenCalled()
   })
 

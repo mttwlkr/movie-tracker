@@ -2,29 +2,25 @@ import { mockMovie, mockCleanMovie } from './mockData';
 import { getNowPlaying, cleanMovies } from './getNowPlaying.js'
 
 describe('getNowPlaying', () => {
-  it.skip('should get now playing movies', async () => {
+  it('should get now playing movies', async () => {
     
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
      ok: true,
      json: () => Promise.resolve(mockMovie)
     }));
 
-    const mockAPIKey = 12345678
-
-    const expected = `https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=${mockAPIKey}&language=en-US`
-
-    await getNowPlaying(`https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=${mockAPIKey}&language=en-US`);
-    expect(window.fetch).toHaveBeenCalledWith(expected)
+    const answer = await getNowPlaying()
+    const expected = cleanMovies(mockMovie)
+    expect(answer).toEqual(expected)
   });
 
-  it.skip('should throw an error in case of bad response', async () => {
+  it('should throw an error in case of bad response', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.reject({
      status: 500
     }));
 
-    const expected = await getNowPlaying();
-    console.log(expected)
-    expect(expected).rejects.toEqual(Error('Cannot fetch'));
+    const expected = new Error('Cannot fetch')
+    expect(getNowPlaying()).rejects.toEqual(expected);
   });
 });
 
