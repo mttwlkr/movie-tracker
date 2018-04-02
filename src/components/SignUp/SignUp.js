@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Redirect, NavLink } from 'react-router-dom';
+import './SignUp.css';
 
 class SignUp extends Component {
   constructor(props) {
@@ -83,12 +84,12 @@ class SignUp extends Component {
           placeholder='Password'
           onChange={this.handleChange}
         />
-        <button>Submit</button>
+        <button className='submit'>Submit</button>
       </form>
       { 
         this.state.signUpError &&
           <section>
-            <p>This email has already been used, please try again. </p>
+            <p>This email has already been used</p>
             <NavLink to="/login">Already a member?</NavLink>
           </section>
       }
