@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
+import { Route, Switch, NavLink, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Home } from '../Home/Home';
 import { addToFavorites } from '../../cleaners/addToFavorites';
 import Login from '../../containers/Login/Login'
-import { loadMovies, logOutUser, addFavorite } from '../../actions';
+import { loadMovies, logOutUser, addFavorite, clearFavoritesLogOut } from '../../actions';
 import SignUp from '../SignUp/SignUp.js'
 import { getNowPlaying } from '../../cleaners/getNowPlaying'
 // import { cleanMovies } from '../../cleaners/cleanMovies'
@@ -31,19 +31,26 @@ export class App extends Component {
 
   logOut = () => {
     return (
-      <div>
+      <div className='nav-menu'>
         <NavLink
           to='/' 
           className='log-out'
-          onClick={ () => this.props.logOutUser() }>Log Out
+          onClick={this.handleLogOut}>Log Out
         </NavLink>
+      { 
         <NavLink 
           to='/favorites' 
-          className='nav'
+          className='show-favorites'
         >Show Favorites</NavLink>
+      }
       </div>
     );
   };
+
+  handleLogOut = () => {
+    this.props.logOutUser();
+    this.props.clearFavoritesLogOut();
+  }
 
   render() {
     const { user, movies, favorites } = this.props;
@@ -90,7 +97,7 @@ export const mapDispatchToProps = (dispatch) => {
   return {
     loadMovies: (movies) => (dispatch(loadMovies(movies))),
     logOutUser: () => (dispatch(logOutUser())),
-    // clearFavorites: () => (dispatch(clearFavorites()))
+    clearFavoritesLogOut: () => (dispatch(clearFavoritesLogOut()))
   };
 };
 

@@ -9,6 +9,9 @@ const favoriteReducer = (state = [], action) => {
   case 'ADD_ALL_FAVORITES':
     return [...action.movies];
 
+  case 'CLEAR_FAVORITES_LOGOUT':
+    return [];
+
   default:
     return state; 
   }
