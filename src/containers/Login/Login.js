@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logInUser } from '../../actions';
 import './Login.css';
+import { logInUser, addAllFavorites } from '../../actions';
+import { loadAllFavorites } from '../../cleaners/fetchData'
 
 export class Login extends Component {
   constructor() {
@@ -16,8 +17,8 @@ export class Login extends Component {
 
   submitEmail = (event) => {
     event.preventDefault();
-    const userInfo = {email: this.state.email, password: this.state.password}
-    this.logIn(userInfo)
+    const userInfo = { email: this.state.email, password: this.state.password };
+    this.logIn(userInfo);
   }
 
   logIn = async (data) => {
@@ -31,10 +32,17 @@ export class Login extends Component {
       });
       const logInData = await response.json();
 
-      this.redirectUser(logInData.data.id, logInData.data.name)
+      this.redirectUser(logInData.data.id, logInData.data.name);
+      this.showFavorites(logInData.data.id)
     } catch (error){
       this.setState({error: true})
     }
+  }
+
+  showFavorites = async (userId) => {
+    const allFavorites = await loadAllFavorites(userId);
+
+    this.props.addAllFavorites(allFavorites.data);
   }
 
   redirectUser = (id, name) => {
@@ -82,10 +90,9 @@ export const mapStateToProps = (state) => {
 
 export const mapDispatchToProps = (dispatch) => {
   return {
-    handleSubmit: (id, name) => {
-      dispatch(logInUser(id, name));
-    }
+    handleSubmit: (id, name) => (dispatch(logInUser(id, name))),
+    addAllFavorites: (movies) => (dispatch(addAllFavorites(movies)))
   };
-};
+};  
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

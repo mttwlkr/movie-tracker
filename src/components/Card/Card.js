@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Card.css';
-import { addToFavorites, removeFromFavorites } from '../../cleaners/fetchData';
+import { addToFavorites, removeFromFavorites, loadAllFavorites } from '../../cleaners/fetchData';
 import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
 import './Card.css'
@@ -12,12 +12,12 @@ export class Card extends Component {
   }
 
   addFavoritesToStore = (userMovie) => {
+
     const isInFavorites = this.props.favorites
       .filter(favorite => favorite.movie_id === this.props.movieInfo.movie_id);
 
-
     if (!isInFavorites.length) {
-      addToFavorites(userMovie);
+      addToFavorites(this.userMovie);
       this.props.addFavorite(userMovie);
     } else {
       removeFavorite(this.props.movieInfo.movie_id)
@@ -25,7 +25,7 @@ export class Card extends Component {
     }
   }
 
-  validateUser = () => {  
+  validateUser = async () => {  
     if (!this.props.user.id) {
       alert('Please log in or sign up to add favorites')
     } else {
