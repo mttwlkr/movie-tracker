@@ -3,6 +3,8 @@ import './Card.css';
 import { addToFavorites, removeFromFavorites } from '../../cleaners/fetchData';
 import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
+import './Card.css'
+
 
 
 export class Card extends Component {

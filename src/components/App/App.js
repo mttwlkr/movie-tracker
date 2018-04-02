@@ -26,7 +26,7 @@ export class App extends Component {
       <NavLink 
         to='/login'
         className='nav'> 
-        Log in / Sign up
+        Log In / Sign Up
       </NavLink>
     );
   };
@@ -34,7 +34,11 @@ export class App extends Component {
   logOut = () => {
     return (
       <div>
-        <button onClick={ () => this.props.logOutUser() }>Log Out</button>
+        <NavLink
+          to='/' 
+          className='log-out'
+          onClick={ () => this.props.logOutUser() }>Log Out
+        </NavLink>
         <NavLink 
           to='/favorites' 
           className='nav'

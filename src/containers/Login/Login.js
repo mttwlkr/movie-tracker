@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logInUser } from '../../actions';
+import './Login.css';
 
 export class Login extends Component {
   constructor() {
@@ -46,27 +47,25 @@ export class Login extends Component {
     return (
       <div>
         <form onSubmit={this.submitEmail}>
-          <label htmlFor="email">email: </label>
           <input 
             type='text' 
             id='email' 
             value={this.state.email} 
-            placeholder='email'
+            placeholder='Email'
             onChange={(event) => this.setState({ email: event.target.value })}
           />
-          <label htmlFor="password">Password: </label>
           <input 
             type='password' 
             id='password' 
             value={this.state.password} 
-            placeholder='password'
+            placeholder='Password'
             onChange={(event) => this.setState({ password: event.target.value })}
           />
-          <button>submit</button>
+          <button className='submit'>Submit</button>
         </form>
         { this.state.error &&
             <section>
-              <p>Login Failed: Please Try Again</p>
+              <p>Email and password do not match, please try again.</p>
               <NavLink to="/signup">Sign Up</NavLink>
             </section>
         }
