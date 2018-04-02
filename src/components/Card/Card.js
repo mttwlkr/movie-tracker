@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Card.css';
-import { addToFavorites, removeFromFavorites } from '../../cleaners/fetchData';
+import { addToFavorites } from '../../cleaners/addToFavorites.js'
+import { removeFromFavorites } from '../../cleaners/removeFromFavorites.js';
 import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
 
@@ -20,7 +21,7 @@ export class Card extends Component {
       addFavorite(userMovie);
     } else {
       removeFavorite(this.props.movieInfo.movie_id)
-      removeFromFavorites(this.props.user_id, this.props.movieInfo.movie_id);
+      removeFromFavorites(this.props.user.id, this.props.movieInfo.movie_id);
     }
   }
 

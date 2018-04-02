@@ -3,7 +3,7 @@ import './App.css';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Home } from '../Home/Home';
-import { addToFavorites} from '../../cleaners/fetchData';
+import { addToFavorites } from '../../cleaners/addToFavorites';
 import Login from '../../containers/Login/Login'
 import { loadMovies, logOutUser, addFavorite, addAllFavorites } from '../../actions';
 import SignUp from '../SignUp/SignUp.js'
@@ -15,7 +15,7 @@ export class App extends Component {
   
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
-    //const cleanedMovies = await cleanMovies(nowPlaying);
+    // const cleanedMovies = await cleanMovies(nowPlaying);
     this.props.loadMovies(nowPlaying);
   }
 

@@ -5,7 +5,6 @@ import { mockNowPlaying,
   mockUser } from '../../cleaners/mockData';
 import { shallow } from 'enzyme';
 import { getNowPlaying } from '../../cleaners/getNowPlaying'
-import { cleanMovies } from '../../cleaners/cleanMovies'
 import { loadAllFavorites } from '../../cleaners/loadAllFavorites'
 import { mapStateToProps } from './App.js'
 import { mapDispatchToProps } from './App.js'
@@ -43,6 +42,7 @@ describe('App', () => {
 
   it('should fetch and load the movies into the store', async () => {
     const mockLoadMovies = jest.fn()
+    const cleanMovies = jest.fn()
     wrapper = shallow(<App 
       user={mockUser}
       loadMovies={mockLoadMovies}
