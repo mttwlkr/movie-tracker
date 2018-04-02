@@ -19,7 +19,6 @@ export const getNowPlaying = async () => {
 
 
 export const addToFavorites = async (movie) => {
-  console.log(movie)
   try {
     const response = await fetch('/api/users/favorites/new', {
       method: 'POST',

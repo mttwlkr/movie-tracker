@@ -18,10 +18,10 @@ export class Card extends Component {
 
     if (!isInFavorites.length) {
       addToFavorites(this.userMovie);
-      this.props.addFavorite(userMovie);
+      this.props.addFavorite(this.userMovie);
     } else {
-      removeFavorite(this.props.movieInfo.movie_id)
-      removeFromFavorites(this.props.user_id, this.props.movieInfo.movie_id);
+      this.props.removeFavorite(this.userMovie.movie_id);
+      removeFromFavorites(this.props.user.id, this.props.movieInfo.movie_id);
     }
   }
 
@@ -48,7 +48,7 @@ export class Card extends Component {
           <button 
             onClick={this.validateUser}
             className={`${this.props.selected}`}>
-            favorite</button>
+          </button>
       </div>
     </div>
     );
