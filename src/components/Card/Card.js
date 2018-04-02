@@ -5,8 +5,6 @@ import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
 import './Card.css'
 
-
-
 export class Card extends Component {
   constructor(props) {
     super(props)
@@ -17,9 +15,10 @@ export class Card extends Component {
     const isInFavorites = this.props.favorites
       .filter(favorite => favorite.movie_id === this.props.movieInfo.movie_id);
 
+
     if (!isInFavorites.length) {
       addToFavorites(userMovie);
-      addFavorite(userMovie);
+      this.props.addFavorite(userMovie);
     } else {
       removeFavorite(this.props.movieInfo.movie_id)
       removeFromFavorites(this.props.user_id, this.props.movieInfo.movie_id);
@@ -30,12 +29,14 @@ export class Card extends Component {
     if (!this.props.user.id) {
       alert('Please log in or sign up to add favorites')
     } else {
+
       this.addFavoritesToStore(this.userMovie);
     }
   }
 
   render () {
     const { poster_path, title, overview } = this.props.movieInfo
+
     return (
       <div className='tile'>
         <img className='tile__img'
@@ -48,10 +49,10 @@ export class Card extends Component {
             onClick={this.validateUser}
             className={`${this.props.selected}`}>
             favorite</button>
-        </div>
       </div>
+    </div>
     );
-  }
+  };
 };
 
 export const mapStateToProps = (state) => ({

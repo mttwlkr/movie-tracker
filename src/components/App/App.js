@@ -19,6 +19,7 @@ export class App extends Component {
     const allFavorites = await loadAllFavorites(this.props.user.id);
     
     this.props.addAllFavorites(allFavorites.data);
+    console.log(this.props.favorites)
   }
 
   logIn = () => {

@@ -22,13 +22,11 @@ describe('Card', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-
   it.skip('should invoke validateUser when clicking a button', () => {
     wrapper.find('button').simulate('click');
     wrapper.instance().validateUser = jest.fn();
     expect(wrapper.instance().validateUser).toHaveBeenCalled();
   });
-
 
     describe.skip('add favorite to store', () => {
 
@@ -36,6 +34,7 @@ describe('Card', () => {
         // wrapper.instance().addFavorite = jest.fn()
         wrapper.instance().addFavoritesToStore(mockCleanMovie);
         expect(mockAddFavorite).toHaveBeenCalledWith(mockCleanMovie)
+
       });
       
     });
