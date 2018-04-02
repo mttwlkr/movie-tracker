@@ -31,7 +31,7 @@ export class Login extends Component {
         }
       });
       const logInData = await response.json();
-
+      
       this.redirectUser(logInData.data.id, logInData.data.name);
       this.showFavorites(logInData.data.id)
     } catch (error){
