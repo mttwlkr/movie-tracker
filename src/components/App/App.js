@@ -4,22 +4,21 @@ import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Home } from '../Home/Home';
 import { addToFavorites } from '../../cleaners/addToFavorites';
-import Login from '../../containers/Login/Login'
-import { loadMovies, logOutUser, addFavorite } from '../../actions';
-import SignUp from '../SignUp/SignUp.js'
-import { getNowPlaying } from '../../cleaners/getNowPlaying'
-// import { cleanMovies } from '../../cleaners/cleanMovies'
-import { loadAllFavorites } from '../../cleaners/loadAllFavorites'
+import Login from '../../containers/Login/Login';
+import { loadMovies, logOutUser, addFavorite, clearFavoritesLogOut } from '../../actions';
+import SignUp from '../SignUp/SignUp.js';
+import { getNowPlaying } from '../../cleaners/getNowPlaying';
+import { loadAllFavorites } from '../../cleaners/loadAllFavorites';
 
 export class App extends Component {
   
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
-    // const cleanedMovies = await cleanMovies(nowPlaying);
+
     this.props.loadMovies(nowPlaying);
   }
 
-  logIn = () => {
+  displayLogIn = () => {
     return (
       <NavLink 
         to='/login'
@@ -29,21 +28,43 @@ export class App extends Component {
     );
   };
 
-  logOut = () => {
+  displayLogOut = () => {
+    const { pathname } = this.props.location;
+
     return (
-      <div>
-        <NavLink
+      <div className='nav-menu'>
+       <NavLink
           to='/' 
           className='log-out'
-          onClick={ () => this.props.logOutUser() }>Log Out
+          onClick={this.handleLogOut}>
+          Log Out
         </NavLink>
-        <NavLink 
-          to='/favorites' 
-          className='nav'
-        >Show Favorites</NavLink>
+        { pathname === '/' ? this.showFavorites() : this.showHome() }
       </div>
     );
   };
+
+  showFavorites = () => {
+    return ( 
+      <NavLink 
+        to='/favorites' 
+        className='show-favorites'>
+        Show Favorites
+      </NavLink>  
+    )
+  }
+
+  showHome = () => {
+    return (
+      <NavLink to='/'>Home</NavLink>
+    )
+  }
+
+
+  handleLogOut = () => {
+    this.props.logOutUser();
+    this.props.clearFavoritesLogOut();
+  }
 
   render() {
     const { user, movies, favorites } = this.props;
@@ -51,7 +72,7 @@ export class App extends Component {
     return (
       <div className="App">
         <header>
-        { !user.id ? this.logIn() : this.logOut()}
+        { !user.id ? this.displayLogIn() : this.displayLogOut()}
         <h1>Movie Tracker</h1>
         </header>
 
@@ -90,7 +111,7 @@ export const mapDispatchToProps = (dispatch) => {
   return {
     loadMovies: (movies) => (dispatch(loadMovies(movies))),
     logOutUser: () => (dispatch(logOutUser())),
-    // clearFavorites: () => (dispatch(clearFavorites()))
+    clearFavoritesLogOut: () => (dispatch(clearFavoritesLogOut()))
   };
 };
 

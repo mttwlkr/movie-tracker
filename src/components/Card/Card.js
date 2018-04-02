@@ -21,7 +21,7 @@ export class Card extends Component {
       addToFavorites(this.userMovie);
       this.props.addFavorite(this.userMovie);
     } else {
-      this.props.removeFavorite(this.userMovie.movie_id);
+      this.props.removeFavorite(this.props.movieInfo.movie_id);
       removeFromFavorites(this.props.user.id, this.props.movieInfo.movie_id);
     }
   }
