@@ -22,17 +22,16 @@ describe('addToFavorites', () => {
   
     addToFavorites(mockCleanMovie)
     expect(window.fetch).toHaveBeenCalledWith(...expected)
-  })
+  });
 
-  it('should throw an error if bad response', async () => {
+  it('should throw an error if bad response', () => {
 
-    window.fetch = jest.fn().mockImplementation(() => {
-      json: () => Promise.rejects({
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
         status: 500
-      })
-    })
+      }))
 
-    const expected = new Error('Error adding to your favorites');
-    await expect(addToFavorites(mockCleanMovie)).rejects.toEqual(expected)
-  })
-})
+    const expected = {"status": 500};
+    expect(addToFavorites(mockCleanMovie)).rejects.toEqual(expected)
+  });
+
+});

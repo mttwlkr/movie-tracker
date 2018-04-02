@@ -16,6 +16,6 @@ export const removeFromFavorites = async (userId, movieId) => {
 
     return removedData;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 }

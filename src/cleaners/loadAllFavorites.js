@@ -5,6 +5,6 @@ export const loadAllFavorites = async (userId) => {
     const favoriteData = await response.json();
     return favoriteData.data;
   } catch (error) {
-    throw new Error('Error retrieving your favorites');
+    throw error;
   }
 }

@@ -19,7 +19,7 @@ describe('getNowPlaying', () => {
      status: 500
     }));
 
-    const expected = new Error('Cannot fetch')
+    const expected = {"status": 500}
     expect(getNowPlaying()).rejects.toEqual(expected);
   });
 });
