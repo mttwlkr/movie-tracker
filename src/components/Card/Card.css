@@ -1,16 +1,8 @@
-/*.card {
-  width: 200px;
-  border: 1px solid coral;
-  margin: 2%;
-  text-align: center;
-}*/
-
-/*.card-image {
-  height: 180px;
-  width: 118px;
-}*/
-
-
-.selected {
-  background: yellow;
+.tile .selected{
+  background-image: url('../../images/checked.svg');
+  background-repeat: no-repeat; 
+  background-color: transparent;
+  background-size: cover;  
+  width: 35px;
+  height: 35px;
 }

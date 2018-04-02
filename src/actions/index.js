@@ -27,3 +27,7 @@ export const addAllFavorites = (movies) => ({
   type: 'ADD_ALL_FAVORITES',
   movies
 });
+
+export const clearFavorites = () => ({
+  type: 'CLEAR_FAVORITES'
+});

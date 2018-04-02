@@ -1,6 +1,7 @@
 
 * {
   box-sizing: border-box;
+  width: 100%;
 }
 
 body, html {
@@ -22,6 +23,7 @@ header {
 h1 {
   text-align: center;
   font-size: 75px;
+  font-family: 'Orbitron', sans-serif;
   color: red;
 }
 
@@ -29,6 +31,8 @@ a:link,
 a:hover,
 a:active,
 a:visited {
+  position: relative;
+  top: 20px;
   -webkit-transition: color 150ms;
   transition: color 150ms;
   color: #95a5a6;
@@ -45,7 +49,7 @@ a:hover {
   overflow: scroll;
   width: 100%;
   position: absolute;
-  top: 150px;
+  top: 165px;
 }
 .row__inner {
   transition: 450ms transform;
@@ -94,13 +98,15 @@ a:hover {
   color: white;
   border: none;
   opacity: 0;
-  padding: 0 5px;
+  padding: 5px 20px;
 }
 
 h2 {
   text-align: center;
   font-size: 16px;
   opacity: 0;
+  margin: 0;
+  padding-top: 20px;
 }
 
 .tile:hover h2 {
@@ -109,11 +115,17 @@ h2 {
 
 .tile button {
   position: absolute;
+  top: 265px;
   left: 100px;
-  bottom: 10px;
   opacity: 0;
   border: none;
   outline: none;
+  background-image: url('./images/add-favorite.svg');
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  width: 35px;
+  height: 35px;
 }
 
 .tile:hover button {
