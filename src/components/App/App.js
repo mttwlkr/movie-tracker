@@ -33,6 +33,7 @@ export class App extends Component {
 
     return (
       <div className='nav-menu'>
+      <h3>{`Hey, ${this.props.user.name} !`}</h3>
        <NavLink
           to='/' 
           className='log-out'
