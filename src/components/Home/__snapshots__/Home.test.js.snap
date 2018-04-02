@@ -45,7 +45,7 @@ ShallowWrapper {
       "children": <div
         className="row__inner"
 >
-        <Connect(Component)
+        <Connect(Card)
                 movieInfo={
                         Object {
                                 "movie_id": "284054",
@@ -68,7 +68,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(Component)
+          <Connect(Card)
             movieInfo={
                         Object {
                                     "movie_id": "284054",
@@ -119,7 +119,7 @@ ShallowWrapper {
         "children": <div
           className="row__inner"
 >
-          <Connect(Component)
+          <Connect(Card)
                     movieInfo={
                               Object {
                                         "movie_id": "284054",
@@ -142,7 +142,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <Connect(Component)
+            <Connect(Card)
               movieInfo={
                             Object {
                                           "movie_id": "284054",

@@ -45,7 +45,9 @@ ShallowWrapper {
                     type="password"
                     value=""
           />
-          <button>
+          <button
+                    className="submit"
+          >
                     Submit
           </button>
 </form>,
@@ -85,7 +87,9 @@ ShallowWrapper {
               type="password"
               value=""
 />,
-            <button>
+            <button
+              className="submit"
+>
               Submit
 </button>,
           ],
@@ -147,6 +151,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Submit",
+              "className": "submit",
             },
             "ref": null,
             "rendered": "Submit",
@@ -194,7 +199,9 @@ ShallowWrapper {
                         type="password"
                         value=""
             />
-            <button>
+            <button
+                        className="submit"
+            >
                         Submit
             </button>
 </form>,
@@ -234,7 +241,9 @@ ShallowWrapper {
                 type="password"
                 value=""
 />,
-              <button>
+              <button
+                className="submit"
+>
                 Submit
 </button>,
             ],
@@ -296,6 +305,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Submit",
+                "className": "submit",
               },
               "ref": null,
               "rendered": "Submit",

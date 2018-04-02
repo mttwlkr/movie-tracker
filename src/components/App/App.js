@@ -3,15 +3,19 @@ import './App.css';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Home } from '../Home/Home';
-import { getNowPlaying, addToFavorites, loadAllFavorites } from '../../cleaners/fetchData';
+import { addToFavorites } from '../../cleaners/addToFavorites';
 import Login from '../../containers/Login/Login'
 import { loadMovies, logOutUser, addFavorite } from '../../actions';
 import SignUp from '../SignUp/SignUp.js'
+import { getNowPlaying } from '../../cleaners/getNowPlaying'
+// import { cleanMovies } from '../../cleaners/cleanMovies'
+import { loadAllFavorites } from '../../cleaners/loadAllFavorites'
 
 export class App extends Component {
   
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
+    // const cleanedMovies = await cleanMovies(nowPlaying);
     this.props.loadMovies(nowPlaying);
   }
 
@@ -40,11 +44,6 @@ export class App extends Component {
       </div>
     );
   };
-
-  // logOutFunctions = () => {
-  //   this.props.logOutUser();
-  //   this.props.clearFavorites();
-  // }
 
   render() {
     const { user, movies, favorites } = this.props;
@@ -79,7 +78,7 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     user: state.user,
     movies: state.movies,
@@ -87,7 +86,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     loadMovies: (movies) => (dispatch(loadMovies(movies))),
     logOutUser: () => (dispatch(logOutUser())),

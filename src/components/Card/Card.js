@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Card.css';
-import { addToFavorites, removeFromFavorites, loadAllFavorites } from '../../cleaners/fetchData';
+import { addToFavorites } from '../../cleaners/addToFavorites.js'
+import { removeFromFavorites } from '../../cleaners/removeFromFavorites.js';
 import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
 import './Card.css'

@@ -55,9 +55,7 @@ ShallowWrapper {
           <button
                     className="undefined"
                     onClick={[Function]}
-          >
-                    favorite
-          </button>
+          />
 </div>,
       ],
       "className": "tile",
@@ -90,9 +88,7 @@ ShallowWrapper {
             <button
               className="undefined"
               onClick={[Function]}
->
-              favorite
-</button>,
+/>,
           ],
           "className": "card-details",
         },
@@ -126,12 +122,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "favorite",
               "className": "undefined",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": "favorite",
+            "rendered": null,
             "type": "button",
           },
         ],
@@ -162,9 +157,7 @@ ShallowWrapper {
             <button
                         className="undefined"
                         onClick={[Function]}
-            >
-                        favorite
-            </button>
+            />
 </div>,
         ],
         "className": "tile",
@@ -197,9 +190,7 @@ ShallowWrapper {
               <button
                 className="undefined"
                 onClick={[Function]}
->
-                favorite
-</button>,
+/>,
             ],
             "className": "card-details",
           },
@@ -233,12 +224,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "favorite",
                 "className": "undefined",
                 "onClick": [Function],
               },
               "ref": null,
-              "rendered": "favorite",
+              "rendered": null,
               "type": "button",
             },
           ],

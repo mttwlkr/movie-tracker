@@ -3,23 +3,31 @@ import { shallow } from 'enzyme';
 import { Login } from './Login';
 import * as actions from '../../actions/index';
 import { mapStateToProps, mapDispatchToProps } from './Login';
+import { loadAllFavorites } from '../../cleaners/loadAllFavorites.js'
+
+jest.mock('../../cleaners/loadAllFavorites')
 
 describe('Login', () => {
   let wrapper, 
   mockHandleSubmit, 
   mockEvent, 
   mockHistory,
-  mockLogin;
+  mockLogin,
+  mockAddAllFavorites;
 
   beforeEach(() => {
     mockHandleSubmit = jest.fn();
     mockEvent = {
       preventDefault: jest.fn()
     };
+
     mockHistory = [];
+    mockAddAllFavorites = jest.fn()
     wrapper = shallow(<Login 
       handleSubmit={mockHandleSubmit}
-      history={mockHistory} />);
+      history={mockHistory} 
+      addAllFavorites={mockAddAllFavorites}
+      />);
   });
 
   it.skip('should match the snapshot', ()=> {
@@ -65,6 +73,11 @@ describe('Login', () => {
     await wrapper.instance().logIn(mockData);
     expect(spy).toHaveBeenCalledWith(1, 'Taylor');
   });
+
+  it('should fetch favorites from db and put them into the store', async () => {
+    await wrapper.instance().showFavorites()
+    expect(mockAddAllFavorites).toHaveBeenCalled() 
+  })
 
   it('should call handleSubmit when redirectUser is called', () => {
     const id = '122345';
