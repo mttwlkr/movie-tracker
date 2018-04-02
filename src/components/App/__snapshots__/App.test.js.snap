@@ -28,6 +28,7 @@ ShallowWrapper {
         <header>
           <div>
                     <button
+                              className="log-out-button"
                               onClick={[Function]}
                     >
                               Log Out
@@ -81,6 +82,7 @@ ShallowWrapper {
           "children": Array [
             <div>
               <button
+                            className="log-out-button"
                             onClick={[Function]}
               >
                             Log Out
@@ -109,6 +111,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <button
+                  className="log-out-button"
                   onClick={[Function]}
 >
                   Log Out
@@ -132,6 +135,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Log Out",
+                  "className": "log-out-button",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -269,6 +273,7 @@ ShallowWrapper {
           <header>
             <div>
                         <button
+                                    className="log-out-button"
                                     onClick={[Function]}
                         >
                                     Log Out
@@ -322,6 +327,7 @@ ShallowWrapper {
             "children": Array [
               <div>
                 <button
+                                className="log-out-button"
                                 onClick={[Function]}
                 >
                                 Log Out
@@ -350,6 +356,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <button
+                    className="log-out-button"
                     onClick={[Function]}
 >
                     Log Out
@@ -373,6 +380,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "Log Out",
+                    "className": "log-out-button",
                     "onClick": [Function],
                   },
                   "ref": null,

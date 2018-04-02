@@ -3,25 +3,26 @@ import './App.css';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Home } from '../Home/Home';
-import { addToFavorites, loadAllFavorites } from '../../cleaners/fetchData';
+import { addToFavorites} from '../../cleaners/fetchData';
 import Login from '../../containers/Login/Login'
 import { loadMovies, logOutUser, addFavorite, addAllFavorites } from '../../actions';
 import SignUp from '../SignUp/SignUp.js'
 import { getNowPlaying } from '../../cleaners/getNowPlaying'
 // import { cleanMovies } from '../../cleaners/cleanMovies'
+import { loadAllFavorites } from '../../cleaners/loadAllFavorites'
 
 export class App extends Component {
   
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
-    // const cleanedMovies = cleanMovies(nowPlaying);
+    //const cleanedMovies = await cleanMovies(nowPlaying);
     this.props.loadMovies(nowPlaying);
   }
 
   showFavorites = async () => {
     const allFavorites = await loadAllFavorites(this.props.user.id);
     
-    this.props.addAllFavorites(allFavorites.data);
+    this.props.addAllFavorites(allFavorites);
   }
 
   logIn = () => {
@@ -37,7 +38,9 @@ export class App extends Component {
   logOut = () => {
     return (
       <div>
-        <button onClick={ () => this.props.logOutUser() }>Log Out</button>
+        <button 
+        className='log-out-button'
+        onClick={ () => this.props.logOutUser() }>Log Out</button>
         <NavLink 
           to='/favorites' 
           className='nav'
@@ -81,7 +84,7 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     user: state.user,
     movies: state.movies,
@@ -89,7 +92,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     loadMovies: (movies) => (dispatch(loadMovies(movies))),
     logOutUser: () => (dispatch(logOutUser())),

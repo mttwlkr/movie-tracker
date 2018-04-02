@@ -30,8 +30,6 @@ export const addToFavorites = async (movie) => {
     });
     const favoriteData = await response.json();
 
-    console.log(favoriteData);
-
     return favoriteData;
   } catch (error) {
     console.log(error);
@@ -60,14 +58,14 @@ export const removeFromFavorites = async (userId, movieId) => {
   }
 }
 
-export const loadAllFavorites = async (userId) => {
+// export const loadAllFavorites = async (userId) => {
 
-  try {
-    const response = await fetch(`/api/users/${userId}/favorites/`);
-    const favoriteData = await response.json();
+//   try {
+//     const response = await fetch(`/api/users/${userId}/favorites/`);
+//     const favoriteData = await response.json();
 
-    return favoriteData;
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     return favoriteData;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }

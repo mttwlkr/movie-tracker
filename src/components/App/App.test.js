@@ -6,8 +6,12 @@ import { mockNowPlaying,
 import { shallow } from 'enzyme';
 import { getNowPlaying } from '../../cleaners/getNowPlaying'
 import { cleanMovies } from '../../cleaners/cleanMovies'
+import { loadAllFavorites } from '../../cleaners/loadAllFavorites'
+import { mapStateToProps } from './App.js'
+import { mapDispatchToProps } from './App.js'
 
 jest.mock('../../cleaners/getNowPlaying')
+jest.mock('../../cleaners/loadAllFavorites')
 
 describe('App', () => {
   let wrapper;
@@ -27,18 +31,62 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should fetch the movies ', () => {
-    const mockloadMovies = jest.fn()
+  it('should invoke logOutUser if there is a user and the button is clicked', () => {
+    const mockLogOutUser = jest.fn()
     wrapper = shallow(<App 
       user={mockUser}
-      loadMovies={mockloadMovies}
-    />, { disableLifecycleMethods: true });
-    wrapper.instance().componentDidMount()
-    expect()
+      logOutUser={mockLogOutUser}
+      />, { disableLifecycleMethods: true });
+    wrapper.find('.log-out-button').simulate('click')
+    expect(mockLogOutUser).toHaveBeenCalled()
   })
 
-  it.skip('should invoke showFavorites', () => {
-      wrapper = shallow(<App user={mockUser}/>, { disableLifecycleMethods: true });
+  it('should fetch and load the movies into the store', async () => {
+    const mockLoadMovies = jest.fn()
+    wrapper = shallow(<App 
+      user={mockUser}
+      loadMovies={mockLoadMovies}
+    />, { disableLifecycleMethods: true });
+    await wrapper.instance().componentDidMount()
+    await expect(mockLoadMovies).toHaveBeenCalled()
+  })
+
+  it('should fetch favorites from db and put them into the store', async () => {
+    const mockAddAllFavorites = jest.fn()
+    wrapper = shallow(<App 
+      user={mockUser}
+      addAllFavorites={mockAddAllFavorites}
+    />, { disableLifecycleMethods: true });
+    await wrapper.instance().showFavorites()
+    expect(mockAddAllFavorites).toHaveBeenCalled() 
+  })
+
+  it('should map state to props', () => {
+    const mockUser = {user: {name: 'matt'}}
+    const mockMovies = {movies: {title: 'star wars'}}
+    const mockFavorites = {favorites: {title: 'gladiator'}}
+
+    const mappedUser = mapStateToProps(mockUser)
+    expect(mappedUser.user).toEqual(mockUser.user)
+
+    const mappedMovies = mapStateToProps(mockMovies)
+    expect(mappedMovies.movies).toEqual(mockMovies.movies)
+
+    const mappedFavorites = mapStateToProps(mockFavorites)
+    expect (mockFavorites.favorites).toEqual(mockFavorites.favorites)
+  })
+
+  it('should map dispatch to props', () => {
+    const mockDispatch = jest.fn()
+    const mapped = mapDispatchToProps(mockDispatch)
+    mapped.loadMovies()
+    mapped.logOutUser()
+    mapped.addAllFavorites()
+    expect(mockDispatch).toHaveBeenCalled()
+  })
+
+  // it.skip('should invoke showFavorites', () => {
+  //     wrapper = shallow(<App user={mockUser}/>, { disableLifecycleMethods: true });
 
 
     //  wrapper.instance().logIn = jest.fn();
@@ -48,10 +96,10 @@ describe('App', () => {
     // expect(spy).toHaveBeenCalledWith(expected);
 
     // wrapper.instance().showFavorites = jest.fn();
-    const spy = jest.spyOn(wrapper.instance(), 'showFavorites');
-    wrapper.find('NavLink').simulate('click', spy);
-    expect(spy).toHaveBeenCalled();
-  });
+  //   const spy = jest.spyOn(wrapper.instance(), 'showFavorites');
+  //   wrapper.find('NavLink').simulate('click', spy);
+  //   expect(spy).toHaveBeenCalled();
+  // });
 
 
 

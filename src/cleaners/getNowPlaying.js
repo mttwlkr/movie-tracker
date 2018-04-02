@@ -5,6 +5,7 @@ export const getNowPlaying = async () => {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=${apiKey}&language=en-US`);
     const nowPlayingData = await response.json();
+    // return nowPlayingData
     const cleanedMovies = cleanMovies(nowPlayingData)
     return cleanedMovies
   } catch (error) {
@@ -12,7 +13,7 @@ export const getNowPlaying = async () => {
   }
 };
 
-const cleanMovies = (movieData) => {
+export const cleanMovies = (movieData) => {
   return movieData.results.map(movie => ({
     movie_id: movie.id, 
     title: movie.title, 
