@@ -4,6 +4,10 @@ import { App } from './App';
 import { mockNowPlaying, 
   mockUser } from '../../cleaners/mockData';
 import { shallow } from 'enzyme';
+import { getNowPlaying } from '../../cleaners/getNowPlaying'
+import { cleanMovies } from '../../cleaners/cleanMovies'
+
+jest.mock('../../cleaners/getNowPlaying')
 
 describe('App', () => {
   let wrapper;
@@ -23,6 +27,16 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should fetch the movies ', () => {
+    const mockloadMovies = jest.fn()
+    wrapper = shallow(<App 
+      user={mockUser}
+      loadMovies={mockloadMovies}
+    />, { disableLifecycleMethods: true });
+    wrapper.instance().componentDidMount()
+    expect()
+  })
+
   it.skip('should invoke showFavorites', () => {
       wrapper = shallow(<App user={mockUser}/>, { disableLifecycleMethods: true });
 
@@ -38,6 +52,8 @@ describe('App', () => {
     wrapper.find('NavLink').simulate('click', spy);
     expect(spy).toHaveBeenCalled();
   });
+
+
 
   // describe('componentDidMount', () => {
   //   it.skip('should invoke getNowPlaying at componentDidMount', () => {

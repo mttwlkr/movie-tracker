@@ -1,21 +1,21 @@
-import { apiKey } from './apiKeys';
-import { cleanMovies } from './dataCleaner';
+// import { apiKey } from './apiKeys';
+// import { cleanMovies } from './cleanMovies';
 
-const rootUrl = 'https://api.themoviedb.org/3';
-const nowPlaying = `/movie/now_playing?page=1&language=en-US&api_key=${apiKey}&language=en-US`;
+// const rootUrl = 'https://api.themoviedb.org/3';
+// const nowPlaying = `/movie/now_playing?page=1&language=en-US&api_key=${apiKey}&language=en-US`;
 
-export const getNowPlaying = async () => {
+// export const getNowPlaying = async () => {
 
-  try {
-    const response = await fetch(`${rootUrl}${nowPlaying}`);
-    const nowPlayingData = await response.json();
-    const cleanedMovies = cleanMovies(nowPlayingData);
+//   try {
+//     const response = await fetch(`${rootUrl}${nowPlaying}`);
+//     const nowPlayingData = await response.json();
+//     const cleanedMovies = cleanMovies(nowPlayingData);
 
-    return cleanedMovies;
-  } catch (error) {
-    throw new Error ('Cannot fetch');
-  }
-};
+//     return cleanedMovies;
+//   } catch (error) {
+//     throw new Error ('Cannot fetch');
+//   }
+// };
 
 
 export const addToFavorites = async (movie) => {

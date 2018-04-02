@@ -1,0 +1,1 @@
+export const getNowPlaying = jest.fn()

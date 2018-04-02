@@ -3,15 +3,18 @@ import './App.css';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Home } from '../Home/Home';
-import { getNowPlaying, addToFavorites, loadAllFavorites } from '../../cleaners/fetchData';
+import { addToFavorites, loadAllFavorites } from '../../cleaners/fetchData';
 import Login from '../../containers/Login/Login'
 import { loadMovies, logOutUser, addFavorite, addAllFavorites } from '../../actions';
 import SignUp from '../SignUp/SignUp.js'
+import { getNowPlaying } from '../../cleaners/getNowPlaying'
+// import { cleanMovies } from '../../cleaners/cleanMovies'
 
 export class App extends Component {
   
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
+    // const cleanedMovies = cleanMovies(nowPlaying);
     this.props.loadMovies(nowPlaying);
   }
 
