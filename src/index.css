@@ -49,7 +49,7 @@ a:hover {
   overflow: scroll;
   width: 100%;
   position: absolute;
-  top: 150px;
+  top: 165px;
 }
 .row__inner {
   transition: 450ms transform;

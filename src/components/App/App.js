@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Home } from '../Home/Home';
 import { getNowPlaying, addToFavorites, loadAllFavorites } from '../../cleaners/fetchData';
 import Login from '../../containers/Login/Login'
-import { loadMovies, logOutUser, addFavorite, addAllFavorites } from '../../actions';
+import { loadMovies, logOutUser, addFavorite } from '../../actions';
 import SignUp from '../SignUp/SignUp.js'
 
 export class App extends Component {
@@ -13,12 +13,6 @@ export class App extends Component {
   async componentDidMount() {
     const nowPlaying = await getNowPlaying();
     this.props.loadMovies(nowPlaying);
-  }
-
-  showFavorites = async () => {
-    const allFavorites = await loadAllFavorites(this.props.user.id);
-    
-    this.props.addAllFavorites(allFavorites.data);
   }
 
   logIn = () => {
@@ -42,12 +36,15 @@ export class App extends Component {
         <NavLink 
           to='/favorites' 
           className='nav'
-          onClick={this.showFavorites}>
-          Show Favorites
-        </NavLink>
+        >Show Favorites</NavLink>
       </div>
     );
   };
+
+  // logOutFunctions = () => {
+  //   this.props.logOutUser();
+  //   this.props.clearFavorites();
+  // }
 
   render() {
     const { user, movies, favorites } = this.props;
@@ -94,7 +91,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     loadMovies: (movies) => (dispatch(loadMovies(movies))),
     logOutUser: () => (dispatch(logOutUser())),
-    addAllFavorites: (movies) => (dispatch(addAllFavorites(movies)))
+    // clearFavorites: () => (dispatch(clearFavorites()))
   };
 };
 
