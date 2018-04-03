@@ -9,10 +9,13 @@ import './Card.css'
 export class Card extends Component {
   constructor(props) {
     super(props)
-    this.userMovie = {...this.props.movieInfo, user_id: this.props.user.id},
     this.state = {
       loggedIn: false
     };
+    this.userMovie = {
+      ...this.props.movieInfo, 
+      user_id: this.props.user.id
+    }
   }
 
   addFavoritesToStore = (userMovie) => {
@@ -30,10 +33,10 @@ export class Card extends Component {
   }
 
    validateUser = () => {  
-    if (this.props.user.id) {
-      this.addFavoritesToStore(this.userMovie);
-    } else {
+    if (!this.props.user.id) {
       this.setState({ loggedIn: !this.state.loggedIn });
+    } else {
+      this.addFavoritesToStore(this.userMovie);
     }
   }
 
@@ -53,7 +56,7 @@ export class Card extends Component {
           }
           {
             this.state.loggedIn &&
-            <textarea className='tile__title'>Please login to your account</textarea>
+            <textarea className='tile__title error'>Please login to your account</textarea>
           }
           <button 
             onClick={this.validateUser}

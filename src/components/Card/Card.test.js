@@ -46,11 +46,11 @@ describe('Card', () => {
   });
 
   it('should not be able to favorite a movie if not logged in', () => {
-    const mockUser = '';
-    wrapper.instance().validateUser();
-    
+    // const mockUser = {};
+    console.log(wrapper.state('loggedIn'));
 
-    expect(window.alert).toEqual(alert('Please log in or sign up to add favorites'));
+    wrapper.instance().validateUser();
+    expect(wrapper.state('loggedIn')).toEqual(true);
   });
 
   it('should call addFavoritesToStore when logged in', () => {

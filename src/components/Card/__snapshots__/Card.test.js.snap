@@ -85,6 +85,7 @@ ShallowWrapper {
             <textarea
               className="tile__title"
 />,
+            false,
             <button
               className="undefined"
               onClick={[Function]}
@@ -117,6 +118,7 @@ ShallowWrapper {
             "rendered": null,
             "type": "textarea",
           },
+          false,
           Object {
             "instance": null,
             "key": undefined,
@@ -187,6 +189,7 @@ ShallowWrapper {
               <textarea
                 className="tile__title"
 />,
+              false,
               <button
                 className="undefined"
                 onClick={[Function]}
@@ -219,6 +222,7 @@ ShallowWrapper {
               "rendered": null,
               "type": "textarea",
             },
+            false,
             Object {
               "instance": null,
               "key": undefined,
