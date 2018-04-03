@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './Card.css';
 import { addToFavorites } from '../../cleaners/addToFavorites.js';
 import { removeFromFavorites } from '../../cleaners/removeFromFavorites.js';
 import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './Card.css';
 
 export class Card extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       loggedIn: false
     };
@@ -16,7 +16,7 @@ export class Card extends Component {
       ...this.props.movieInfo, 
       user_id: this.props.user.id
     };
-  };
+  }
 
   addFavoritesToStore = (userMovie) => {
 
@@ -85,6 +85,9 @@ export const mapDispatchToProps = (dispatch) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card)
 
-
+Card.propTypes = {
+  user: PropTypes.object,
+  favorites: PropTypes.object
+}
 
 
