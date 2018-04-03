@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, mapStateToProps } from './Home';
+import { Home } from './Home';
 import { mockCleanNowPlaying } from '../../cleaners/mockData';
 import { shallow } from 'enzyme';
 
