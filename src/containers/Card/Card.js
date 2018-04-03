@@ -32,7 +32,7 @@ export class Card extends Component {
     }
   };
 
-  validateUser = () => {  
+  validateUser = () => { 
     if (!this.props.user.id) {
       this.setState({ loggedIn: !this.state.loggedIn });
     } else {
