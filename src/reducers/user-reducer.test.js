@@ -12,7 +12,8 @@ describe('userReducer', () => {
     const id = '12345';
     const name = 'jared';
     const expected = {id, name};
-    expect(userReducer(undefined, actions.logInUser(id, name))).toEqual(expected);
+    expect(userReducer(undefined, 
+      actions.logInUser(id, name))).toEqual(expected);
   });
 
   it('should logout user and return empty array', () => {

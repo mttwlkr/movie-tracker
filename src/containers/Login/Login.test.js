@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Login, mapStateToProps, mapDispatchToProps } from './Login';
 import { loadAllFavorites } from '../../cleaners/loadAllFavorites.js';
+import { mocklogInData } from '../../cleaners/mockData';
 
 jest.mock('../../cleaners/loadAllFavorites');
 
@@ -48,15 +49,6 @@ describe('Login', () => {
     const mockData = {
       email: 'tman2272@aol.com',
       password: 'password'
-    };
-
-    const mocklogInData = { data : {
-      id: 1, 
-      name: "Taylor", 
-      password: "password", 
-      email: "tman2272@aol.com" },
-    message: "Retrieved ONE User",
-    status: "success" 
     };
 
     wrapper.instance().redirectUser = jest.fn();
