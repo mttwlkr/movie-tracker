@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { addToFavorites } from '../../cleaners/addToFavorites.js';
 import { removeFromFavorites } from '../../cleaners/removeFromFavorites.js';
@@ -104,5 +103,3 @@ Card.propTypes = {
   removeFavorite: PropTypes.func,
   selected: PropTypes.string
 };
-
-
