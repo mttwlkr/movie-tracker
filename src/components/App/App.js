@@ -33,7 +33,7 @@ export class App extends Component {
 
     return (
       <div className='nav-menu'>
-        <h3 className='welcome'>{`Hello ${this.props.user.name}. We are watching you....`}</h3>
+        <h3 className='welcome'>{`Hello ${this.props.user.name}. We are tracking you....`}</h3>
          <NavLink
             to='/' 
             id='login-logout'
@@ -57,10 +57,9 @@ export class App extends Component {
 
   showHome = () => {
     return (
-      <NavLink to='/'>Home</NavLink>
+      <NavLink id='home' to='/'>Home</NavLink>
     )
   }
-
 
   handleLogOut = () => {
     this.props.logOutUser();

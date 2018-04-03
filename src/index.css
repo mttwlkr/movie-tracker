@@ -49,6 +49,12 @@ a:hover {
   width: auto;
 }
 
+#home {
+  position: absolute;
+  left: 92%;
+  width: auto;
+}
+
 .welcome {
   text-align: center;
   color: #95a5a6;
