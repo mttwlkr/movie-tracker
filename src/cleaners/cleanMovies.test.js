@@ -1,5 +1,4 @@
-import React from 'react';
-import { cleanMovies } from './getNowPlaying.js'
+import { cleanMovies } from './getNowPlaying.js';
 import { mockMovie, mockCleanNowPlaying } from './mockData';
 
 
