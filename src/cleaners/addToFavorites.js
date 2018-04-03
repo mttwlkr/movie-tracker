@@ -13,4 +13,4 @@ export const addToFavorites = async (movie) => {
   } catch (error) {
     throw error;
   }
-}
+};

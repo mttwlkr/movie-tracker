@@ -2,7 +2,7 @@ export const removeFromFavorites = async (userId, movieId) => {
   const movieInfo = { 
     user_id: userId, 
     movie_id: movieId 
-  } 
+  };
 
   try {
     const response = await fetch(`/api/users/${userId}/favorites/${movieId}/`, {
@@ -18,4 +18,4 @@ export const removeFromFavorites = async (userId, movieId) => {
   } catch (error) {
     throw error;
   }
-}
+};

@@ -1,12 +1,13 @@
 import { apiKey } from './apiKeys';
 
 export const getNowPlaying = async () => {
-
+  const rootUrl = 'https://api.themoviedb.org/3/movie/now_playing?page=1';
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=${apiKey}&language=en-US`);
+    const response = await fetch(
+      `${rootUrl}&language=en-US&api_key=${apiKey}&language=en-US`);
     const nowPlayingData = await response.json();
-    const cleanedMovies = cleanMovies(nowPlayingData)
-    return cleanedMovies
+    const cleanedMovies = cleanMovies(nowPlayingData);
+    return cleanedMovies;
   } catch (error) {
     throw error;
   }
@@ -21,4 +22,4 @@ export const cleanMovies = (movieData) => {
     vote_average: movie.vote_average, 
     overview: movie.overview  
   }));
-}
+};

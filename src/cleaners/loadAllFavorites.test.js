@@ -1,5 +1,9 @@
-import { loadAllFavorites } from './loadAllFavorites.js'
-import { mockUser, mockLoadAllFavoritesMovie, mockCleanMovie } from './mockData';  
+import { loadAllFavorites } from './loadAllFavorites.js';
+import { 
+  mockUser, 
+  mockLoadAllFavoritesMovie, 
+  mockCleanMovie 
+} from './mockData';  
 
 describe('loadAllFavorites', () => {
 
@@ -10,17 +14,16 @@ describe('loadAllFavorites', () => {
     }));
 
     const expected = await loadAllFavorites(mockUser.id);
-    expect(expected).toEqual(mockCleanMovie)
+    expect(expected).toEqual(mockCleanMovie);
   });
 
   it('should throw an error', () => {
     
     window.fetch = jest.fn().mockImplementation(() => Promise.reject({
       status: 500
-    }))
+    }));
 
     const expected = {"status": 500};
-    expect(loadAllFavorites()).rejects.toEqual(expected)
+    expect(loadAllFavorites()).rejects.toEqual(expected);
   });
-
 });

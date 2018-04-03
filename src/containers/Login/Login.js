@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import './Login.css';
 import { logInUser, addAllFavorites } from '../../actions';
 import { loadAllFavorites } from '../../cleaners/loadAllFavorites.js';
+import PropTypes from 'prop-types';
 
 export class Login extends Component {
   constructor() {
@@ -21,21 +22,21 @@ export class Login extends Component {
     this.logIn(userInfo);
   }
 
-  logIn = async (data) => {
+  logIn = async (info) => {
     try {
       const response = await fetch('/api/users', {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify(info),
         headers: {
           'content-type': 'application/json'
         }
       });
       const logInData = await response.json();
       
-      this.redirectUser(logInData.data.id, logInData.data.name);
-      this.showFavorites(logInData.data.id)
+      this.redirectUser(logInData.info.id, logInData.info.name);
+      this.showFavorites(logInData.info.id);
     } catch (error){
-      this.setState({error: true})
+      this.setState({error: true});
     }
   }
 
@@ -60,14 +61,16 @@ export class Login extends Component {
             id='email' 
             value={this.state.email} 
             placeholder='Email'
-            onChange={(event) => this.setState({ email: event.target.value })}
+            onChange={(event) => this.setState({ 
+              email: event.target.value })}
           />
           <input 
             type='password' 
             id='password' 
             value={this.state.password} 
             placeholder='Password'
-            onChange={(event) => this.setState({ password: event.target.value })}
+            onChange={(event) => this.setState({ 
+              password: event.target.value })}
           />
           <button className='submit'>Submit</button>
         </form>
@@ -96,3 +99,9 @@ export const mapDispatchToProps = (dispatch) => {
 };  
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
+
+Login.propTypes = {
+  history: PropTypes.array,
+  handleSubmit: PropTypes.func,
+  addAllFavorites: PropTypes.func
+};

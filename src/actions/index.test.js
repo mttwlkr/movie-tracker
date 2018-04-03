@@ -16,7 +16,7 @@ describe('Actions', () => {
     });
   });
 
-   describe('logOutUser', () => {
+  describe('logOutUser', () => {
     it('should return a type of LOGOUT_USER', () => {
       const expected = {
         type: 'LOGOUT_USER'
@@ -26,9 +26,9 @@ describe('Actions', () => {
     });
   });
 
-   describe('loadMovies', () => {
+  describe('loadMovies', () => {
     it('should return a type of LOAD_MOVIES', () => {
-      const movies = [{name: 'hotfire'}, {name: 'coldwaterbackmountain'}]
+      const movies = [{name: 'hotfire'}, {name: 'coldwaterbackmountain'}];
       const expected = {
         type: 'LOAD_MOVIES',
         movies
@@ -38,7 +38,7 @@ describe('Actions', () => {
     });
   });
 
-   describe('addFavorite', () => {
+  describe('addFavorite', () => {
     it('should return a type of ADD_FAVORITE', () => {
       const movie = {name: 'how low'};
       const expected = {
@@ -48,9 +48,9 @@ describe('Actions', () => {
 
       expect(actions.addFavorite(movie)).toEqual(expected);
     });
-   });
+  });
 
-   describe('removeFavorite', () => {
+  describe('removeFavorite', () => {
     it('should return a type of REMOVE_FAVORITE', () => {
       const id = 12;
       const expected = {
@@ -60,9 +60,9 @@ describe('Actions', () => {
 
       expect(actions.removeFavorite(id)).toEqual(expected);
     });
-   });
+  });
 
-   describe('showAllFavorites', () => {
+  describe('showAllFavorites', () => {
     it('should return a type of ADD_ALL_FAVORITES', () => {
       const expected = {
         type: 'ADD_ALL_FAVORITES'
@@ -70,6 +70,5 @@ describe('Actions', () => {
 
       expect(actions.addAllFavorites()).toEqual(expected);
     });
-   });
-
+  });
 });
