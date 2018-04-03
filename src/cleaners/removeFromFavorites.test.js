@@ -34,7 +34,8 @@ describe('removeFromFavorites', () => {
     window.fetch = jest.fn().mockImplementation(() => 
       Promise.reject({
         status: 500
-  }));
+      }) 
+    );
 
     const expected = {"status": 500};
     expect(removeFromFavorites()).rejects.toEqual(expected);
