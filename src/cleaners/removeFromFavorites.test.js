@@ -17,17 +17,15 @@ describe('removeFromFavorites', () => {
       })
     );
 
-    const expected = [
-      "/api/users/4/favorites/123456/", {
-        method: "DELETE",
-        body: JSON.stringify(mockMovieInfo),
-        headers: {
-          "content-type": "application/json"
-        }
+    const expected = ["/api/users/4/favorites/123456/", {
+      method: "DELETE",
+      body: JSON.stringify(mockMovieInfo),
+      headers: {
+        "content-type": "application/json"
       }
-    ];
+    }];
 
-    const response = await removeFromFavorites(mockUserId, mockMovieId);
+    await removeFromFavorites(mockUserId, mockMovieId);
   
     expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
@@ -36,7 +34,7 @@ describe('removeFromFavorites', () => {
     window.fetch = jest.fn().mockImplementation(() => 
       Promise.reject({
         status: 500
-    }));
+  }));
 
     const expected = {"status": 500};
     expect(removeFromFavorites()).rejects.toEqual(expected);

@@ -72,6 +72,7 @@ describe('Login', () => {
   });
 
   it('should fetch favorites from db and put them into the store', async () => {
+    
     await wrapper.instance().showFavorites();
     expect(mockAddAllFavorites).toHaveBeenCalled();
   });
