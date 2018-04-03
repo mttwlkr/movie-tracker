@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, mapStateToProps, mapDispatchToProps } from './Card';
 import { mockCleanMovie, 
-  mockUser, 
   mockAddFavoriteMovie 
 } from '../../cleaners/mockData';
 import { shallow } from 'enzyme';
@@ -19,7 +18,7 @@ describe('Card', () => {
   let mockUser;
 
   beforeEach(() => {
-    mockUser = { name: 'mud', id: 4 }
+    mockUser = { name: 'mud', id: 4 };
 
     wrapper = shallow(<Card 
       movieInfo={mockCleanMovie}
@@ -76,7 +75,7 @@ describe('Card', () => {
   describe('add favorite to store', () => {
 
     it('should call addFavorite when the movie is not in favorites', () => {  
-      wrapper.instance().addFavoritesToStore(mockCleanMovie);
+      wrapper.instance().addFavoritesToStore(mockAddFavoriteMovie);
       expect(mockAddFavorite).toHaveBeenCalledWith(mockAddFavoriteMovie);
       expect(addToFavorites).toHaveBeenCalledWith(mockAddFavoriteMovie);
     });
@@ -97,6 +96,5 @@ describe('Card', () => {
       expect(removeFromFavorites)
         .toHaveBeenCalledWith(mockUser.id, mockAddFavoriteMovie.movie_id);
     });
-    
   });
 });
