@@ -19,7 +19,8 @@ describe('loadAllFavorites', () => {
       status: 500
     }))
 
-    const expected = new Error('Error retrieving your favorites')
+    const expected = {"status": 500};
     expect(loadAllFavorites()).rejects.toEqual(expected)
-  })
+  });
+
 });

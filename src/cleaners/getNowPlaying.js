@@ -8,7 +8,7 @@ export const getNowPlaying = async () => {
     const cleanedMovies = cleanMovies(nowPlayingData)
     return cleanedMovies
   } catch (error) {
-    throw new Error ('Cannot fetch');
+    throw error;
   }
 };
 

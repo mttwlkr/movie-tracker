@@ -5,6 +5,14 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App
+    clearFavoritesLogOut={[Function]}
+    loadMovies={[Function]}
+    location={
+        Object {
+            "pathname": "/",
+          }
+    }
+    logOutUser={[Function]}
     user={
         Object {
             "id": 4,
@@ -26,7 +34,12 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <header>
-          <div>
+          <div
+                    className="nav-menu"
+          >
+                    <h3>
+                              Hey, mud !
+                    </h3>
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
@@ -39,7 +52,7 @@ ShallowWrapper {
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
-                              className="nav"
+                              className="show-favorites"
                               to="/favorites"
                     >
                               Show Favorites
@@ -82,7 +95,12 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <div>
+            <div
+              className="nav-menu"
+>
+              <h3>
+                            Hey, mud !
+              </h3>
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
@@ -95,7 +113,7 @@ ShallowWrapper {
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
-                            className="nav"
+                            className="show-favorites"
                             to="/favorites"
               >
                             Show Favorites
@@ -114,6 +132,9 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
+                <h3>
+                  Hey, mud !
+</h3>,
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
@@ -126,15 +147,27 @@ ShallowWrapper {
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
-                  className="nav"
+                  className="show-favorites"
                   to="/favorites"
 >
                   Show Favorites
 </NavLink>,
               ],
+              "className": "nav-menu",
             },
             "ref": null,
             "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Hey, mud !",
+                },
+                "ref": null,
+                "rendered": "Hey, mud !",
+                "type": "h3",
+              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -159,7 +192,7 @@ ShallowWrapper {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
                   "children": "Show Favorites",
-                  "className": "nav",
+                  "className": "show-favorites",
                   "to": "/favorites",
                 },
                 "ref": null,
@@ -279,7 +312,12 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <header>
-            <div>
+            <div
+                        className="nav-menu"
+            >
+                        <h3>
+                                    Hey, mud !
+                        </h3>
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
@@ -292,7 +330,7 @@ ShallowWrapper {
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
-                                    className="nav"
+                                    className="show-favorites"
                                     to="/favorites"
                         >
                                     Show Favorites
@@ -335,7 +373,12 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <div>
+              <div
+                className="nav-menu"
+>
+                <h3>
+                                Hey, mud !
+                </h3>
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
@@ -348,7 +391,7 @@ ShallowWrapper {
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
-                                className="nav"
+                                className="show-favorites"
                                 to="/favorites"
                 >
                                 Show Favorites
@@ -367,6 +410,9 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
+                  <h3>
+                    Hey, mud !
+</h3>,
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
@@ -379,15 +425,27 @@ ShallowWrapper {
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    className="nav"
+                    className="show-favorites"
                     to="/favorites"
 >
                     Show Favorites
 </NavLink>,
                 ],
+                "className": "nav-menu",
               },
               "ref": null,
               "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Hey, mud !",
+                  },
+                  "ref": null,
+                  "rendered": "Hey, mud !",
+                  "type": "h3",
+                },
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -412,7 +470,7 @@ ShallowWrapper {
                     "activeClassName": "active",
                     "ariaCurrent": "true",
                     "children": "Show Favorites",
-                    "className": "nav",
+                    "className": "show-favorites",
                     "to": "/favorites",
                   },
                   "ref": null,
@@ -816,6 +874,592 @@ ShallowWrapper {
               "ref": null,
               "rendered": "Log In / Sign Up",
               "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Movie Tracker",
+              },
+              "ref": null,
+              "rendered": "Movie Tracker",
+              "type": "h1",
+            },
+          ],
+          "type": "header",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Route
+                exact={true}
+                path="/"
+                render={[Function]}
+/>,
+              <Route
+                component={[Function]}
+                exact={true}
+                path="/login"
+/>,
+              <Route
+                component={[Function]}
+                exact={true}
+                path="/signup"
+/>,
+              <Route
+                exact={true}
+                path="/favorites"
+                render={[Function]}
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "exact": true,
+                "path": "/login",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "exact": true,
+                "path": "/signup",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/favorites",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifecycleMethods": true,
+  },
+}
+`;
+
+exports[`App should render showHome when pathname is favorite 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App
+    clearFavoritesLogOut={[Function]}
+    loadMovies={[Function]}
+    location={
+        Object {
+            "pathname": "/favorites",
+          }
+    }
+    logOutUser={[Function]}
+    user={
+        Object {
+            "id": 4,
+            "name": "mud",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <header>
+          <div
+                    className="nav-menu"
+          >
+                    <h3>
+                              Hey, mud !
+                    </h3>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              className="log-out"
+                              onClick={[Function]}
+                              to="/"
+                    >
+                              Log Out
+                    </NavLink>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/"
+                    >
+                              Home
+                    </NavLink>
+          </div>
+          <h1>
+                    Movie Tracker
+          </h1>
+</header>,
+        <Switch>
+          <Route
+                    exact={true}
+                    path="/"
+                    render={[Function]}
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/login"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/signup"
+          />
+          <Route
+                    exact={true}
+                    path="/favorites"
+                    render={[Function]}
+          />
+</Switch>,
+      ],
+      "className": "App",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="nav-menu"
+>
+              <h3>
+                            Hey, mud !
+              </h3>
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            className="log-out"
+                            onClick={[Function]}
+                            to="/"
+              >
+                            Log Out
+              </NavLink>
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            to="/"
+              >
+                            Home
+              </NavLink>
+</div>,
+            <h1>
+              Movie Tracker
+</h1>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  Hey, mud !
+</h3>,
+                <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  className="log-out"
+                  onClick={[Function]}
+                  to="/"
+>
+                  Log Out
+</NavLink>,
+                <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  to="/"
+>
+                  Home
+</NavLink>,
+              ],
+              "className": "nav-menu",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Hey, mud !",
+                },
+                "ref": null,
+                "rendered": "Hey, mud !",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Log Out",
+                  "className": "log-out",
+                  "onClick": [Function],
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": "Log Out",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Home",
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": "Home",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Movie Tracker",
+            },
+            "ref": null,
+            "rendered": "Movie Tracker",
+            "type": "h1",
+          },
+        ],
+        "type": "header",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Route
+              exact={true}
+              path="/"
+              render={[Function]}
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/login"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/signup"
+/>,
+            <Route
+              exact={true}
+              path="/favorites"
+              render={[Function]}
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/login",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/signup",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/favorites",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <header>
+            <div
+                        className="nav-menu"
+            >
+                        <h3>
+                                    Hey, mud !
+                        </h3>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    className="log-out"
+                                    onClick={[Function]}
+                                    to="/"
+                        >
+                                    Log Out
+                        </NavLink>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    to="/"
+                        >
+                                    Home
+                        </NavLink>
+            </div>
+            <h1>
+                        Movie Tracker
+            </h1>
+</header>,
+          <Switch>
+            <Route
+                        exact={true}
+                        path="/"
+                        render={[Function]}
+            />
+            <Route
+                        component={[Function]}
+                        exact={true}
+                        path="/login"
+            />
+            <Route
+                        component={[Function]}
+                        exact={true}
+                        path="/signup"
+            />
+            <Route
+                        exact={true}
+                        path="/favorites"
+                        render={[Function]}
+            />
+</Switch>,
+        ],
+        "className": "App",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="nav-menu"
+>
+                <h3>
+                                Hey, mud !
+                </h3>
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                className="log-out"
+                                onClick={[Function]}
+                                to="/"
+                >
+                                Log Out
+                </NavLink>
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                to="/"
+                >
+                                Home
+                </NavLink>
+</div>,
+              <h1>
+                Movie Tracker
+</h1>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h3>
+                    Hey, mud !
+</h3>,
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    className="log-out"
+                    onClick={[Function]}
+                    to="/"
+>
+                    Log Out
+</NavLink>,
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/"
+>
+                    Home
+</NavLink>,
+                ],
+                "className": "nav-menu",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Hey, mud !",
+                  },
+                  "ref": null,
+                  "rendered": "Hey, mud !",
+                  "type": "h3",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Log Out",
+                    "className": "log-out",
+                    "onClick": [Function],
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Log Out",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Home",
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Home",
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,

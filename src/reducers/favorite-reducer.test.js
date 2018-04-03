@@ -42,4 +42,8 @@ describe('favoriteReducer', () => {
     expect(favoriteReducer(undefined, action.addAllFavorites(allFavorites))).toEqual(allFavorites);
   });
 
+  it('should clear favorites when user logs out', () => {
+    expect(favoriteReducer(undefined, action.clearFavoritesLogOut())).toEqual([]);
+  });
+
 });
