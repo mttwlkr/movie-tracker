@@ -3,12 +3,14 @@ import './App.css';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Home } from '../../components/Home/Home';
-import { addToFavorites } from '../../cleaners/addToFavorites';
 import Login from '../Login/Login';
-import { loadMovies, logOutUser, addFavorite, clearFavoritesLogOut } from '../../actions';
+import { loadMovies, 
+  logOutUser, 
+  clearFavoritesLogOut 
+} from '../../actions';
 import SignUp from '../../components/SignUp/SignUp.js';
 import { getNowPlaying } from '../../cleaners/getNowPlaying';
-import { loadAllFavorites } from '../../cleaners/loadAllFavorites';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
   
@@ -33,13 +35,15 @@ export class App extends Component {
 
     return (
       <div className='nav-menu'>
-        <h3 className='welcome'>{`Hello ${this.props.user.name}. We are tracking you....`}</h3>
-         <NavLink
-            to='/' 
-            id='login-logout'
-            onClick={this.handleLogOut}>
-            Log Out
-          </NavLink>
+        <h3 className='welcome'>
+          {`Hello ${this.props.user.name}. We are tracking you....`}
+        </h3>
+        <NavLink
+          to='/' 
+          id='login-logout'
+          onClick={this.handleLogOut}>
+          Log Out
+        </NavLink>
         { pathname === '/' ? this.showFavorites() : this.showHome() }
       </div>
     );
@@ -52,13 +56,13 @@ export class App extends Component {
         id='show-favorites'>
         Show Favorites
       </NavLink>  
-    )
+    );
   }
 
   showHome = () => {
     return (
       <NavLink id='home' to='/'>Home</NavLink>
-    )
+    );
   }
 
   handleLogOut = () => {
@@ -72,10 +76,9 @@ export class App extends Component {
     return (
       <div className="App">
         <header>
-        { !user.id ? this.displayLogIn() : this.displayLogOut()}
-        <h1>Movie Tracker</h1>
+          { !user.id ? this.displayLogIn() : this.displayLogOut()}
+          <h1>Movie Tracker</h1>
         </header>
-
         <Switch>
           <Route exact path='/' 
             render={ () => <Home 
@@ -116,3 +119,17 @@ export const mapDispatchToProps = (dispatch) => {
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+
+App.propTypes = {
+  loadMovies: PropTypes.func,
+  location: PropTypes.object,
+  user: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ]),
+  logOutUser: PropTypes.func,
+  clearFavoritesLogOut: PropTypes.func,
+  movies: PropTypes.object,
+  favorites: PropTypes.object
+};
+

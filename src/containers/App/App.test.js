@@ -1,21 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { App } from './App';
-import { mockNowPlaying, 
-  mockUser } from '../../cleaners/mockData';
+import { App, mapStateToProps, mapDispatchToProps } from './App';
+import { mockUser } from '../../cleaners/mockData';
 import { shallow } from 'enzyme';
-import { getNowPlaying } from '../../cleaners/getNowPlaying'
-import { mapStateToProps } from './App.js'
-import { mapDispatchToProps } from './App.js'
+import { getNowPlaying } from '../../cleaners/getNowPlaying';
 
-jest.mock('../../cleaners/getNowPlaying')
+jest.mock('../../cleaners/getNowPlaying');
 
 describe('App', () => {
-  let wrapper
-  let mockLogOutUser = jest.fn()
+  let wrapper;
+  let mockLogOutUser = jest.fn();
   let mockLocation = { pathname: "/" };
   let mockClearFavoritesLogOut = jest.fn();
-  let mockLoadMovies = jest.fn()
+  let mockLoadMovies = jest.fn();
 
   beforeEach(() => {
 
@@ -40,7 +36,7 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should invoke logOutUser and clearFavoritesLogOut when handleLogOut is called', () => {
+  it('handleLogOut should call logOutUser & clearFavoritesLogOut', () => {
     wrapper.instance().handleLogOut();
     expect(mockLogOutUser).toHaveBeenCalled();
     expect(mockClearFavoritesLogOut).toHaveBeenCalled();
@@ -65,7 +61,7 @@ describe('App', () => {
     expect(mappedMovies.movies).toEqual(mockMovies.movies);
 
     const mappedFavorites = mapStateToProps(mockFavorites);
-    expect (mockFavorites.favorites).toEqual(mockFavorites.favorites);
+    expect(mappedFavorites.favorites).toEqual(mockFavorites.favorites);
   });
 
   it('should map dispatch to props', () => {
