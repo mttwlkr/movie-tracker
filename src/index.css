@@ -27,14 +27,9 @@ h1 {
   color: red;
 }
 
-a:link,
-a:hover,
-a:active,
-a:visited {
+a {
   position: relative;
   top: 20px;
-  display: inline-block;
-  transition: color 150ms;
   color: #95a5a6;
   text-decoration: none;
 }
@@ -42,16 +37,33 @@ a:hover {
   color: #7f8c8d;
   text-decoration: underline;
 }
+
+#login-logout {
+  position: absolute;
+  left: 3%
+}
+
+#show-favorites {
+  position: absolute;
+  left: 88%;
+  width: auto;
+}
+
+.welcome {
+  text-align: center;
+  color: #95a5a6;
+}
+
 .App {
   width: 100%;
 }
-.row {
+.card-container {
   overflow: scroll;
   width: 100%;
   position: absolute;
   top: 165px;
 }
-.row__inner {
+.inner-card-container {
   transition: 450ms transform;
   white-space: nowrap;
   margin: 80px 0;
@@ -69,14 +81,15 @@ a:hover {
   transition: 450ms all;
   transform-origin: center left;
   white-space: initial;
+  vertical-align: bottom;
 }
-.card__img {
+.poster-img {
   width: 250px;
   max-height: 300px;
   object-fit: contain;
 }
 
-.card:hover .card__img {
+.card:hover .poster-img {
   opacity: .2;
 }
 
@@ -148,6 +161,10 @@ a:hover {
   opacity: 1;
 }
 
+.card .favorites:hover {
+  opacity: .7
+}
+
 .average-rating {
   position: absolute;
   bottom: 0;
@@ -159,6 +176,7 @@ a:hover {
   padding: 10px 8px;
   font-size: 16px;
   opacity: 0;
+  text-align: center;
 }
 
 .card:hover .average-rating {
@@ -168,13 +186,13 @@ a:hover {
 .card:hover .card-synopsis {
   opacity: 1;
 }
-.row__inner:hover {
+.inner-card-container:hover {
   transform: translate3d(-62.5px, 0, 0);
 }
-.row__inner:hover .card {
+.inner-card-container:hover .card {
   opacity: 0.3;
 }
-.row__inner:hover .card:hover {
+.inner-card-container:hover .card:hover {
   transform: scale(1.5);
   opacity: 1;
 }

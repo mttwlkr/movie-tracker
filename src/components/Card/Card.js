@@ -47,11 +47,10 @@ export class Card extends Component {
 
     return (
       <div className='card'>
-        <img className='card__img'
+        <img className='poster-img'
             src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
             alt='movie poster' />
         <div className='card-details'>
-          
           {
             !this.state.loggedIn &&
               <div>
@@ -61,10 +60,7 @@ export class Card extends Component {
           }
           {
             this.state.loggedIn &&
-            <div>
-              <h2 className='title'></h2>
               <h2 className='card-synopsis error'>Login to your account to add favorites</h2>
-            </div>
           }
           <div className='average-rating'>{vote_average}</div>
           <button 
