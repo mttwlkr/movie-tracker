@@ -34,7 +34,6 @@ a:visited {
   position: relative;
   top: 20px;
   display: inline-block;
-  -webkit-transition: color 150ms;
   transition: color 150ms;
   color: #95a5a6;
   text-decoration: none;
@@ -59,7 +58,7 @@ a:hover {
   padding: 0 0 10px 45px;
 }
 
-.tile {
+.card {
   position: relative;
   display: inline-block;
   width: 250px;
@@ -69,14 +68,15 @@ a:hover {
   cursor: pointer;
   transition: 450ms all;
   transform-origin: center left;
+  white-space: initial;
 }
-.tile__img {
+.card__img {
   width: 250px;
   max-height: 300px;
   object-fit: contain;
 }
 
-.tile:hover .tile__img {
+.card:hover .card__img {
   opacity: .2;
 }
 
@@ -87,37 +87,50 @@ a:hover {
   height: 300px;
 }
 
-.tile:hover .tile__details {
+.card:hover .card__details {
   opacity: 1;
 }
-.tile__title {
+.card-synopsis {
   position: absolute;
-  left: 20px;
+  left: 25px;
   width: 200px;
   height: 200px;
   background: transparent;
   color: white;
   border: none;
   opacity: 0;
-  padding: 5px 20px;
+  padding: 5px 15px;
+  border-top: 1px solid white;
+  font-size: 11px;
+  overflow-y: scroll;
 }
 
-h2 {
+.error {
+  font-size: 24px;
+  margin-top: 0;
+  color: red;
+  border: none;
+  top: 35px;
   text-align: center;
-  font-size: 16px;
+}
+
+.title {
+  text-align: center;
+  font-size: 14px;
   opacity: 0;
   margin: 0;
-  padding-top: 20px;
+  padding: 20px 30px 0 30px;
+  height: auto;
 }
 
-.tile:hover h2 {
+.card:hover .title {
   opacity: 1;
 }
 
-.tile button {
+.card .favorites {
   position: absolute;
-  top: 265px;
-  left: 100px;
+  bottom: 0;
+  right: 50px;
   opacity: 0;
   border: none;
   outline: none;
@@ -125,27 +138,46 @@ h2 {
   background-repeat: no-repeat;
   background-color: transparent;
   background-size: cover;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  text-align: center;
 }
 
-.tile:hover button {
+.card:hover .favorites {
   opacity: 1;
 }
 
-.tile:hover .tile__title {
+.average-rating {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  width: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  left: 50px;
+  padding: 10px 8px;
+  font-size: 16px;
+  opacity: 0;
+}
+
+.card:hover .average-rating {
+  opacity: 1;
+}
+
+.card:hover .card-synopsis {
   opacity: 1;
 }
 .row__inner:hover {
   transform: translate3d(-62.5px, 0, 0);
 }
-.row__inner:hover .tile {
+.row__inner:hover .card {
   opacity: 0.3;
 }
-.row__inner:hover .tile:hover {
+.row__inner:hover .card:hover {
   transform: scale(1.5);
   opacity: 1;
 }
-.tile:hover ~ .tile {
+.card:hover ~ .card {
   transform: translate3d(150px, 0, 0);
 }

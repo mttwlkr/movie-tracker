@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './Card.css';
-import { addToFavorites } from '../../cleaners/addToFavorites.js'
+import { addToFavorites } from '../../cleaners/addToFavorites.js';
 import { removeFromFavorites } from '../../cleaners/removeFromFavorites.js';
 import { addFavorite, removeFavorite } from '../../actions/';
 import { connect } from 'react-redux';
-import './Card.css'
+import './Card.css';
 
 export class Card extends Component {
   constructor(props) {
@@ -15,8 +15,8 @@ export class Card extends Component {
     this.userMovie = {
       ...this.props.movieInfo, 
       user_id: this.props.user.id
-    }
-  }
+    };
+  };
 
   addFavoritesToStore = (userMovie) => {
 
@@ -30,37 +30,46 @@ export class Card extends Component {
       this.props.removeFavorite(this.props.movieInfo.movie_id);
       removeFromFavorites(this.props.user.id, this.props.movieInfo.movie_id);
     }
-  }
+  };
 
-   validateUser = () => {  
+  validateUser = () => {  
     if (!this.props.user.id) {
       this.setState({ loggedIn: !this.state.loggedIn });
     } else {
       this.addFavoritesToStore(this.userMovie);
     }
-  }
+  };
+
+
 
   render () {
-    const { poster_path, title, overview } = this.props.movieInfo
+    const { poster_path, title, overview, vote_average } = this.props.movieInfo;
 
     return (
-      <div className='tile'>
-        <img className='tile__img'
+      <div className='card'>
+        <img className='card__img'
             src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
             alt='movie poster' />
         <div className='card-details'>
-          <h2>{title}</h2>
+          
           {
             !this.state.loggedIn &&
-          <textarea className='tile__title'>{overview}</textarea>
+              <div>
+                <h2 className='title'>{title}</h2>
+                <p className='card-synopsis'>{overview}</p>
+              </div>
           }
           {
             this.state.loggedIn &&
-            <textarea className='tile__title error'>Please login to your account</textarea>
+            <div>
+              <h2 className='title'></h2>
+              <h2 className='card-synopsis error'>Login to your account to add favorites</h2>
+            </div>
           }
+          <div className='average-rating'>{vote_average}</div>
           <button 
             onClick={this.validateUser}
-            className={`${this.props.selected}`}>
+            className={`favorites ${this.props.selected}`}>
           </button>
       </div>
     </div>
