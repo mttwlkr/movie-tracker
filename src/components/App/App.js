@@ -22,7 +22,7 @@ export class App extends Component {
     return (
       <NavLink 
         to='/login'
-        className='nav'> 
+        id='login-logout'> 
         Log In / Sign Up
       </NavLink>
     );
@@ -33,13 +33,13 @@ export class App extends Component {
 
     return (
       <div className='nav-menu'>
-      <h3>{`Hey, ${this.props.user.name} !`}</h3>
-       <NavLink
-          to='/' 
-          className='log-out'
-          onClick={this.handleLogOut}>
-          Log Out
-        </NavLink>
+        <h3 className='welcome'>{`Hello ${this.props.user.name}. We are tracking you....`}</h3>
+         <NavLink
+            to='/' 
+            id='login-logout'
+            onClick={this.handleLogOut}>
+            Log Out
+          </NavLink>
         { pathname === '/' ? this.showFavorites() : this.showHome() }
       </div>
     );
@@ -49,7 +49,7 @@ export class App extends Component {
     return ( 
       <NavLink 
         to='/favorites' 
-        className='show-favorites'>
+        id='show-favorites'>
         Show Favorites
       </NavLink>  
     )
@@ -57,10 +57,9 @@ export class App extends Component {
 
   showHome = () => {
     return (
-      <NavLink to='/'>Home</NavLink>
+      <NavLink id='home' to='/'>Home</NavLink>
     )
   }
-
 
   handleLogOut = () => {
     this.props.logOutUser();

@@ -46,8 +46,9 @@ describe('Card', () => {
   });
 
   it('should not be able to favorite a movie if not logged in', () => {
-    // const mockUser = {};
-    console.log(wrapper.state('loggedIn'));
+    
+    const mockUser = {name: 'jared'};
+    // console.log(wrapper.state('loggedIn'));
 
     wrapper.instance().validateUser();
     expect(wrapper.state('loggedIn')).toEqual(true);

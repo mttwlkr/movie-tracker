@@ -22,8 +22,8 @@ export const Home = ({ movies, favorites }) => {
   });
 
   return (
-    <div className='row'>
-      <div className='row__inner'>
+    <div className='card-container'>
+      <div className='inner-card-container'>
         {displayMovies}
       </div>
     </div>
