@@ -43,7 +43,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div
-        className="row__inner"
+        className="inner-card-container"
 >
         <Connect(Card)
                 movieInfo={
@@ -59,7 +59,7 @@ ShallowWrapper {
                 selected="selected"
         />
 </div>,
-      "className": "row",
+      "className": "card-container",
     },
     "ref": null,
     "rendered": Object {
@@ -82,7 +82,7 @@ ShallowWrapper {
             selected="selected"
 />,
         ],
-        "className": "row__inner",
+        "className": "inner-card-container",
       },
       "ref": null,
       "rendered": Array [
@@ -117,7 +117,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="row__inner"
+          className="inner-card-container"
 >
           <Connect(Card)
                     movieInfo={
@@ -133,7 +133,7 @@ ShallowWrapper {
                     selected="selected"
           />
 </div>,
-        "className": "row",
+        "className": "card-container",
       },
       "ref": null,
       "rendered": Object {
@@ -156,7 +156,7 @@ ShallowWrapper {
               selected="selected"
 />,
           ],
-          "className": "row__inner",
+          "className": "inner-card-container",
         },
         "ref": null,
         "rendered": Array [

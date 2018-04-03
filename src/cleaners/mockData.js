@@ -139,7 +139,7 @@ export const mockMovie = {
   ]
 };
 
-export const mockUser = {
+export let mockUser = {
   name: 'mud',
   id: 4
 }

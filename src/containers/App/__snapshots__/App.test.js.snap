@@ -37,13 +37,15 @@ ShallowWrapper {
           <div
                     className="nav-menu"
           >
-                    <h3>
-                              Hey, mud !
+                    <h3
+                              className="welcome"
+                    >
+                              Hello mud. We are tracking you....
                     </h3>
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
-                              className="log-out"
+                              id="login-logout"
                               onClick={[Function]}
                               to="/"
                     >
@@ -52,7 +54,7 @@ ShallowWrapper {
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
-                              className="show-favorites"
+                              id="show-favorites"
                               to="/favorites"
                     >
                               Show Favorites
@@ -98,13 +100,15 @@ ShallowWrapper {
             <div
               className="nav-menu"
 >
-              <h3>
-                            Hey, mud !
+              <h3
+                            className="welcome"
+              >
+                            Hello mud. We are tracking you....
               </h3>
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
-                            className="log-out"
+                            id="login-logout"
                             onClick={[Function]}
                             to="/"
               >
@@ -113,7 +117,7 @@ ShallowWrapper {
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
-                            className="show-favorites"
+                            id="show-favorites"
                             to="/favorites"
               >
                             Show Favorites
@@ -132,13 +136,15 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <h3>
-                  Hey, mud !
+                <h3
+                  className="welcome"
+>
+                  Hello mud. We are tracking you....
 </h3>,
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
-                  className="log-out"
+                  id="login-logout"
                   onClick={[Function]}
                   to="/"
 >
@@ -147,7 +153,7 @@ ShallowWrapper {
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
-                  className="show-favorites"
+                  id="show-favorites"
                   to="/favorites"
 >
                   Show Favorites
@@ -162,10 +168,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Hey, mud !",
+                  "children": "Hello mud. We are tracking you....",
+                  "className": "welcome",
                 },
                 "ref": null,
-                "rendered": "Hey, mud !",
+                "rendered": "Hello mud. We are tracking you....",
                 "type": "h3",
               },
               Object {
@@ -176,7 +183,7 @@ ShallowWrapper {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
                   "children": "Log Out",
-                  "className": "log-out",
+                  "id": "login-logout",
                   "onClick": [Function],
                   "to": "/",
                 },
@@ -192,7 +199,7 @@ ShallowWrapper {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
                   "children": "Show Favorites",
-                  "className": "show-favorites",
+                  "id": "show-favorites",
                   "to": "/favorites",
                 },
                 "ref": null,
@@ -315,13 +322,15 @@ ShallowWrapper {
             <div
                         className="nav-menu"
             >
-                        <h3>
-                                    Hey, mud !
+                        <h3
+                                    className="welcome"
+                        >
+                                    Hello mud. We are tracking you....
                         </h3>
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
-                                    className="log-out"
+                                    id="login-logout"
                                     onClick={[Function]}
                                     to="/"
                         >
@@ -330,7 +339,7 @@ ShallowWrapper {
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
-                                    className="show-favorites"
+                                    id="show-favorites"
                                     to="/favorites"
                         >
                                     Show Favorites
@@ -376,13 +385,15 @@ ShallowWrapper {
               <div
                 className="nav-menu"
 >
-                <h3>
-                                Hey, mud !
+                <h3
+                                className="welcome"
+                >
+                                Hello mud. We are tracking you....
                 </h3>
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
-                                className="log-out"
+                                id="login-logout"
                                 onClick={[Function]}
                                 to="/"
                 >
@@ -391,7 +402,7 @@ ShallowWrapper {
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
-                                className="show-favorites"
+                                id="show-favorites"
                                 to="/favorites"
                 >
                                 Show Favorites
@@ -410,13 +421,15 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <h3>
-                    Hey, mud !
+                  <h3
+                    className="welcome"
+>
+                    Hello mud. We are tracking you....
 </h3>,
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    className="log-out"
+                    id="login-logout"
                     onClick={[Function]}
                     to="/"
 >
@@ -425,7 +438,7 @@ ShallowWrapper {
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    className="show-favorites"
+                    id="show-favorites"
                     to="/favorites"
 >
                     Show Favorites
@@ -440,10 +453,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Hey, mud !",
+                    "children": "Hello mud. We are tracking you....",
+                    "className": "welcome",
                   },
                   "ref": null,
-                  "rendered": "Hey, mud !",
+                  "rendered": "Hello mud. We are tracking you....",
                   "type": "h3",
                 },
                 Object {
@@ -454,7 +468,7 @@ ShallowWrapper {
                     "activeClassName": "active",
                     "ariaCurrent": "true",
                     "children": "Log Out",
-                    "className": "log-out",
+                    "id": "login-logout",
                     "onClick": [Function],
                     "to": "/",
                   },
@@ -470,7 +484,7 @@ ShallowWrapper {
                     "activeClassName": "active",
                     "ariaCurrent": "true",
                     "children": "Show Favorites",
-                    "className": "show-favorites",
+                    "id": "show-favorites",
                     "to": "/favorites",
                   },
                   "ref": null,
@@ -618,7 +632,7 @@ ShallowWrapper {
           <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    className="nav"
+                    id="login-logout"
                     to="/login"
           >
                     Log In / Sign Up
@@ -663,7 +677,7 @@ ShallowWrapper {
             <NavLink
               activeClassName="active"
               ariaCurrent="true"
-              className="nav"
+              id="login-logout"
               to="/login"
 >
               Log In / Sign Up
@@ -683,7 +697,7 @@ ShallowWrapper {
               "activeClassName": "active",
               "ariaCurrent": "true",
               "children": "Log In / Sign Up",
-              "className": "nav",
+              "id": "login-logout",
               "to": "/login",
             },
             "ref": null,
@@ -803,7 +817,7 @@ ShallowWrapper {
             <NavLink
                         activeClassName="active"
                         ariaCurrent="true"
-                        className="nav"
+                        id="login-logout"
                         to="/login"
             >
                         Log In / Sign Up
@@ -848,7 +862,7 @@ ShallowWrapper {
               <NavLink
                 activeClassName="active"
                 ariaCurrent="true"
-                className="nav"
+                id="login-logout"
                 to="/login"
 >
                 Log In / Sign Up
@@ -868,7 +882,7 @@ ShallowWrapper {
                 "activeClassName": "active",
                 "ariaCurrent": "true",
                 "children": "Log In / Sign Up",
-                "className": "nav",
+                "id": "login-logout",
                 "to": "/login",
               },
               "ref": null,
@@ -1026,13 +1040,15 @@ ShallowWrapper {
           <div
                     className="nav-menu"
           >
-                    <h3>
-                              Hey, mud !
+                    <h3
+                              className="welcome"
+                    >
+                              Hello mud. We are tracking you....
                     </h3>
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
-                              className="log-out"
+                              id="login-logout"
                               onClick={[Function]}
                               to="/"
                     >
@@ -1041,6 +1057,7 @@ ShallowWrapper {
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
+                              id="home"
                               to="/"
                     >
                               Home
@@ -1086,13 +1103,15 @@ ShallowWrapper {
             <div
               className="nav-menu"
 >
-              <h3>
-                            Hey, mud !
+              <h3
+                            className="welcome"
+              >
+                            Hello mud. We are tracking you....
               </h3>
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
-                            className="log-out"
+                            id="login-logout"
                             onClick={[Function]}
                             to="/"
               >
@@ -1101,6 +1120,7 @@ ShallowWrapper {
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
+                            id="home"
                             to="/"
               >
                             Home
@@ -1119,13 +1139,15 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <h3>
-                  Hey, mud !
+                <h3
+                  className="welcome"
+>
+                  Hello mud. We are tracking you....
 </h3>,
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
-                  className="log-out"
+                  id="login-logout"
                   onClick={[Function]}
                   to="/"
 >
@@ -1134,6 +1156,7 @@ ShallowWrapper {
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
+                  id="home"
                   to="/"
 >
                   Home
@@ -1148,10 +1171,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Hey, mud !",
+                  "children": "Hello mud. We are tracking you....",
+                  "className": "welcome",
                 },
                 "ref": null,
-                "rendered": "Hey, mud !",
+                "rendered": "Hello mud. We are tracking you....",
                 "type": "h3",
               },
               Object {
@@ -1162,7 +1186,7 @@ ShallowWrapper {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
                   "children": "Log Out",
-                  "className": "log-out",
+                  "id": "login-logout",
                   "onClick": [Function],
                   "to": "/",
                 },
@@ -1178,6 +1202,7 @@ ShallowWrapper {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
                   "children": "Home",
+                  "id": "home",
                   "to": "/",
                 },
                 "ref": null,
@@ -1300,13 +1325,15 @@ ShallowWrapper {
             <div
                         className="nav-menu"
             >
-                        <h3>
-                                    Hey, mud !
+                        <h3
+                                    className="welcome"
+                        >
+                                    Hello mud. We are tracking you....
                         </h3>
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
-                                    className="log-out"
+                                    id="login-logout"
                                     onClick={[Function]}
                                     to="/"
                         >
@@ -1315,6 +1342,7 @@ ShallowWrapper {
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
+                                    id="home"
                                     to="/"
                         >
                                     Home
@@ -1360,13 +1388,15 @@ ShallowWrapper {
               <div
                 className="nav-menu"
 >
-                <h3>
-                                Hey, mud !
+                <h3
+                                className="welcome"
+                >
+                                Hello mud. We are tracking you....
                 </h3>
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
-                                className="log-out"
+                                id="login-logout"
                                 onClick={[Function]}
                                 to="/"
                 >
@@ -1375,6 +1405,7 @@ ShallowWrapper {
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
+                                id="home"
                                 to="/"
                 >
                                 Home
@@ -1393,13 +1424,15 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <h3>
-                    Hey, mud !
+                  <h3
+                    className="welcome"
+>
+                    Hello mud. We are tracking you....
 </h3>,
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    className="log-out"
+                    id="login-logout"
                     onClick={[Function]}
                     to="/"
 >
@@ -1408,6 +1441,7 @@ ShallowWrapper {
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
+                    id="home"
                     to="/"
 >
                     Home
@@ -1422,10 +1456,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Hey, mud !",
+                    "children": "Hello mud. We are tracking you....",
+                    "className": "welcome",
                   },
                   "ref": null,
-                  "rendered": "Hey, mud !",
+                  "rendered": "Hello mud. We are tracking you....",
                   "type": "h3",
                 },
                 Object {
@@ -1436,7 +1471,7 @@ ShallowWrapper {
                     "activeClassName": "active",
                     "ariaCurrent": "true",
                     "children": "Log Out",
-                    "className": "log-out",
+                    "id": "login-logout",
                     "onClick": [Function],
                     "to": "/",
                   },
@@ -1452,6 +1487,7 @@ ShallowWrapper {
                     "activeClassName": "active",
                     "ariaCurrent": "true",
                     "children": "Home",
+                    "id": "home",
                     "to": "/",
                   },
                   "ref": null,

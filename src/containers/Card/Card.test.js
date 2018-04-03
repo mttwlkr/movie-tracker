@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from './Card';
-import { mockCleanMovie, mockUser, mockAddFavoriteMovie } from '../../cleaners/mockData';
+import { mockCleanMovie, mockAddFavoriteMovie } from '../../cleaners/mockData';
 import { shallow } from 'enzyme';
 import { addToFavorites } from '../../cleaners/addToFavorites';
 import { removeFromFavorites } from '../../cleaners/removeFromFavorites';
@@ -13,8 +13,11 @@ describe('Card', () => {
   const mockAddFavorite = jest.fn();
   const mockRemoveFavorite = jest.fn();
   let mockFavorites = [];
+  let mockUser;
 
   beforeEach(() => {
+    mockUser = { name: 'mud', id: 4 }
+
     wrapper = shallow(<Card 
       movieInfo={mockCleanMovie}
       favorites={mockFavorites}
@@ -47,8 +50,14 @@ describe('Card', () => {
 
   it('should not be able to favorite a movie if not logged in', () => {
     
-    const mockUser = {name: 'jared'};
-    // console.log(wrapper.state('loggedIn'));
+    mockUser = {} ;
+    wrapper = shallow(<Card 
+      movieInfo={mockCleanMovie}
+      favorites={mockFavorites}
+      addFavorite={mockAddFavorite}
+      removeFavorite={mockRemoveFavorite}
+      user={mockUser}
+    />);
 
     wrapper.instance().validateUser();
     expect(wrapper.state('loggedIn')).toEqual(true);

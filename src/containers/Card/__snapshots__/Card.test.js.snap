@@ -42,23 +42,30 @@ ShallowWrapper {
       "children": Array [
         <img
           alt="movie poster"
-          className="tile__img"
+          className="poster-img"
           src="https://image.tmdb.org/t/p/w500/undefined"
 />,
         <div
           className="card-details"
 >
-          <h2 />
-          <textarea
-                    className="tile__title"
+          <div>
+                    <h2
+                              className="title"
+                    />
+                    <p
+                              className="card-synopsis"
+                    />
+          </div>
+          <div
+                    className="average-rating"
           />
           <button
-                    className="undefined"
+                    className="favorites undefined"
                     onClick={[Function]}
           />
 </div>,
       ],
-      "className": "tile",
+      "className": "card",
     },
     "ref": null,
     "rendered": Array [
@@ -68,7 +75,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "alt": "movie poster",
-          "className": "tile__img",
+          "className": "poster-img",
           "src": "https://image.tmdb.org/t/p/w500/undefined",
         },
         "ref": null,
@@ -81,13 +88,20 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <h2 />,
-            <textarea
-              className="tile__title"
-/>,
+            <div>
+              <h2
+                            className="title"
+              />
+              <p
+                            className="card-synopsis"
+              />
+</div>,
             false,
+            <div
+              className="average-rating"
+/>,
             <button
-              className="undefined"
+              className="favorites undefined"
               onClick={[Function]}
 />,
           ],
@@ -100,23 +114,43 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": undefined,
+              "children": Array [
+                <h2
+                  className="title"
+/>,
+                <p
+                  className="card-synopsis"
+/>,
+              ],
             },
             "ref": null,
-            "rendered": null,
-            "type": "h2",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": undefined,
-              "className": "tile__title",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "textarea",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                  "className": "card-synopsis",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "p",
+              },
+            ],
+            "type": "div",
           },
           false,
           Object {
@@ -124,7 +158,19 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "className": "undefined",
+              "children": undefined,
+              "className": "average-rating",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "favorites undefined",
               "onClick": [Function],
             },
             "ref": null,
@@ -146,23 +192,30 @@ ShallowWrapper {
         "children": Array [
           <img
             alt="movie poster"
-            className="tile__img"
+            className="poster-img"
             src="https://image.tmdb.org/t/p/w500/undefined"
 />,
           <div
             className="card-details"
 >
-            <h2 />
-            <textarea
-                        className="tile__title"
+            <div>
+                        <h2
+                                    className="title"
+                        />
+                        <p
+                                    className="card-synopsis"
+                        />
+            </div>
+            <div
+                        className="average-rating"
             />
             <button
-                        className="undefined"
+                        className="favorites undefined"
                         onClick={[Function]}
             />
 </div>,
         ],
-        "className": "tile",
+        "className": "card",
       },
       "ref": null,
       "rendered": Array [
@@ -172,7 +225,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "alt": "movie poster",
-            "className": "tile__img",
+            "className": "poster-img",
             "src": "https://image.tmdb.org/t/p/w500/undefined",
           },
           "ref": null,
@@ -185,13 +238,20 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h2 />,
-              <textarea
-                className="tile__title"
-/>,
+              <div>
+                <h2
+                                className="title"
+                />
+                <p
+                                className="card-synopsis"
+                />
+</div>,
               false,
+              <div
+                className="average-rating"
+/>,
               <button
-                className="undefined"
+                className="favorites undefined"
                 onClick={[Function]}
 />,
             ],
@@ -204,23 +264,43 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": undefined,
+                "children": Array [
+                  <h2
+                    className="title"
+/>,
+                  <p
+                    className="card-synopsis"
+/>,
+                ],
               },
               "ref": null,
-              "rendered": null,
-              "type": "h2",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": undefined,
-                "className": "tile__title",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "textarea",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                    "className": "title",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                    "className": "card-synopsis",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "p",
+                },
+              ],
+              "type": "div",
             },
             false,
             Object {
@@ -228,7 +308,19 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "className": "undefined",
+                "children": undefined,
+                "className": "average-rating",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "favorites undefined",
                 "onClick": [Function],
               },
               "ref": null,
