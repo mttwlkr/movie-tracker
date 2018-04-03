@@ -51,7 +51,7 @@ describe('Card', () => {
   });
 
   it('should not be able to favorite a movie if not logged in', () => {
-    
+
     mockUser = {} ;
     wrapper = shallow(<Card 
       movieInfo={mockCleanMovie}
@@ -60,7 +60,7 @@ describe('Card', () => {
       removeFavorite={mockRemoveFavorite}
       user={mockUser}
     />);
-
+    
     wrapper.instance().validateUser();
     expect(wrapper.state('loggedIn')).toEqual(true);
   });

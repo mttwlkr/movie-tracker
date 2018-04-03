@@ -22,19 +22,19 @@ export class Login extends Component {
     this.logIn(userInfo);
   }
 
-  logIn = async (info) => {
+  logIn = async (userInfo) => {
     try {
       const response = await fetch('/api/users', {
         method: "POST",
-        body: JSON.stringify(info),
+        body: JSON.stringify(userInfo),
         headers: {
           'content-type': 'application/json'
         }
       });
       const logInData = await response.json();
       
-      this.redirectUser(logInData.info.id, logInData.info.name);
-      this.showFavorites(logInData.info.id);
+      this.redirectUser(logInData.data.id, logInData.data.name);
+      this.showFavorites(logInData.data.id);
     } catch (error){
       this.setState({error: true});
     }

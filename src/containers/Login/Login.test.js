@@ -50,7 +50,7 @@ describe('Login', () => {
       password: 'password'
     };
 
-    const mocklogInData = { info : {
+    const mocklogInData = { data : {
       id: 1, 
       name: "Taylor", 
       password: "password", 
