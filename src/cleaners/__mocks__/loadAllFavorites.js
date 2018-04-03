@@ -1,1 +1,1 @@
-export const loadAllFavorites = jest.fn()
+export const loadAllFavorites = jest.fn();

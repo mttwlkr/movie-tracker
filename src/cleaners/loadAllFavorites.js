@@ -7,4 +7,4 @@ export const loadAllFavorites = async (userId) => {
   } catch (error) {
     throw error;
   }
-}
+};
