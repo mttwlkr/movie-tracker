@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Home } from '../Home/Home';
+import { Home } from '../../components/Home/Home';
 import { addToFavorites } from '../../cleaners/addToFavorites';
-import Login from '../../containers/Login/Login';
+import Login from '../Login/Login';
 import { loadMovies, logOutUser, addFavorite, clearFavoritesLogOut } from '../../actions';
-import SignUp from '../SignUp/SignUp.js';
+import SignUp from '../../components/SignUp/SignUp.js';
 import { getNowPlaying } from '../../cleaners/getNowPlaying';
 import { loadAllFavorites } from '../../cleaners/loadAllFavorites';
 
