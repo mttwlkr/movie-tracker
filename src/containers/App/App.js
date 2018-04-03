@@ -22,11 +22,10 @@ export class App extends Component {
 
   displayLogIn = () => {
     return (
-      <NavLink 
-        to='/login'
-        id='login-logout'> 
-        Log In / Sign Up
-      </NavLink>
+      <div id='login-logout'>
+        <NavLink to='/login'>Log In / </NavLink>
+        <NavLink to='/signup'>Sign Up</NavLink>
+      </div>
     );
   };
 

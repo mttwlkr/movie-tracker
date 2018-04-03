@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   width: 100%;
@@ -28,11 +27,10 @@ h1 {
 }
 
 a {
-  position: relative;
-  top: 20px;
   color: #95a5a6;
   text-decoration: none;
 }
+
 a:hover {
   color: #7f8c8d;
   text-decoration: underline;
@@ -40,7 +38,8 @@ a:hover {
 
 #login-logout {
   position: absolute;
-  left: 3%
+  left: 3%;
+  top: 20px;
 }
 
 #show-favorites {
@@ -63,12 +62,14 @@ a:hover {
 .App {
   width: 100%;
 }
+
 .card-container {
   overflow: scroll;
   width: 100%;
   position: absolute;
   top: 165px;
 }
+
 .inner-card-container {
   transition: 450ms transform;
   white-space: nowrap;
@@ -89,6 +90,7 @@ a:hover {
   white-space: initial;
   vertical-align: bottom;
 }
+
 .poster-img {
   width: 250px;
   max-height: 300px;
@@ -109,6 +111,7 @@ a:hover {
 .card:hover .card__details {
   opacity: 1;
 }
+
 .card-synopsis {
   position: absolute;
   left: 25px;
@@ -192,16 +195,20 @@ a:hover {
 .card:hover .card-synopsis {
   opacity: 1;
 }
+
 .inner-card-container:hover {
   transform: translate3d(-62.5px, 0, 0);
 }
+
 .inner-card-container:hover .card {
   opacity: 0.3;
 }
+
 .inner-card-container:hover .card:hover {
   transform: scale(1.5);
   opacity: 1;
 }
+
 .card:hover ~ .card {
   transform: translate3d(150px, 0, 0);
 }
