@@ -1,10 +1,12 @@
 import React from 'react';
-import { Card } from './Card';
-import { mockCleanMovie, mockAddFavoriteMovie } from '../../cleaners/mockData';
+import { Card, mapStateToProps, mapDispatchToProps } from './Card';
+import { mockCleanMovie, 
+  mockAddFavoriteMovie 
+} from '../../cleaners/mockData';
 import { shallow } from 'enzyme';
 import { addToFavorites } from '../../cleaners/addToFavorites';
 import { removeFromFavorites } from '../../cleaners/removeFromFavorites';
-import { mapStateToProps, mapDispatchToProps } from './Card';
+
 jest.mock('../../cleaners/addToFavorites') ;
 jest.mock('../../cleaners/removeFromFavorites');
 
@@ -16,7 +18,7 @@ describe('Card', () => {
   let mockUser;
 
   beforeEach(() => {
-    mockUser = { name: 'mud', id: 4 }
+    mockUser = { name: 'mud', id: 4 };
 
     wrapper = shallow(<Card 
       movieInfo={mockCleanMovie}
@@ -70,28 +72,29 @@ describe('Card', () => {
     expect(spy).toHaveBeenCalledWith(mockAddFavoriteMovie);
   });
 
-    describe('add favorite to store', () => {
+  describe('add favorite to store', () => {
 
-      it('should call addFavorite when the movie is not in favorites', () => {  
-        wrapper.instance().addFavoritesToStore(mockCleanMovie);
-        expect(mockAddFavorite).toHaveBeenCalledWith(mockAddFavoriteMovie);
-        expect(addToFavorites).toHaveBeenCalledWith(mockAddFavoriteMovie);
-      });
-
-      it('should call removeFavorite when the movie is is favorites', () => {
-        mockFavorites = [mockAddFavoriteMovie];
-
-         wrapper = shallow(<Card 
-          movieInfo={mockCleanMovie}
-          favorites={mockFavorites}
-          addFavorite={mockAddFavorite}
-          removeFavorite={mockRemoveFavorite}
-          user={mockUser}/>);
-
-         wrapper.instance().addFavoritesToStore(mockCleanMovie);
-         expect(mockRemoveFavorite).toHaveBeenCalledWith(mockAddFavoriteMovie.movie_id);
-         expect(removeFromFavorites).toHaveBeenCalledWith(mockUser.id, mockAddFavoriteMovie.movie_id);
-      });
-      
+    it('should call addFavorite when the movie is not in favorites', () => {  
+      wrapper.instance().addFavoritesToStore(mockAddFavoriteMovie);
+      expect(mockAddFavorite).toHaveBeenCalledWith(mockAddFavoriteMovie);
+      expect(addToFavorites).toHaveBeenCalledWith(mockAddFavoriteMovie);
     });
+
+    it('should call removeFavorite when the movie is is favorites', () => {
+      mockFavorites = [mockAddFavoriteMovie];
+
+      wrapper = shallow(<Card 
+        movieInfo={mockCleanMovie}
+        favorites={mockFavorites}
+        addFavorite={mockAddFavorite}
+        removeFavorite={mockRemoveFavorite}
+        user={mockUser}/>);
+ 
+      wrapper.instance().addFavoritesToStore(mockCleanMovie);
+      expect(mockRemoveFavorite)
+        .toHaveBeenCalledWith(mockAddFavoriteMovie.movie_id);
+      expect(removeFromFavorites)
+        .toHaveBeenCalledWith(mockUser.id, mockAddFavoriteMovie.movie_id);
+    });
+  });
 });
