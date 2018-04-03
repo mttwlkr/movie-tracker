@@ -5,7 +5,9 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Login
+    addAllFavorites={[Function]}
     handleSubmit={[Function]}
+    history={Array []}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -20,35 +22,31 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <label
-          htmlFor="username"
+        <form
+          onSubmit={[Function]}
 >
-          Username: 
-</label>,
-        <input
-          id="username"
-          onChange={[Function]}
-          placeholder="username"
-          type="text"
-          value=""
-/>,
-        <label
-          htmlFor="password"
->
-          Password: 
-</label>,
-        <input
-          id="password"
-          onChange={[Function]}
-          placeholder="password"
-          type="password"
-          value=""
-/>,
-        <button>
-          submit
-</button>,
+          <input
+                    id="email"
+                    onChange={[Function]}
+                    placeholder="Email"
+                    type="text"
+                    value=""
+          />
+          <input
+                    id="password"
+                    onChange={[Function]}
+                    placeholder="Password"
+                    type="password"
+                    value=""
+          />
+          <button
+                    className="submit"
+          >
+                    Submit
+          </button>
+</form>,
+        false,
       ],
-      "onSubmit": [Function],
     },
     "ref": null,
     "rendered": Array [
@@ -57,68 +55,79 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Username: ",
-          "htmlFor": "username",
+          "children": Array [
+            <input
+              id="email"
+              onChange={[Function]}
+              placeholder="Email"
+              type="text"
+              value=""
+/>,
+            <input
+              id="password"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+/>,
+            <button
+              className="submit"
+>
+              Submit
+</button>,
+          ],
+          "onSubmit": [Function],
         },
         "ref": null,
-        "rendered": "Username: ",
-        "type": "label",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "email",
+              "onChange": [Function],
+              "placeholder": "Email",
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "password",
+              "onChange": [Function],
+              "placeholder": "Password",
+              "type": "password",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Submit",
+              "className": "submit",
+            },
+            "ref": null,
+            "rendered": "Submit",
+            "type": "button",
+          },
+        ],
+        "type": "form",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "id": "username",
-          "onChange": [Function],
-          "placeholder": "username",
-          "type": "text",
-          "value": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Password: ",
-          "htmlFor": "password",
-        },
-        "ref": null,
-        "rendered": "Password: ",
-        "type": "label",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "id": "password",
-          "onChange": [Function],
-          "placeholder": "password",
-          "type": "password",
-          "value": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "submit",
-        },
-        "ref": null,
-        "rendered": "submit",
-        "type": "button",
-      },
+      false,
     ],
-    "type": "form",
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -127,35 +136,31 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <label
-            htmlFor="username"
+          <form
+            onSubmit={[Function]}
 >
-            Username: 
-</label>,
-          <input
-            id="username"
-            onChange={[Function]}
-            placeholder="username"
-            type="text"
-            value=""
-/>,
-          <label
-            htmlFor="password"
->
-            Password: 
-</label>,
-          <input
-            id="password"
-            onChange={[Function]}
-            placeholder="password"
-            type="password"
-            value=""
-/>,
-          <button>
-            submit
-</button>,
+            <input
+                        id="email"
+                        onChange={[Function]}
+                        placeholder="Email"
+                        type="text"
+                        value=""
+            />
+            <input
+                        id="password"
+                        onChange={[Function]}
+                        placeholder="Password"
+                        type="password"
+                        value=""
+            />
+            <button
+                        className="submit"
+            >
+                        Submit
+            </button>
+</form>,
+          false,
         ],
-        "onSubmit": [Function],
       },
       "ref": null,
       "rendered": Array [
@@ -164,68 +169,79 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Username: ",
-            "htmlFor": "username",
+            "children": Array [
+              <input
+                id="email"
+                onChange={[Function]}
+                placeholder="Email"
+                type="text"
+                value=""
+/>,
+              <input
+                id="password"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+/>,
+              <button
+                className="submit"
+>
+                Submit
+</button>,
+            ],
+            "onSubmit": [Function],
           },
           "ref": null,
-          "rendered": "Username: ",
-          "type": "label",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "email",
+                "onChange": [Function],
+                "placeholder": "Email",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "password",
+                "onChange": [Function],
+                "placeholder": "Password",
+                "type": "password",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Submit",
+                "className": "submit",
+              },
+              "ref": null,
+              "rendered": "Submit",
+              "type": "button",
+            },
+          ],
+          "type": "form",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "id": "username",
-            "onChange": [Function],
-            "placeholder": "username",
-            "type": "text",
-            "value": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Password: ",
-            "htmlFor": "password",
-          },
-          "ref": null,
-          "rendered": "Password: ",
-          "type": "label",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "id": "password",
-            "onChange": [Function],
-            "placeholder": "password",
-            "type": "password",
-            "value": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "submit",
-          },
-          "ref": null,
-          "rendered": "submit",
-          "type": "button",
-        },
+        false,
       ],
-      "type": "form",
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

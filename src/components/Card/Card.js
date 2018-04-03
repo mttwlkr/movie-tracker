@@ -9,7 +9,10 @@ import './Card.css'
 export class Card extends Component {
   constructor(props) {
     super(props)
-    this.userMovie = {...this.props.movieInfo, user_id: this.props.user.id}
+    this.userMovie = {...this.props.movieInfo, user_id: this.props.user.id},
+    this.state = {
+      loggedIn: false
+    };
   }
 
   addFavoritesToStore = (userMovie) => {
@@ -26,12 +29,11 @@ export class Card extends Component {
     }
   }
 
-  validateUser = async () => {  
-    if (!this.props.user.id) {
-      alert('Please log in or sign up to add favorites')
-    } else {
-
+   validateUser = () => {  
+    if (this.props.user.id) {
       this.addFavoritesToStore(this.userMovie);
+    } else {
+      this.setState({ loggedIn: !this.state.loggedIn });
     }
   }
 
@@ -45,7 +47,14 @@ export class Card extends Component {
             alt='movie poster' />
         <div className='card-details'>
           <h2>{title}</h2>
+          {
+            !this.state.loggedIn &&
           <textarea className='tile__title'>{overview}</textarea>
+          }
+          {
+            this.state.loggedIn &&
+            <textarea className='tile__title'>Please login to your account</textarea>
+          }
           <button 
             onClick={this.validateUser}
             className={`${this.props.selected}`}>
