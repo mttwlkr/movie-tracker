@@ -27,6 +27,7 @@ h1 {
 }
 
 #home {
+  top: 20px;
   position: absolute;
   left: 92%;
   width: auto;
