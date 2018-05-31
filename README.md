@@ -21,14 +21,14 @@
 
 ## Tests
 
-#### This project was developed using using Jest and Enzyme testing utilities. To run the test suites for this project:
+#### This project was  developed using using Jest and Enzyme testing utilities. To run the test suites for this project:
 
 #### ```npm test```
 
 ## Contributors
-Jared Eklin || https://github.com/jaredeklin
-Matt Walker || https://github.com/mttwlkr
-Om Saetehn || https://github.com/chunktooth
+##### Jared Eklin || https://github.com/jaredeklin
+##### Matt Walker || https://github.com/mttwlkr
+##### Om Saetehn || https://github.com/chunktooth
 
 ## Project Layout
 
