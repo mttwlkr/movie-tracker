@@ -9,7 +9,7 @@
 * Redux
 * Router
 * Authenticate and persist users via a PostgresQL DB
-* Test Coverage of <80% using Mocha/Chain
+* Test Coverage of <80% using Mocha/Chai
 
 ## Installation
 
