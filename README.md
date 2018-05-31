@@ -5,6 +5,12 @@
 
 ## Project Guidelines
 
+* React
+* Redux
+* Router
+* Authenticate and persist users via a PostgresQL DB
+* Test Coverage of <80% using Mocha/Chain
+
 ## Installation
 
 #### This project was bootstrapped with create-react-app
