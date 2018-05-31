@@ -1,7 +1,7 @@
 # Movie Tracker
 
 ## Synopsis
-#### Movie Tracker is the final group project for module 3 at Turing. This project reinforced our abilities to create modular React components and test React using Jest and Enzyme. Movie Tracker also introduced us to Redux and Router. We hit the MovieDB API to get release dates, synopses and information about about current movies.
+#### Movie Tracker is a group project done in module 3 at Turing School of Software and Design. This project reinforced our abilities to create modular React components and test React using Jest and Enzyme. Movie Tracker also introduced us to Redux and Router. We used the MovieDB API to get release dates, synopses and information about about current movies.
 
 ## Project Guidelines
 
@@ -26,9 +26,9 @@
 #### ```npm test```
 
 ## Contributors
-[Jared Eklin](https://github.com/jaredeklin)
-[Matt Walker](https://github.com/mttwlkr)
-[Om Saetehn](https://github.com/chunktooth)
+Jared Eklin || https://github.com/jaredeklin
+Matt Walker || https://github.com/mttwlkr
+Om Saetehn || https://github.com/chunktooth
 
 ## Project Layout
 
