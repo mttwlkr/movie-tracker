@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { Redirect, NavLink } from 'react-router-dom';
 import './SignUp.css';
 
+const url = process.env.REACT_APP_DATABASE_URL;
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -13,10 +15,10 @@ class SignUp extends Component {
       signUpError: false
     };
   }
-
+ 
   handleFetch = async (state) => {
     try {
-      const response = await fetch('/api/users/new', {
+      const response = await fetch(`${url}/api/v1/users`, {
         method: "POST",
         body: JSON.stringify(state),
         headers: {
