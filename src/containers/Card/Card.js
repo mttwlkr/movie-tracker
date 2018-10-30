@@ -18,17 +18,17 @@ export class Card extends Component {
     };
   }
 
-  addFavoritesToStore = (userMovie) => {
-
+  addFavoritesToStore = async (userMovie) => {
+    const { movieInfo, user, addFavorite, removeFavorite } = this.props;
     const isInFavorites = this.props.favorites
-      .filter(favorite => favorite.movie_id === this.props.movieInfo.movie_id);
+      .filter(favorite => favorite.movie_id === movieInfo.movie_id);
 
     if (!isInFavorites.length) {
-      addToFavorites(userMovie);
-      this.props.addFavorite(userMovie);
+      await addToFavorites(userMovie);
+      addFavorite(userMovie);
     } else {
-      this.props.removeFavorite(this.props.movieInfo.movie_id);
-      removeFromFavorites(this.props.user.id, this.props.movieInfo.movie_id);
+      removeFavorite(movieInfo.movie_id);
+      removeFromFavorites(user.id, movieInfo.movie_id);
     }
   };
 
