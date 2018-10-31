@@ -629,14 +629,24 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <header>
-          <NavLink
-                    activeClassName="active"
-                    ariaCurrent="true"
+          <div
                     id="login-logout"
-                    to="/login"
           >
-                    Log In / Sign Up
-          </NavLink>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/login"
+                    >
+                              Log In / 
+                    </NavLink>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/signup"
+                    >
+                              Sign Up
+                    </NavLink>
+          </div>
           <h1>
                     Movie Tracker
           </h1>
@@ -674,14 +684,24 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <NavLink
-              activeClassName="active"
-              ariaCurrent="true"
+            <div
               id="login-logout"
-              to="/login"
 >
-              Log In / Sign Up
-</NavLink>,
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            to="/login"
+              >
+                            Log In / 
+              </NavLink>
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            to="/signup"
+              >
+                            Sign Up
+              </NavLink>
+</div>,
             <h1>
               Movie Tracker
 </h1>,
@@ -692,17 +712,58 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "host",
             "props": Object {
-              "activeClassName": "active",
-              "ariaCurrent": "true",
-              "children": "Log In / Sign Up",
+              "children": Array [
+                <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  to="/login"
+>
+                  Log In / 
+</NavLink>,
+                <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  to="/signup"
+>
+                  Sign Up
+</NavLink>,
+              ],
               "id": "login-logout",
-              "to": "/login",
             },
             "ref": null,
-            "rendered": "Log In / Sign Up",
-            "type": [Function],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Log In / ",
+                  "to": "/login",
+                },
+                "ref": null,
+                "rendered": "Log In / ",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Sign Up",
+                  "to": "/signup",
+                },
+                "ref": null,
+                "rendered": "Sign Up",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
           },
           Object {
             "instance": null,
@@ -814,14 +875,24 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <header>
-            <NavLink
-                        activeClassName="active"
-                        ariaCurrent="true"
+            <div
                         id="login-logout"
-                        to="/login"
             >
-                        Log In / Sign Up
-            </NavLink>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    to="/login"
+                        >
+                                    Log In / 
+                        </NavLink>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    to="/signup"
+                        >
+                                    Sign Up
+                        </NavLink>
+            </div>
             <h1>
                         Movie Tracker
             </h1>
@@ -859,14 +930,24 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <NavLink
-                activeClassName="active"
-                ariaCurrent="true"
+              <div
                 id="login-logout"
-                to="/login"
 >
-                Log In / Sign Up
-</NavLink>,
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                to="/login"
+                >
+                                Log In / 
+                </NavLink>
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                to="/signup"
+                >
+                                Sign Up
+                </NavLink>
+</div>,
               <h1>
                 Movie Tracker
 </h1>,
@@ -877,17 +958,58 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "host",
               "props": Object {
-                "activeClassName": "active",
-                "ariaCurrent": "true",
-                "children": "Log In / Sign Up",
+                "children": Array [
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/login"
+>
+                    Log In / 
+</NavLink>,
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/signup"
+>
+                    Sign Up
+</NavLink>,
+                ],
                 "id": "login-logout",
-                "to": "/login",
               },
               "ref": null,
-              "rendered": "Log In / Sign Up",
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Log In / ",
+                    "to": "/login",
+                  },
+                  "ref": null,
+                  "rendered": "Log In / ",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Sign Up",
+                    "to": "/signup",
+                  },
+                  "ref": null,
+                  "rendered": "Sign Up",
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,

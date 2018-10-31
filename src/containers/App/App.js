@@ -128,7 +128,13 @@ App.propTypes = {
   ]),
   logOutUser: PropTypes.func,
   clearFavoritesLogOut: PropTypes.func,
-  movies: PropTypes.object,
-  favorites: PropTypes.object
+  movies: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ]),
+  favorites: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ])
 };
 
