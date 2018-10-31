@@ -99,7 +99,7 @@ export class App extends Component {
           />
           <Route 
             exact path='/favorites'
-            render={() => <Home movies={movies} favorites={favorites} />}
+            render={() => <Home movies={favorites} favorites={favorites} />}
           />
         </Switch>
       </div>
