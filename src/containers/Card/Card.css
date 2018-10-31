@@ -1,13 +1,11 @@
 .card-container {
   overflow: scroll;
   width: 100%;
-  position: absolute;
-  top: 165px;
+  position: relative;
 }
 
 .inner-card-container {
   transition: 450ms transform;
-  /*transition: 600ms transform;*/
   white-space: nowrap;
   margin: 80px 0;
   padding: 0 0 10px 45px;
@@ -22,7 +20,6 @@
   font-size: 20px;
   cursor: pointer;
   transition: 450ms all;
-  /*transition: 600ms all;*/
   transform-origin: center left;
   white-space: initial;
   vertical-align: bottom;
@@ -136,10 +133,6 @@
 .inner-card-container:hover {
   transform: translate3d(-62.5px, 0, 0);
 }
-
-/*.inner-card-container:hover .card {
-  opacity: 0.8;
-}*/
 
 .inner-card-container:hover .card:hover {
   transform: scale(1.5);

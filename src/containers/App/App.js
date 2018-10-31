@@ -34,16 +34,20 @@ export class App extends Component {
 
     return (
       <div className='nav-menu'>
+        <div>
+          <NavLink
+            to='/' 
+            id='login-logout'
+            onClick={this.handleLogOut}>
+            Log Out
+          </NavLink>
+        </div>
         <h3 className='welcome'>
           {`Hello ${this.props.user.name}. We are tracking you....`}
         </h3>
-        <NavLink
-          to='/' 
-          id='login-logout'
-          onClick={this.handleLogOut}>
-          Log Out
-        </NavLink>
-        { pathname === '/' ? this.showFavorites() : this.showHome() }
+        <div className="display-right-corner">
+          {pathname === '/' ? this.showFavorites() : this.showHome()}
+        </div>      
       </div>
     );
   };
