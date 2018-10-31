@@ -1,4 +1,4 @@
-const apiKey = process.env.REACT_APP_MOVIE_DB_KEY;
+import { apiKey } from './apiKeys';
 
 export const getNowPlaying = async () => {
   const rootUrl = 'https://api.themoviedb.org/3/movie/now_playing?page=1';

@@ -1,16 +1,14 @@
 import { removeFromFavorites } from './removeFromFavorites';
 
-const url = process.env.REACT_APP_DATABASE_URL;
-
 describe('removeFromFavorites', () => {
 
   it('should remove from favorites', async () => {
     const mockUserId = 4;
     const mockMovieId = 123456;
-    const mockMovieInfo = JSON.stringify({
+    const mockMovieInfo = {
       user_id: 4,
       movie_id: 123456
-    });
+    };
 
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.resolve({ 
@@ -19,8 +17,9 @@ describe('removeFromFavorites', () => {
       })
     );
 
-    const expected = [`${url}/api/v1/favorites/${mockMovieInfo}`, {
+    const expected = ["/api/users/4/favorites/123456/", {
       method: "DELETE",
+      body: JSON.stringify(mockMovieInfo),
       headers: {
         "content-type": "application/json"
       }

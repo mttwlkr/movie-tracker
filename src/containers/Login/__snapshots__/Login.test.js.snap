@@ -7,11 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Login
     addAllFavorites={[Function]}
     handleSubmit={[Function]}
-    history={
-        Object {
-            "push": [Function],
-          }
-    }
+    history={Array []}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
