@@ -1,14 +1,9 @@
 /* eslint-disable */
 
 export const mocklogInData = { 
-  data : {
-    id: 1, 
-    name: "Taylor", 
-    password: "password", 
-    email: "tman2272@aol.com" 
-  },
-  message: "Retrieved ONE User",
-  status: "success" 
+  id: 1,
+  name: "Taylor",
+  message: "Retrieved ONE User" 
 };
 
 export const mockNowPlaying = {
