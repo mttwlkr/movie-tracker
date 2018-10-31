@@ -74,8 +74,9 @@ describe('Card', () => {
 
   describe('add favorite to store', () => {
 
-    it('should call addFavorite when the movie is not in favorites', () => {  
-      wrapper.instance().addFavoritesToStore(mockAddFavoriteMovie);
+    it('should call addFavorite when the movie is not in favorites', async () => {  
+      await wrapper.instance().addFavoritesToStore(mockAddFavoriteMovie);
+
       expect(mockAddFavorite).toHaveBeenCalledWith(mockAddFavoriteMovie);
       expect(addToFavorites).toHaveBeenCalledWith(mockAddFavoriteMovie);
     });
