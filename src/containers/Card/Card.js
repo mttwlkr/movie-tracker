@@ -33,7 +33,7 @@ export class Card extends Component {
     
     if (!user.id) {
       this.setState({ showSynopsis: false });
-      setTimeout(() => this.setState({ showSynopsis: true }), 3000);
+      setTimeout(() => this.setState({ showSynopsis: true }), 2000);
     } else {     
       const userMovie = { ...movieInfo, user_id: user.id };
       this.addFavoritesToStore(userMovie);

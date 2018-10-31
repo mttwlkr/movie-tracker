@@ -83,7 +83,7 @@ describe('Card', () => {
       wrapper.instance().validateUser();
   
       expect(setTimeout).toHaveBeenCalledTimes(1);
-      expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
+      expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 2000);
       expect(wrapper.instance().addFavoritesToStore).not.toHaveBeenCalled();
     });
   
