@@ -10,11 +10,7 @@ export class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false
-    };
-    this.userMovie = {
-      ...this.props.movieInfo, 
-      user_id: this.props.user.id
+      showSynopsis: true
     };
   }
 
@@ -33,10 +29,14 @@ export class Card extends Component {
   };
 
   validateUser = () => { 
-    if (!this.props.user.id) {
-      this.setState({ loggedIn: !this.state.loggedIn });
-    } else {
-      this.addFavoritesToStore(this.userMovie);
+    const { user, movieInfo } = this.props;
+    
+    if (!user.id) {
+      this.setState({ showSynopsis: false });
+      setTimeout(() => this.setState({ showSynopsis: true }), 3000);
+    } else {     
+      const userMovie = { ...movieInfo, user_id: user.id };
+      this.addFavoritesToStore(userMovie);
     }
   };
 
@@ -50,14 +50,14 @@ export class Card extends Component {
           alt='movie poster' />
         <div className='card-details'>
           {
-            !this.state.loggedIn &&
+            this.state.showSynopsis &&
               <div>
                 <h2 className='title'>{title}</h2>
                 <p className='card-synopsis'>{overview}</p>
               </div>
           }
           {
-            this.state.loggedIn &&
+            !this.state.showSynopsis &&
               <h2 className='card-synopsis error'>
                 Login to your account to add favorites
               </h2>

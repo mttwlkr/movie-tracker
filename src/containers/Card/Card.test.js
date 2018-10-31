@@ -50,29 +50,53 @@ describe('Card', () => {
     expect(mockDispatch).toHaveBeenCalled();
   });
 
-  it('should not be able to favorite a movie if not logged in', () => {
-
-    mockUser = {} ;
-    wrapper = shallow(<Card 
-      movieInfo={mockCleanMovie}
-      favorites={mockFavorites}
-      addFavorite={mockAddFavorite}
-      removeFavorite={mockRemoveFavorite}
-      user={mockUser}
-    />);
-    
-    wrapper.instance().validateUser();
-    expect(wrapper.state('loggedIn')).toEqual(true);
+  describe('validateUser', () => {
+    it('should not be able to favorite a movie if not logged in', () => {
+  
+      mockUser = {} ;
+      wrapper = shallow(<Card 
+        movieInfo={mockCleanMovie}
+        favorites={mockFavorites}
+        addFavorite={mockAddFavorite}
+        removeFavorite={mockRemoveFavorite}
+        user={mockUser}
+      />);
+  
+      wrapper.instance().addFavoritesToStore = jest.fn();
+      wrapper.instance().validateUser();
+      expect(wrapper.state('showSynopsis')).toEqual(false);
+      expect(wrapper.instance().addFavoritesToStore).not.toHaveBeenCalled();
+    });
+  
+    it('should wait 3 seconds before showing the synopsis', () => {
+      jest.useFakeTimers();
+      mockUser = {};
+      wrapper = shallow(<Card
+        movieInfo={mockCleanMovie}
+        favorites={mockFavorites}
+        addFavorite={mockAddFavorite}
+        removeFavorite={mockRemoveFavorite}
+        user={mockUser}
+      />);
+  
+      wrapper.instance().addFavoritesToStore = jest.fn();
+      wrapper.instance().validateUser();
+  
+      expect(setTimeout).toHaveBeenCalledTimes(1);
+      expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
+      expect(wrapper.instance().addFavoritesToStore).not.toHaveBeenCalled();
+    });
+  
+    it('should call addFavoritesToStore when logged in', () => {
+      wrapper.instance().addFavoritesToStore = jest.fn();
+      const spy = jest.spyOn(wrapper.instance(), 'addFavoritesToStore');
+      wrapper.instance().validateUser();
+      expect(spy).toHaveBeenCalledWith(mockAddFavoriteMovie);
+    });
   });
 
-  it('should call addFavoritesToStore when logged in', () => {
-    wrapper.instance().addFavoritesToStore = jest.fn();
-    const spy = jest.spyOn(wrapper.instance(), 'addFavoritesToStore');
-    wrapper.instance().validateUser();
-    expect(spy).toHaveBeenCalledWith(mockAddFavoriteMovie);
-  });
 
-  describe('add favorite to store', () => {
+  describe('addFavoritesToStore', () => {
 
     it('should call addFavorite when the movie is not in favorites', async () => {  
       await wrapper.instance().addFavoritesToStore(mockAddFavoriteMovie);
