@@ -4,12 +4,12 @@ export const loadAllFavorites = async (userId) => {
 
   try {
     const response = await fetch(`${url}/api/v1/users/${userId}/favorites`);
-    if (response.status === 404) {
+
+    if (response.status === 404) {      
       return {};
     }
-    const favoriteData = await response.json();
     
-    return favoriteData;
+    return await response.json();
   } catch (error) {
     throw error;
   }
