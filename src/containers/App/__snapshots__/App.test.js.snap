@@ -37,28 +37,36 @@ ShallowWrapper {
           <div
                     className="nav-menu"
           >
-                    <h3
-                              className="welcome"
+                    <div>
+                              <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        id="login-logout"
+                                        onClick={[Function]}
+                                        to="/"
+                              >
+                                        Log Out
+                              </NavLink>
+                    </div>
+                    <div>
+                              <h3
+                                        className="welcome"
+                              >
+                                        Hello mud. We are tracking you....
+                              </h3>
+                    </div>
+                    <div
+                              className="display-right-corner"
                     >
-                              Hello mud. We are tracking you....
-                    </h3>
-                    <NavLink
-                              activeClassName="active"
-                              ariaCurrent="true"
-                              id="login-logout"
-                              onClick={[Function]}
-                              to="/"
-                    >
-                              Log Out
-                    </NavLink>
-                    <NavLink
-                              activeClassName="active"
-                              ariaCurrent="true"
-                              id="show-favorites"
-                              to="/favorites"
-                    >
-                              Show Favorites
-                    </NavLink>
+                              <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        id="show-favorites"
+                                        to="/favorites"
+                              >
+                                        Show Favorites
+                              </NavLink>
+                    </div>
           </div>
           <h1>
                     Movie Tracker
@@ -100,28 +108,36 @@ ShallowWrapper {
             <div
               className="nav-menu"
 >
-              <h3
-                            className="welcome"
+              <div>
+                            <NavLink
+                                          activeClassName="active"
+                                          ariaCurrent="true"
+                                          id="login-logout"
+                                          onClick={[Function]}
+                                          to="/"
+                            >
+                                          Log Out
+                            </NavLink>
+              </div>
+              <div>
+                            <h3
+                                          className="welcome"
+                            >
+                                          Hello mud. We are tracking you....
+                            </h3>
+              </div>
+              <div
+                            className="display-right-corner"
               >
-                            Hello mud. We are tracking you....
-              </h3>
-              <NavLink
-                            activeClassName="active"
-                            ariaCurrent="true"
-                            id="login-logout"
-                            onClick={[Function]}
-                            to="/"
-              >
-                            Log Out
-              </NavLink>
-              <NavLink
-                            activeClassName="active"
-                            ariaCurrent="true"
-                            id="show-favorites"
-                            to="/favorites"
-              >
-                            Show Favorites
-              </NavLink>
+                            <NavLink
+                                          activeClassName="active"
+                                          ariaCurrent="true"
+                                          id="show-favorites"
+                                          to="/favorites"
+                            >
+                                          Show Favorites
+                            </NavLink>
+              </div>
 </div>,
             <h1>
               Movie Tracker
@@ -136,28 +152,36 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <h3
-                  className="welcome"
+                <div>
+                  <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    id="login-logout"
+                                    onClick={[Function]}
+                                    to="/"
+                  >
+                                    Log Out
+                  </NavLink>
+</div>,
+                <div>
+                  <h3
+                                    className="welcome"
+                  >
+                                    Hello mud. We are tracking you....
+                  </h3>
+</div>,
+                <div
+                  className="display-right-corner"
 >
-                  Hello mud. We are tracking you....
-</h3>,
-                <NavLink
-                  activeClassName="active"
-                  ariaCurrent="true"
-                  id="login-logout"
-                  onClick={[Function]}
-                  to="/"
->
-                  Log Out
-</NavLink>,
-                <NavLink
-                  activeClassName="active"
-                  ariaCurrent="true"
-                  id="show-favorites"
-                  to="/favorites"
->
-                  Show Favorites
-</NavLink>,
+                  <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    id="show-favorites"
+                                    to="/favorites"
+                  >
+                                    Show Favorites
+                  </NavLink>
+</div>,
               ],
               "className": "nav-menu",
             },
@@ -168,43 +192,93 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Hello mud. We are tracking you....",
-                  "className": "welcome",
+                  "children": <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    id="login-logout"
+                    onClick={[Function]}
+                    to="/"
+>
+                    Log Out
+</NavLink>,
                 },
                 "ref": null,
-                "rendered": "Hello mud. We are tracking you....",
-                "type": "h3",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Log Out",
+                    "id": "login-logout",
+                    "onClick": [Function],
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Log Out",
+                  "type": [Function],
+                },
+                "type": "div",
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "host",
                 "props": Object {
-                  "activeClassName": "active",
-                  "ariaCurrent": "true",
-                  "children": "Log Out",
-                  "id": "login-logout",
-                  "onClick": [Function],
-                  "to": "/",
+                  "children": <h3
+                    className="welcome"
+>
+                    Hello mud. We are tracking you....
+</h3>,
                 },
                 "ref": null,
-                "rendered": "Log Out",
-                "type": [Function],
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Hello mud. We are tracking you....",
+                    "className": "welcome",
+                  },
+                  "ref": null,
+                  "rendered": "Hello mud. We are tracking you....",
+                  "type": "h3",
+                },
+                "type": "div",
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "host",
                 "props": Object {
-                  "activeClassName": "active",
-                  "ariaCurrent": "true",
-                  "children": "Show Favorites",
-                  "id": "show-favorites",
-                  "to": "/favorites",
+                  "children": <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    id="show-favorites"
+                    to="/favorites"
+>
+                    Show Favorites
+</NavLink>,
+                  "className": "display-right-corner",
                 },
                 "ref": null,
-                "rendered": "Show Favorites",
-                "type": [Function],
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Show Favorites",
+                    "id": "show-favorites",
+                    "to": "/favorites",
+                  },
+                  "ref": null,
+                  "rendered": "Show Favorites",
+                  "type": [Function],
+                },
+                "type": "div",
               },
             ],
             "type": "div",
@@ -322,28 +396,36 @@ ShallowWrapper {
             <div
                         className="nav-menu"
             >
-                        <h3
-                                    className="welcome"
+                        <div>
+                                    <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                id="login-logout"
+                                                onClick={[Function]}
+                                                to="/"
+                                    >
+                                                Log Out
+                                    </NavLink>
+                        </div>
+                        <div>
+                                    <h3
+                                                className="welcome"
+                                    >
+                                                Hello mud. We are tracking you....
+                                    </h3>
+                        </div>
+                        <div
+                                    className="display-right-corner"
                         >
-                                    Hello mud. We are tracking you....
-                        </h3>
-                        <NavLink
-                                    activeClassName="active"
-                                    ariaCurrent="true"
-                                    id="login-logout"
-                                    onClick={[Function]}
-                                    to="/"
-                        >
-                                    Log Out
-                        </NavLink>
-                        <NavLink
-                                    activeClassName="active"
-                                    ariaCurrent="true"
-                                    id="show-favorites"
-                                    to="/favorites"
-                        >
-                                    Show Favorites
-                        </NavLink>
+                                    <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                id="show-favorites"
+                                                to="/favorites"
+                                    >
+                                                Show Favorites
+                                    </NavLink>
+                        </div>
             </div>
             <h1>
                         Movie Tracker
@@ -385,28 +467,36 @@ ShallowWrapper {
               <div
                 className="nav-menu"
 >
-                <h3
-                                className="welcome"
+                <div>
+                                <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                id="login-logout"
+                                                onClick={[Function]}
+                                                to="/"
+                                >
+                                                Log Out
+                                </NavLink>
+                </div>
+                <div>
+                                <h3
+                                                className="welcome"
+                                >
+                                                Hello mud. We are tracking you....
+                                </h3>
+                </div>
+                <div
+                                className="display-right-corner"
                 >
-                                Hello mud. We are tracking you....
-                </h3>
-                <NavLink
-                                activeClassName="active"
-                                ariaCurrent="true"
-                                id="login-logout"
-                                onClick={[Function]}
-                                to="/"
-                >
-                                Log Out
-                </NavLink>
-                <NavLink
-                                activeClassName="active"
-                                ariaCurrent="true"
-                                id="show-favorites"
-                                to="/favorites"
-                >
-                                Show Favorites
-                </NavLink>
+                                <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                id="show-favorites"
+                                                to="/favorites"
+                                >
+                                                Show Favorites
+                                </NavLink>
+                </div>
 </div>,
               <h1>
                 Movie Tracker
@@ -421,28 +511,36 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <h3
-                    className="welcome"
+                  <div>
+                    <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        id="login-logout"
+                                        onClick={[Function]}
+                                        to="/"
+                    >
+                                        Log Out
+                    </NavLink>
+</div>,
+                  <div>
+                    <h3
+                                        className="welcome"
+                    >
+                                        Hello mud. We are tracking you....
+                    </h3>
+</div>,
+                  <div
+                    className="display-right-corner"
 >
-                    Hello mud. We are tracking you....
-</h3>,
-                  <NavLink
-                    activeClassName="active"
-                    ariaCurrent="true"
-                    id="login-logout"
-                    onClick={[Function]}
-                    to="/"
->
-                    Log Out
-</NavLink>,
-                  <NavLink
-                    activeClassName="active"
-                    ariaCurrent="true"
-                    id="show-favorites"
-                    to="/favorites"
->
-                    Show Favorites
-</NavLink>,
+                    <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        id="show-favorites"
+                                        to="/favorites"
+                    >
+                                        Show Favorites
+                    </NavLink>
+</div>,
                 ],
                 "className": "nav-menu",
               },
@@ -453,43 +551,93 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Hello mud. We are tracking you....",
-                    "className": "welcome",
+                    "children": <NavLink
+                      activeClassName="active"
+                      ariaCurrent="true"
+                      id="login-logout"
+                      onClick={[Function]}
+                      to="/"
+>
+                      Log Out
+</NavLink>,
                   },
                   "ref": null,
-                  "rendered": "Hello mud. We are tracking you....",
-                  "type": "h3",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "activeClassName": "active",
+                      "ariaCurrent": "true",
+                      "children": "Log Out",
+                      "id": "login-logout",
+                      "onClick": [Function],
+                      "to": "/",
+                    },
+                    "ref": null,
+                    "rendered": "Log Out",
+                    "type": [Function],
+                  },
+                  "type": "div",
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "function",
+                  "nodeType": "host",
                   "props": Object {
-                    "activeClassName": "active",
-                    "ariaCurrent": "true",
-                    "children": "Log Out",
-                    "id": "login-logout",
-                    "onClick": [Function],
-                    "to": "/",
+                    "children": <h3
+                      className="welcome"
+>
+                      Hello mud. We are tracking you....
+</h3>,
                   },
                   "ref": null,
-                  "rendered": "Log Out",
-                  "type": [Function],
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Hello mud. We are tracking you....",
+                      "className": "welcome",
+                    },
+                    "ref": null,
+                    "rendered": "Hello mud. We are tracking you....",
+                    "type": "h3",
+                  },
+                  "type": "div",
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "function",
+                  "nodeType": "host",
                   "props": Object {
-                    "activeClassName": "active",
-                    "ariaCurrent": "true",
-                    "children": "Show Favorites",
-                    "id": "show-favorites",
-                    "to": "/favorites",
+                    "children": <NavLink
+                      activeClassName="active"
+                      ariaCurrent="true"
+                      id="show-favorites"
+                      to="/favorites"
+>
+                      Show Favorites
+</NavLink>,
+                    "className": "display-right-corner",
                   },
                   "ref": null,
-                  "rendered": "Show Favorites",
-                  "type": [Function],
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "activeClassName": "active",
+                      "ariaCurrent": "true",
+                      "children": "Show Favorites",
+                      "id": "show-favorites",
+                      "to": "/favorites",
+                    },
+                    "ref": null,
+                    "rendered": "Show Favorites",
+                    "type": [Function],
+                  },
+                  "type": "div",
                 },
               ],
               "type": "div",
@@ -1162,28 +1310,36 @@ ShallowWrapper {
           <div
                     className="nav-menu"
           >
-                    <h3
-                              className="welcome"
+                    <div>
+                              <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        id="login-logout"
+                                        onClick={[Function]}
+                                        to="/"
+                              >
+                                        Log Out
+                              </NavLink>
+                    </div>
+                    <div>
+                              <h3
+                                        className="welcome"
+                              >
+                                        Hello mud. We are tracking you....
+                              </h3>
+                    </div>
+                    <div
+                              className="display-right-corner"
                     >
-                              Hello mud. We are tracking you....
-                    </h3>
-                    <NavLink
-                              activeClassName="active"
-                              ariaCurrent="true"
-                              id="login-logout"
-                              onClick={[Function]}
-                              to="/"
-                    >
-                              Log Out
-                    </NavLink>
-                    <NavLink
-                              activeClassName="active"
-                              ariaCurrent="true"
-                              id="home"
-                              to="/"
-                    >
-                              Home
-                    </NavLink>
+                              <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        id="home"
+                                        to="/"
+                              >
+                                        Home
+                              </NavLink>
+                    </div>
           </div>
           <h1>
                     Movie Tracker
@@ -1225,28 +1381,36 @@ ShallowWrapper {
             <div
               className="nav-menu"
 >
-              <h3
-                            className="welcome"
+              <div>
+                            <NavLink
+                                          activeClassName="active"
+                                          ariaCurrent="true"
+                                          id="login-logout"
+                                          onClick={[Function]}
+                                          to="/"
+                            >
+                                          Log Out
+                            </NavLink>
+              </div>
+              <div>
+                            <h3
+                                          className="welcome"
+                            >
+                                          Hello mud. We are tracking you....
+                            </h3>
+              </div>
+              <div
+                            className="display-right-corner"
               >
-                            Hello mud. We are tracking you....
-              </h3>
-              <NavLink
-                            activeClassName="active"
-                            ariaCurrent="true"
-                            id="login-logout"
-                            onClick={[Function]}
-                            to="/"
-              >
-                            Log Out
-              </NavLink>
-              <NavLink
-                            activeClassName="active"
-                            ariaCurrent="true"
-                            id="home"
-                            to="/"
-              >
-                            Home
-              </NavLink>
+                            <NavLink
+                                          activeClassName="active"
+                                          ariaCurrent="true"
+                                          id="home"
+                                          to="/"
+                            >
+                                          Home
+                            </NavLink>
+              </div>
 </div>,
             <h1>
               Movie Tracker
@@ -1261,28 +1425,36 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <h3
-                  className="welcome"
+                <div>
+                  <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    id="login-logout"
+                                    onClick={[Function]}
+                                    to="/"
+                  >
+                                    Log Out
+                  </NavLink>
+</div>,
+                <div>
+                  <h3
+                                    className="welcome"
+                  >
+                                    Hello mud. We are tracking you....
+                  </h3>
+</div>,
+                <div
+                  className="display-right-corner"
 >
-                  Hello mud. We are tracking you....
-</h3>,
-                <NavLink
-                  activeClassName="active"
-                  ariaCurrent="true"
-                  id="login-logout"
-                  onClick={[Function]}
-                  to="/"
->
-                  Log Out
-</NavLink>,
-                <NavLink
-                  activeClassName="active"
-                  ariaCurrent="true"
-                  id="home"
-                  to="/"
->
-                  Home
-</NavLink>,
+                  <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    id="home"
+                                    to="/"
+                  >
+                                    Home
+                  </NavLink>
+</div>,
               ],
               "className": "nav-menu",
             },
@@ -1293,43 +1465,93 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Hello mud. We are tracking you....",
-                  "className": "welcome",
+                  "children": <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    id="login-logout"
+                    onClick={[Function]}
+                    to="/"
+>
+                    Log Out
+</NavLink>,
                 },
                 "ref": null,
-                "rendered": "Hello mud. We are tracking you....",
-                "type": "h3",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Log Out",
+                    "id": "login-logout",
+                    "onClick": [Function],
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Log Out",
+                  "type": [Function],
+                },
+                "type": "div",
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "host",
                 "props": Object {
-                  "activeClassName": "active",
-                  "ariaCurrent": "true",
-                  "children": "Log Out",
-                  "id": "login-logout",
-                  "onClick": [Function],
-                  "to": "/",
+                  "children": <h3
+                    className="welcome"
+>
+                    Hello mud. We are tracking you....
+</h3>,
                 },
                 "ref": null,
-                "rendered": "Log Out",
-                "type": [Function],
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Hello mud. We are tracking you....",
+                    "className": "welcome",
+                  },
+                  "ref": null,
+                  "rendered": "Hello mud. We are tracking you....",
+                  "type": "h3",
+                },
+                "type": "div",
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "host",
                 "props": Object {
-                  "activeClassName": "active",
-                  "ariaCurrent": "true",
-                  "children": "Home",
-                  "id": "home",
-                  "to": "/",
+                  "children": <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    id="home"
+                    to="/"
+>
+                    Home
+</NavLink>,
+                  "className": "display-right-corner",
                 },
                 "ref": null,
-                "rendered": "Home",
-                "type": [Function],
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Home",
+                    "id": "home",
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": "Home",
+                  "type": [Function],
+                },
+                "type": "div",
               },
             ],
             "type": "div",
@@ -1447,28 +1669,36 @@ ShallowWrapper {
             <div
                         className="nav-menu"
             >
-                        <h3
-                                    className="welcome"
+                        <div>
+                                    <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                id="login-logout"
+                                                onClick={[Function]}
+                                                to="/"
+                                    >
+                                                Log Out
+                                    </NavLink>
+                        </div>
+                        <div>
+                                    <h3
+                                                className="welcome"
+                                    >
+                                                Hello mud. We are tracking you....
+                                    </h3>
+                        </div>
+                        <div
+                                    className="display-right-corner"
                         >
-                                    Hello mud. We are tracking you....
-                        </h3>
-                        <NavLink
-                                    activeClassName="active"
-                                    ariaCurrent="true"
-                                    id="login-logout"
-                                    onClick={[Function]}
-                                    to="/"
-                        >
-                                    Log Out
-                        </NavLink>
-                        <NavLink
-                                    activeClassName="active"
-                                    ariaCurrent="true"
-                                    id="home"
-                                    to="/"
-                        >
-                                    Home
-                        </NavLink>
+                                    <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                id="home"
+                                                to="/"
+                                    >
+                                                Home
+                                    </NavLink>
+                        </div>
             </div>
             <h1>
                         Movie Tracker
@@ -1510,28 +1740,36 @@ ShallowWrapper {
               <div
                 className="nav-menu"
 >
-                <h3
-                                className="welcome"
+                <div>
+                                <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                id="login-logout"
+                                                onClick={[Function]}
+                                                to="/"
+                                >
+                                                Log Out
+                                </NavLink>
+                </div>
+                <div>
+                                <h3
+                                                className="welcome"
+                                >
+                                                Hello mud. We are tracking you....
+                                </h3>
+                </div>
+                <div
+                                className="display-right-corner"
                 >
-                                Hello mud. We are tracking you....
-                </h3>
-                <NavLink
-                                activeClassName="active"
-                                ariaCurrent="true"
-                                id="login-logout"
-                                onClick={[Function]}
-                                to="/"
-                >
-                                Log Out
-                </NavLink>
-                <NavLink
-                                activeClassName="active"
-                                ariaCurrent="true"
-                                id="home"
-                                to="/"
-                >
-                                Home
-                </NavLink>
+                                <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                id="home"
+                                                to="/"
+                                >
+                                                Home
+                                </NavLink>
+                </div>
 </div>,
               <h1>
                 Movie Tracker
@@ -1546,28 +1784,36 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <h3
-                    className="welcome"
+                  <div>
+                    <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        id="login-logout"
+                                        onClick={[Function]}
+                                        to="/"
+                    >
+                                        Log Out
+                    </NavLink>
+</div>,
+                  <div>
+                    <h3
+                                        className="welcome"
+                    >
+                                        Hello mud. We are tracking you....
+                    </h3>
+</div>,
+                  <div
+                    className="display-right-corner"
 >
-                    Hello mud. We are tracking you....
-</h3>,
-                  <NavLink
-                    activeClassName="active"
-                    ariaCurrent="true"
-                    id="login-logout"
-                    onClick={[Function]}
-                    to="/"
->
-                    Log Out
-</NavLink>,
-                  <NavLink
-                    activeClassName="active"
-                    ariaCurrent="true"
-                    id="home"
-                    to="/"
->
-                    Home
-</NavLink>,
+                    <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        id="home"
+                                        to="/"
+                    >
+                                        Home
+                    </NavLink>
+</div>,
                 ],
                 "className": "nav-menu",
               },
@@ -1578,43 +1824,93 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Hello mud. We are tracking you....",
-                    "className": "welcome",
+                    "children": <NavLink
+                      activeClassName="active"
+                      ariaCurrent="true"
+                      id="login-logout"
+                      onClick={[Function]}
+                      to="/"
+>
+                      Log Out
+</NavLink>,
                   },
                   "ref": null,
-                  "rendered": "Hello mud. We are tracking you....",
-                  "type": "h3",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "activeClassName": "active",
+                      "ariaCurrent": "true",
+                      "children": "Log Out",
+                      "id": "login-logout",
+                      "onClick": [Function],
+                      "to": "/",
+                    },
+                    "ref": null,
+                    "rendered": "Log Out",
+                    "type": [Function],
+                  },
+                  "type": "div",
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "function",
+                  "nodeType": "host",
                   "props": Object {
-                    "activeClassName": "active",
-                    "ariaCurrent": "true",
-                    "children": "Log Out",
-                    "id": "login-logout",
-                    "onClick": [Function],
-                    "to": "/",
+                    "children": <h3
+                      className="welcome"
+>
+                      Hello mud. We are tracking you....
+</h3>,
                   },
                   "ref": null,
-                  "rendered": "Log Out",
-                  "type": [Function],
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Hello mud. We are tracking you....",
+                      "className": "welcome",
+                    },
+                    "ref": null,
+                    "rendered": "Hello mud. We are tracking you....",
+                    "type": "h3",
+                  },
+                  "type": "div",
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "function",
+                  "nodeType": "host",
                   "props": Object {
-                    "activeClassName": "active",
-                    "ariaCurrent": "true",
-                    "children": "Home",
-                    "id": "home",
-                    "to": "/",
+                    "children": <NavLink
+                      activeClassName="active"
+                      ariaCurrent="true"
+                      id="home"
+                      to="/"
+>
+                      Home
+</NavLink>,
+                    "className": "display-right-corner",
                   },
                   "ref": null,
-                  "rendered": "Home",
-                  "type": [Function],
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "activeClassName": "active",
+                      "ariaCurrent": "true",
+                      "children": "Home",
+                      "id": "home",
+                      "to": "/",
+                    },
+                    "ref": null,
+                    "rendered": "Home",
+                    "type": [Function],
+                  },
+                  "type": "div",
                 },
               ],
               "type": "div",
