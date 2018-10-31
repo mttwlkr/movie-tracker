@@ -21,9 +21,9 @@ export class Card extends Component {
   addFavoritesToStore = async (userMovie) => {
     const { movieInfo, user, addFavorite, removeFavorite } = this.props;
     const isInFavorites = this.props.favorites
-      .filter(favorite => favorite.movie_id === movieInfo.movie_id);
-
-    if (!isInFavorites.length) {
+      .find(favorite => favorite.movie_id === movieInfo.movie_id);
+    
+    if (!isInFavorites) {
       await addToFavorites(userMovie);
       addFavorite(userMovie);
     } else {
@@ -41,11 +41,7 @@ export class Card extends Component {
   };
 
   render () {
-    const { poster_path, 
-      title, 
-      overview, 
-      vote_average 
-    } = this.props.movieInfo;
+    const { poster_path, title, overview, vote_average } = this.props.movieInfo;
 
     return (
       <div className='card'>
